@@ -42,10 +42,6 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.isLoading(true)
-    }
-    
     private func showOfflinePage() -> Void {
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "NetworkUnavailable", sender: self)
@@ -98,7 +94,7 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
     }
     
     func centerMap(for coordinate: CLLocationCoordinate2D) {
-        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 100, longitudinalMeters: 100)
+        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
         detailsFoodView?.mapView?.addAnnotation(annotation)

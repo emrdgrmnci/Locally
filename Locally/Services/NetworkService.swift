@@ -11,8 +11,7 @@ import Moya
 
 //MARK: - In your codebase define your apiKey
 //let apiKey = "INSERT YOUR API KEY HERE"
-
-private let apiKey = "nxDFSnEYwlAo08sKu5Avoocem3UCS0S24F1KmIf7NfBikh7VaZrWpmqmv3GZvan301yKX_Hbxf0GNcGfxd4U2ghuhZWhOtjUm_pcceeQ3VC0K6s8a5BHyn3FMsMgXXYx"//MyConstants.apiKey
+private let apiKey = MyConstants.shared.apiKey
 
 enum YelpService {
     enum BusinessProvider: TargetType {

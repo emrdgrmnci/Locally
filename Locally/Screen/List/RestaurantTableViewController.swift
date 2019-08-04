@@ -56,13 +56,7 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        DispatchQueue.main.async {
-        self.isLoading(true)
-        }
-    }
-    
+        
     private func showOfflinePage() -> Void {
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "NetworkUnavailable", sender: self)
@@ -109,7 +103,7 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
             else {return}
         navigationController?.pushViewController(detailsViewController, animated: true)
         let vm = appDelegate.data?[indexPath.row]
-        delegate?.didTapCell(detailsViewController, viewModel: vm!)
+        appDelegate.didTapCell(detailsViewController, viewModel: vm!)
     }
     
 }

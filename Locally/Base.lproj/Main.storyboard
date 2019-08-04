@@ -181,7 +181,7 @@
         <scene sceneID="oOT-zP-nsO">
             <objects>
                 <viewController storyboardIdentifier="OfflineViewController" id="3eT-Tv-gYo" customClass="OfflineViewController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Ck5-sw-3mJ">
+                    <view key="view" contentMode="scaleToFill" id="Ck5-sw-3mJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -834,21 +834,15 @@
                                 <rect key="frame" x="16" y="5.5" width="71" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcQ-Ap-KlZ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcQ-Ap-KlZ">
                                         <rect key="frame" x="14" y="6" width="276" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="276" id="p4M-61-dUX"/>
-                                        </constraints>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="EcQ-Ap-KlZ" firstAttribute="top" secondItem="kEF-Is-nMN" secondAttribute="top" constant="6" id="Umb-ti-m7b"/>
-                                    <constraint firstItem="EcQ-Ap-KlZ" firstAttribute="leading" secondItem="kEF-Is-nMN" secondAttribute="leading" constant="14" id="kVl-Sn-XxF"/>
-                                </constraints>
                             </view>
                         </barButtonItem>
                     </navigationItem>
