@@ -53,6 +53,7 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
         super.viewDidAppear(animated)
         print("did appear")
         self.isLoading(false)
+        tableView.reloadData()
         tableView.dataSource = self
         tableView.delegate = self
     }
