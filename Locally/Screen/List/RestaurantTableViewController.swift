@@ -23,7 +23,7 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
     
     // i got all data nw from app delegate directly you will find i create variable names data in app delegate and i access it here
     // and please notice there is amount of time till got all data before show so u need show loading or something
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
     var viewModels = [RestaurantListViewModel](){
        
         didSet{
@@ -45,7 +45,7 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
             self.showOfflinePage()
         }
         
-        print(">>>>>>>>>\(appDelegate.data)")
+        print(">>>>>>>>>\(appDelegate!.data)")
         tableView.reloadData()
     }
     
@@ -86,12 +86,12 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("number of rows ----------------------- \(String(describing: viewModels.count))")
         print(viewModels)
-        return appDelegate.data?.count ?? 0
+        return appDelegate!.data?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! RestaurantTableViewCell
-        let vm = appDelegate.data?[indexPath.row]
+        let vm = appDelegate!.data?[indexPath.row]
         cell.configure(with: vm!)
         print("vm \(vm)")
         return cell
@@ -102,8 +102,8 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
         guard let detailsViewController = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController")
             else {return}
         navigationController?.pushViewController(detailsViewController, animated: true)
-        let vm = appDelegate.data?[indexPath.row]
-        appDelegate.didTapCell(detailsViewController, viewModel: vm!)
+        let vm = appDelegate!.data?[indexPath.row]
+        appDelegate!.didTapCell(detailsViewController, viewModel: vm!)
     }
     
 }

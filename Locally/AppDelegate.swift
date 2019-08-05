@@ -25,11 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var tabbarController: UITabBarController?
     let locationManager = CLLocationManager()
     var data: [RestaurantListViewModel]?
+    var restaurant = RestaurantTableViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         //MARK: - IQKeyboardMangaer
-        
         IQKeyboardManager.shared.enable = true 
         
         //MARK: - Firebase
@@ -46,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window.rootViewController = initialViewController
             }
         }
-        
         
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         
@@ -114,43 +113,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     .compactMap(RestaurantListViewModel.init)
                     .sorted(by: { $0.distance < $1.distance })
                     self?.data = viewModels
-                    RestaurantTableViewController().viewModels = viewModels ?? []
+                    self?.restaurant.viewModels = viewModels ?? []
                     let tab = strongSelf.storyboard.instantiateViewController(withIdentifier: "TabbarController") as! TabbarController
                     self?.window.rootViewController = tab
-                
-                
-                //                if let nav = strongSelf.window.rootViewController as? UINavigationController,
-                //                    let restaurantListViewController = nav.topViewController as? RestaurantTableViewController {
-                //                    restaurantListViewController.viewModels = viewModels ?? []
-                //
-                //                    let tab = strongSelf.storyboard.instantiateViewController(withIdentifier: "TabbarController") as! TabbarController
-                //                    self?.window.rootViewController = tab
-                //
-                //                }
-                //                else {
-                //                    //When Allow option tapped in location permission alert
-                //                    let tab = strongSelf.storyboard.instantiateViewController(withIdentifier: "TabbarController") as! TabbarController
-                //                    self?.window.rootViewController = tab
-                //
-                //                    //                    let appDelegate = AppDelegate.shared
-                //                    //                    appDelegate.window.rootViewController = tab
-                //                    //                    self!.getTopMostViewController()?.present(tab, animated: true)
-                //
-            //                }
             case .failure(let error):
                 print ("Error: \(error)")
             } 
         }
-    }
-    
-    func getTopMostViewController() -> UIViewController? {
-        var topMostViewController = AppDelegate.shared.window.rootViewController
-        
-        while let presentedViewController = topMostViewController?.presentedViewController {
-            topMostViewController = presentedViewController
-        }
-        
-        return topMostViewController
     }
 }
 

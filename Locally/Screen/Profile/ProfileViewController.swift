@@ -32,9 +32,9 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let screenWidth = UIScreen.main.bounds.width
+//        let screenWidth = UIScreen.main.bounds.width
         
-        movingView = UIView(frame: CGRect(x: 0, y:-10, width: screenWidth / 4, height: 5))
+        movingView = UIView(frame: CGRect(x: 10, y: -20, width: 55, height: 5))
         movingView.backgroundColor = .red   //if backgroundView's color is black
         horizontalLine.addSubview(movingView)
         
@@ -86,7 +86,7 @@ class ProfileViewController: UIViewController {
     }
     @IBAction func dineline(_ sender: UIButton) {
         sender.shake()
-        let newx = sender.frame.origin.x
+        let newx = sender.frame.origin.x + 5
         
         UIView.animate(withDuration: 0.5) {
             self.movingView.frame.origin.x = newx
@@ -97,7 +97,7 @@ class ProfileViewController: UIViewController {
     
     @IBAction func reviews(_ sender: UIButton) {
         sender.shake()
-        let newx = sender.frame.origin.x
+        let newx = sender.frame.origin.x + 5
         
         UIView.animate(withDuration: 0.5) {
             self.movingView.frame.origin.x = newx
@@ -107,7 +107,7 @@ class ProfileViewController: UIViewController {
     }
     @IBAction func photos(_ sender: UIButton) {
         sender.shake()
-        let newx = sender.frame.origin.x
+        let newx = sender.frame.origin.x + 5
         
         UIView.animate(withDuration: 0.5) {
             self.movingView.frame.origin.x = newx
@@ -118,7 +118,7 @@ class ProfileViewController: UIViewController {
     
     @IBAction func beenThere(_ sender: UIButton) {
         sender.shake()
-        let newx = sender.frame.origin.x
+        let newx = sender.frame.origin.x + 5
         
         UIView.animate(withDuration: 0.5) {
             self.movingView.frame.origin.x = newx
