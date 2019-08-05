@@ -34,7 +34,7 @@ class ProfileViewController: UIViewController {
         
 //        let screenWidth = UIScreen.main.bounds.width
         
-        movingView = UIView(frame: CGRect(x: 10, y: -20, width: 55, height: 5))
+        movingView = UIView(frame: CGRect(x: 10, y: -20, width: 50, height: 5))
         movingView.backgroundColor = .red   //if backgroundView's color is black
         horizontalLine.addSubview(movingView)
         
