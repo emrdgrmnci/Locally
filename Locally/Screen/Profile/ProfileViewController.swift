@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var collectionImageView: UIImageView!
     @IBOutlet weak var horizontalLine: UIView!
     @IBOutlet weak var sideMenuConstraint: NSLayoutConstraint!
+    @IBOutlet weak var addPhoto: UIButton!
     
     var movingView = UIView()
     var imagePicker: UIImagePickerController!
@@ -86,8 +87,9 @@ class ProfileViewController: UIViewController {
     }
     @IBAction func dineline(_ sender: UIButton) {
         sender.shake()
-        let newx = sender.frame.origin.x + 5
+        addPhoto.isHidden = false
         
+        let newx = sender.frame.origin.x + 5
         UIView.animate(withDuration: 0.5) {
             self.movingView.frame.origin.x = newx
         }
@@ -97,8 +99,9 @@ class ProfileViewController: UIViewController {
     
     @IBAction func reviews(_ sender: UIButton) {
         sender.shake()
-        let newx = sender.frame.origin.x + 5
+        addPhoto.isHidden = true
         
+        let newx = sender.frame.origin.x + 5
         UIView.animate(withDuration: 0.5) {
             self.movingView.frame.origin.x = newx
         }
@@ -107,8 +110,9 @@ class ProfileViewController: UIViewController {
     }
     @IBAction func photos(_ sender: UIButton) {
         sender.shake()
-        let newx = sender.frame.origin.x + 5
+        addPhoto.isHidden = false
         
+        let newx = sender.frame.origin.x + 5
         UIView.animate(withDuration: 0.5) {
             self.movingView.frame.origin.x = newx
         }
@@ -118,8 +122,9 @@ class ProfileViewController: UIViewController {
     
     @IBAction func beenThere(_ sender: UIButton) {
         sender.shake()
-        let newx = sender.frame.origin.x + 5
+        addPhoto.isHidden = true
         
+        let newx = sender.frame.origin.x + 5
         UIView.animate(withDuration: 0.5) {
             self.movingView.frame.origin.x = newx
         }

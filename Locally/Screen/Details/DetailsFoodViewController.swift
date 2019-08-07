@@ -14,8 +14,11 @@ import CoreLocation
 class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var detailsFoodView: DetailsFoodView?
+    @IBOutlet weak var isFavorite: UIButton!
     
     let locationManager = CLLocationManager()
+    
+    var isFavorited = true
     
     var viewModel: DetailsViewModel? {
         didSet {
@@ -25,6 +28,7 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         detailsFoodView?.collectionView?.register(DetailsCollectionViewCell.self, forCellWithReuseIdentifier: "ImageCell")
         detailsFoodView?.collectionView?.dataSource = self
         detailsFoodView?.collectionView?.delegate = self
@@ -40,13 +44,23 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
         NetworkManager.isUnreachable { _ in
             self.showOfflinePage()
         }
+        
+        // initialize the likes button to reflect the current state
+        self.isFavorite.isSelected = self.likes
+        
+        // set the titles for the likes button per state
+        self.isFavorite.setTitle("YES", for: .normal)
+        self.isFavorite.setTitleColor(UIColor(red: 0.2118, green: 0.749, blue: 0, alpha: 1.0), for: .normal)
+        self.isFavorite.setTitle("NO", for: .selected)
+        self.isFavorite.setTitleColor(.red, for: .selected)
     }
-    
+   
     private func showOfflinePage() -> Void {
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "NetworkUnavailable", sender: self)
         }
     }
+    
     @IBAction func getDirectionsButton(_ sender: Any) {
         openMapsAppWithDirections(to: CLLocationCoordinate2D(latitude: (viewModel?.coordinate.latitude)!, longitude: ((viewModel?.coordinate.longitude)!)), destinationName: "Destination")
     }
@@ -99,6 +113,22 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
         annotation.coordinate = coordinate
         detailsFoodView?.mapView?.addAnnotation(annotation)
         detailsFoodView?.mapView?.setRegion(region, animated: true)
+    }
+    
+    var likes : Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "likes")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "likes")
+        }
+    }
+    
+    @IBAction func favoriteTapped(_ sender: AnyObject) {
+        // toggle the likes state
+        self.likes = !self.isFavorite.isSelected
+        // set the likes button accordingly
+        self.isFavorite.isSelected = self.likes
     }
 }
 
