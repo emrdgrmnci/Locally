@@ -145,8 +145,8 @@
 		470FFACC22D90893003162DD /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				479D574222FBFE24009E7786 /* Controllers */,
 				47C196C422D9094F00E012D0 /* Views */,
-				47C196C222D9094400E012D0 /* NavigationController.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -157,14 +157,6 @@
 				4749A71022F5772B009E14CB /* SideMenuTableViewController.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		476C65FE22D3724600A2F2C9 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				47F4E79622D0CCBA00DFD3A1 /* Assets.xcassets */,
-			);
-			path = "Support Files";
 			sourceTree = "<group>";
 		};
 		4781074522F72B1C00EDEC7F /* Supporting Files */ = {
@@ -194,9 +186,108 @@
 		478AF76422D8858F00D551C4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				47F4E78E22D0CCB900DFD3A1 /* LoginViewController.swift */,
+				479D574122FBFE19009E7786 /* Controllers */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		479D573A22FBFC2D009E7786 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				47F4E78C22D0CCB900DFD3A1 /* AppDelegate.swift */,
+				47F4E79022D0CCB900DFD3A1 /* Main.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		479D573B22FBFC62009E7786 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				47F4E79622D0CCBA00DFD3A1 /* Assets.xcassets */,
+				47F4E79B22D0CCBA00DFD3A1 /* Info.plist */,
+				47F4E79822D0CCBA00DFD3A1 /* LaunchScreen.storyboard */,
+				47B163F422D5DD0C0025EF81 /* GoogleService-Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		479D573C22FBFD81009E7786 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				47F4E7C522D0E49B00DFD3A1 /* DetailsFoodViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		479D573D22FBFDA1009E7786 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				47B163FB22D5EA020025EF81 /* LaunchViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		479D573E22FBFDC2009E7786 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				47F4E7C822D0E52200DFD3A1 /* RestaurantTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		479D573F22FBFDCA009E7786 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				47F4E7DB22D1002100DFD3A1 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		479D574022FBFE0E009E7786 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				478AF76222D880CA00D551C4 /* LocationViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		479D574122FBFE19009E7786 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				47F4E78E22D0CCB900DFD3A1 /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		479D574222FBFE24009E7786 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				47C196C222D9094400E012D0 /* NavigationController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		479D574322FBFE31009E7786 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				47B163FE22D5EAEA0025EF81 /* OfflineViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		479D574422FBFE3C009E7786 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				47FBF1EC22DDE86800CB8C9F /* ProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		479D574522FBFE47009E7786 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		47B163F622D5E7760025EF81 /* Network Manager */ = {
@@ -210,7 +301,7 @@
 		47B163FA22D5E9E30025EF81 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				47B163FB22D5EA020025EF81 /* LaunchViewController.swift */,
+				479D573D22FBFDA1009E7786 /* Controllers */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -218,7 +309,7 @@
 		47B163FD22D5EAD20025EF81 /* Offline */ = {
 			isa = PBXGroup;
 			children = (
-				47B163FE22D5EAEA0025EF81 /* OfflineViewController.swift */,
+				479D574322FBFE31009E7786 /* Controllers */,
 			);
 			path = Offline;
 			sourceTree = "<group>";
@@ -233,8 +324,9 @@
 		47CBC23F22D77A8000EEE826 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				47CBC24022D77A8D00EEE826 /* Views */,
+				479D574522FBFE47009E7786 /* Controllers */,
 				47CBC24122D77AAD00EEE826 /* TabbarController.swift */,
+				47CBC24022D77A8D00EEE826 /* Views */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -282,16 +374,12 @@
 		47F4E78B22D0CCB900DFD3A1 /* Locally */ = {
 			isa = PBXGroup;
 			children = (
+				479D573B22FBFC62009E7786 /* Resources */,
 				4781074522F72B1C00EDEC7F /* Supporting Files */,
 				47E080EF22F1DCD500541192 /* Extensions */,
 				47B163F622D5E7760025EF81 /* Network Manager */,
-				47B163F422D5DD0C0025EF81 /* GoogleService-Info.plist */,
-				47F4E79B22D0CCBA00DFD3A1 /* Info.plist */,
-				476C65FE22D3724600A2F2C9 /* Support Files */,
-				47F4E78C22D0CCB900DFD3A1 /* AppDelegate.swift */,
-				47F4E79822D0CCBA00DFD3A1 /* LaunchScreen.storyboard */,
+				479D573A22FBFC2D009E7786 /* Application */,
 				47F4E79322D0CCB900DFD3A1 /* Locally.xcdatamodeld */,
-				47F4E79022D0CCB900DFD3A1 /* Main.storyboard */,
 				47F4E7BD22D0E26C00DFD3A1 /* Screen */,
 				47F4E7D822D0F58700DFD3A1 /* Services */,
 				478861DF22F74B04001CA421 /* Constants.swift */,
@@ -337,8 +425,8 @@
 		47F4E7C022D0E35F00DFD3A1 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				479D573C22FBFD81009E7786 /* Controllers */,
 				47F4E7C222D0E38100DFD3A1 /* Views */,
-				47F4E7C522D0E49B00DFD3A1 /* DetailsFoodViewController.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -355,9 +443,9 @@
 		47F4E7C722D0E4DE00DFD3A1 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				479D573F22FBFDCA009E7786 /* Models */,
+				479D573E22FBFDC2009E7786 /* Controllers */,
 				47F4E7CA22D0E52C00DFD3A1 /* Views */,
-				47F4E7C822D0E52200DFD3A1 /* RestaurantTableViewController.swift */,
-				47F4E7DB22D1002100DFD3A1 /* Models.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -373,8 +461,8 @@
 		47F4E7CD22D0E65800DFD3A1 /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				479D574022FBFE0E009E7786 /* Controllers */,
 				47F4E7CE22D0E66400DFD3A1 /* Views */,
-				478AF76222D880CA00D551C4 /* LocationViewController.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -399,9 +487,9 @@
 		47FBF1EB22DDE85B00CB8C9F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				479D574422FBFE3C009E7786 /* Controllers */,
 				4749A70F22F5770E009E14CB /* Views */,
 				47FBF1F022DE26A700CB8C9F /* Cell */,
-				47FBF1EC22DDE86800CB8C9F /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -905,7 +993,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NMCVZ8F7S5;
-				INFOPLIST_FILE = Locally/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Locally/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -925,7 +1013,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NMCVZ8F7S5;
-				INFOPLIST_FILE = Locally/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Locally/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
