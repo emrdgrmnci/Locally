@@ -22,6 +22,8 @@
 		47C196C322D9094400E012D0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C196C222D9094400E012D0 /* NavigationController.swift */; };
 		47CBC24222D77AAD00EEE826 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBC24122D77AAD00EEE826 /* TabbarController.swift */; };
 		47E080F122F1DCE300541192 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E080F022F1DCE300541192 /* UIButtonExtension.swift */; };
+		47EDAE6922FD94AC00A55A5C /* RestaurantTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47EDAE6822FD94AC00A55A5C /* RestaurantTableView.storyboard */; };
+		47EDAE6B22FD971D00A55A5C /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47EDAE6A22FD971D00A55A5C /* ProfileView.storyboard */; };
 		47F4E78D22D0CCB900DFD3A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F4E78C22D0CCB900DFD3A1 /* AppDelegate.swift */; };
 		47F4E78F22D0CCB900DFD3A1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F4E78E22D0CCB900DFD3A1 /* LoginViewController.swift */; };
 		47F4E79222D0CCB900DFD3A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F4E79022D0CCB900DFD3A1 /* Main.storyboard */; };
@@ -77,6 +79,8 @@
 		47C196C222D9094400E012D0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		47CBC24122D77AAD00EEE826 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		47E080F022F1DCE300541192 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		47EDAE6822FD94AC00A55A5C /* RestaurantTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RestaurantTableView.storyboard; sourceTree = "<group>"; };
+		47EDAE6A22FD971D00A55A5C /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
 		47F4E78922D0CCB900DFD3A1 /* Locally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Locally.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F4E78C22D0CCB900DFD3A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47F4E78E22D0CCB900DFD3A1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 			children = (
 				47F4E78C22D0CCB900DFD3A1 /* AppDelegate.swift */,
 				47F4E79022D0CCB900DFD3A1 /* Main.storyboard */,
+				47EDAE6822FD94AC00A55A5C /* RestaurantTableView.storyboard */,
+				47EDAE6A22FD971D00A55A5C /* ProfileView.storyboard */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -631,9 +637,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				47F4E79A22D0CCBA00DFD3A1 /* LaunchScreen.storyboard in Resources */,
+				47EDAE6B22FD971D00A55A5C /* ProfileView.storyboard in Resources */,
 				47B163F522D5DD0D0025EF81 /* GoogleService-Info.plist in Resources */,
 				4781074A22F72B7C00EDEC7F /* Animations.bundle in Resources */,
 				47F4E7D722D0F38900DFD3A1 /* Podfile in Resources */,
+				47EDAE6922FD94AC00A55A5C /* RestaurantTableView.storyboard in Resources */,
 				47F4E79222D0CCB900DFD3A1 /* Main.storyboard in Resources */,
 				475C783F22E8820600C174AE /* Assets.xcassets in Resources */,
 			);

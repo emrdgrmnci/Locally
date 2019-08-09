@@ -48,7 +48,9 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
     }
     private func showOfflinePage() {
         DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "NetworkUnavailable", sender: self)
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let offlineVC: UIViewController = (mainStoryboard.instantiateViewController(withIdentifier: "OfflineViewController") as? OfflineViewController)!
+            self.present(offlineVC, animated: true, completion: nil)
         }
     }
 

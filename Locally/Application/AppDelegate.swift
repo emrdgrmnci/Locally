@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let network = NetworkManager.sharedInstance
     let locationService = LocationService()
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let restaurantStoryboard = UIStoryboard(name: "RestaurantTableView", bundle: nil)
     let service = MoyaProvider<YelpService.BusinessProvider>()
     let jsonDecoder = JSONDecoder()
     var navigationController: UINavigationController?
@@ -75,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             locationViewController?.delegate = self
             window.rootViewController = locationViewController
         default :
-            let nav = storyboard
+            let nav = restaurantStoryboard
                 .instantiateViewController(withIdentifier: "RestaurantNavigationController") as? UINavigationController
             self.navigationController = nav
             window.rootViewController = nav
