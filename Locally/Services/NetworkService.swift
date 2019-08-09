@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-//MARK: - In your codebase define your apiKey
+// MARK: - In your codebase define your apiKey
 //let apiKey = "INSERT YOUR API KEY HERE"
 private let apiKey = MyConstants.shared.apiKey
 
@@ -17,11 +17,11 @@ enum YelpService {
     enum BusinessProvider: TargetType {
         case search(lat: Double, long: Double)
         case details(id: String)
-        
+
         var baseURL: URL {
             return URL(string: "https://api.yelp.com/v3/businesses")!
         }
-        
+
         var path: String {
             switch self {
             case .search:
@@ -30,15 +30,15 @@ enum YelpService {
                 return "/\(id)"
             }
         }
-        
+
         var method: Moya.Method {
             return .get
         }
-        
+
         var sampleData: Data {
             return Data()
         }
-        
+
         var task: Task {
             switch self {
             case let .search(lat, long):
@@ -47,8 +47,8 @@ enum YelpService {
                 return .requestPlain
             }
         }
-        
-        var headers: [String : String]? {
+
+        var headers: [String: String]? {
             return ["Authorization": "Bearer \(apiKey)"]
         }
     }

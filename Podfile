@@ -15,6 +15,7 @@ pod 'FirebaseUI/Email'
 pod 'FirebaseUI/Google'
 pod 'IQKeyboardManagerSwift'
 pod 'lottie-ios' 
+pod 'SwiftLint'
 target 'LocallyTests' do
     inherit! :search_paths
     # Pods for testing

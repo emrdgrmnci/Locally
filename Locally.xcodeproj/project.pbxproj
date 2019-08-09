@@ -170,6 +170,10 @@
 		4781074622F72B2500EDEC7F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				47F4E79622D0CCBA00DFD3A1 /* Assets.xcassets */,
+				47F4E79B22D0CCBA00DFD3A1 /* Info.plist */,
+				47F4E79822D0CCBA00DFD3A1 /* LaunchScreen.storyboard */,
+				47B163F422D5DD0C0025EF81 /* GoogleService-Info.plist */,
 				4781074722F72B2B00EDEC7F /* Animations */,
 			);
 			path = Resources;
@@ -198,17 +202,6 @@
 				47F4E79022D0CCB900DFD3A1 /* Main.storyboard */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		479D573B22FBFC62009E7786 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				47F4E79622D0CCBA00DFD3A1 /* Assets.xcassets */,
-				47F4E79B22D0CCBA00DFD3A1 /* Info.plist */,
-				47F4E79822D0CCBA00DFD3A1 /* LaunchScreen.storyboard */,
-				47B163F422D5DD0C0025EF81 /* GoogleService-Info.plist */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		479D573C22FBFD81009E7786 /* Controllers */ = {
@@ -374,7 +367,6 @@
 		47F4E78B22D0CCB900DFD3A1 /* Locally */ = {
 			isa = PBXGroup;
 			children = (
-				479D573B22FBFC62009E7786 /* Resources */,
 				4781074522F72B1C00EDEC7F /* Supporting Files */,
 				47E080EF22F1DCD500541192 /* Extensions */,
 				47B163F622D5E7760025EF81 /* Network Manager */,
@@ -538,6 +530,7 @@
 				47F4E78722D0CCB900DFD3A1 /* Resources */,
 				690EFED1B2DAEF794CC51275 /* [CP] Embed Pods Frameworks */,
 				D5FD174A1660A42EE69DD9A1 /* [CP] Copy Pods Resources */,
+				47EDAE6722FD5C0100A55A5C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -600,6 +593,7 @@
 				TargetAttributes = {
 					47F4E78822D0CCB900DFD3A1 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1030;
 					};
 					47F4E79F22D0CCBA00DFD3A1 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -731,6 +725,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		47EDAE6722FD5C0100A55A5C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		690EFED1B2DAEF794CC51275 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -993,15 +1004,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NMCVZ8F7S5;
-				INFOPLIST_FILE = "$(SRCROOT)/Locally/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				INFOPLIST_FILE = "$(SRCROOT)/Locally/Supporting Files/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Emre.Locall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1013,15 +1024,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NMCVZ8F7S5;
-				INFOPLIST_FILE = "$(SRCROOT)/Locally/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				INFOPLIST_FILE = "$(SRCROOT)/Locally/Supporting Files/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Emre.Locall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1033,7 +1044,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SNV5KB5Z4B;
+				DEVELOPMENT_TEAM = NMCVZ8F7S5;
 				INFOPLIST_FILE = LocallyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1055,7 +1066,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SNV5KB5Z4B;
+				DEVELOPMENT_TEAM = NMCVZ8F7S5;
 				INFOPLIST_FILE = LocallyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1076,7 +1087,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SNV5KB5Z4B;
+				DEVELOPMENT_TEAM = NMCVZ8F7S5;
 				INFOPLIST_FILE = LocallyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1097,7 +1108,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SNV5KB5Z4B;
+				DEVELOPMENT_TEAM = NMCVZ8F7S5;
 				INFOPLIST_FILE = LocallyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

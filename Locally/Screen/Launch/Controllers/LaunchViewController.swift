@@ -11,19 +11,19 @@ import UIKit
 class LaunchViewController: UIViewController {
 
     let network: NetworkManager = NetworkManager.sharedInstance
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         NetworkManager.isUnreachable { _ in
             self.showOfflinePage()
         }
-        
+
         NetworkManager.isReachable { _ in
             self.showMainPage()
         }
     }
-    
-    private func showOfflinePage() -> Void {
+
+    private func showOfflinePage() {
         DispatchQueue.main.async {
             self.performSegue(
                 withIdentifier: "NetworkUnavailable",
@@ -31,8 +31,8 @@ class LaunchViewController: UIViewController {
             )
         }
     }
-    
-    private func showMainPage() -> Void {
+
+    private func showMainPage() {
         DispatchQueue.main.async {
             self.performSegue(
                 withIdentifier: "LoginController",

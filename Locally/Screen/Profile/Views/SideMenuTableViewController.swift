@@ -9,15 +9,14 @@
 import UIKit
 
 class SideMenuTableViewController: UITableViewController {
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(SideMenuTableViewController.swipedLeft))
         swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(swipeLeft)
     }
-    
+
     @objc func swipedLeft() {
         NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
     }
@@ -30,7 +29,7 @@ class SideMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:

@@ -14,7 +14,7 @@ import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+
     let window = UIWindow()
     let network = NetworkManager.sharedInstance
     let locationService = LocationService()
@@ -26,35 +26,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let locationManager = CLLocationManager()
     var data: [RestaurantListViewModel]?
     var restaurant = RestaurantTableViewController()
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        //MARK: - IQKeyboardMangaer
-        IQKeyboardManager.shared.enable = true 
-        
-        //MARK: - Firebase
+
+        // MARK: - IQKeyboardMangaer
+        IQKeyboardManager.shared.enable = true
+
+        // MARK: - Firebase
         FirebaseApp.configure()
-        
+
         NetworkManager.isUnreachable { _ in
             showOfflinePage()
         }
-        
-        func showOfflinePage() -> Void {
+
+        func showOfflinePage() {
             DispatchQueue.main.async {
-                let mainStoryboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let initialViewController : UIViewController = (mainStoryboard.instantiateViewController(withIdentifier: "OfflineViewController") as? OfflineViewController)!
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let initialViewController: UIViewController = (mainStoryboard.instantiateViewController(withIdentifier: "OfflineViewController") as? OfflineViewController)!
                 self.window.rootViewController = initialViewController
             }
         }
-        
+
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-        
+
         locationService.didChangeStatus = { [weak self] success in
             if success {
                 self?.locationService.getLocation()
             }
         }
-        
+
         locationService.newLocation = { [weak self ] result in
             switch result {
             case .success(let location):
@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             }
         }
-        
+
         switch locationService.status {
         case .notDetermined:
             let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
@@ -83,10 +83,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             (nav?.topViewController as? RestaurantTableViewController)?.delegate = self
         }
         window.makeKeyAndVisible()
-        
+
         return true
     }
-    
+
     private func loadDetails(for viewController: UIViewController, with id: String) {
         service.request(.details(id: id)) { [weak self] (result) in
             switch result {
@@ -101,10 +101,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-    
+
     private func loadBusinesses(with coordinate: CLLocationCoordinate2D) {
-        service.request(.search(lat: coordinate.latitude, long: coordinate.longitude)) { [weak self]
-            (result) in
+        service.request(.search(lat: coordinate.latitude, long: coordinate.longitude)) { [weak self] (result) in
             guard let strongSelf = self else { return }
             switch result {
             case .success(let response):
@@ -118,7 +117,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     self?.window.rootViewController = tab
             case .failure(let error):
                 print ("Error: \(error)")
-            } 
+            }
         }
     }
 }
@@ -127,8 +126,7 @@ extension AppDelegate: ListActions, LocationActions {
     func didTapAllow() {
         locationService.requestLocationAuthorization()
     }
-    
-    
+
     func didTapCell(_ viewController: UIViewController, viewModel: RestaurantListViewModel) {
         loadDetails(for: viewController, with: viewModel.id)
     }
@@ -138,7 +136,7 @@ extension AppDelegate {
     static var shared: AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
-    
+
     //    var rootViewController: LoginViewController {
     //        return window.rootViewController as! LoginViewController
     //    }

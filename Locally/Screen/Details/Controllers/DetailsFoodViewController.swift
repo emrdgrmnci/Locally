@@ -12,61 +12,55 @@ import MapKit
 import CoreLocation
 
 class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-    
     @IBOutlet weak var detailsFoodView: DetailsFoodView?
     @IBOutlet weak var isFavorite: UIButton!
-    
     let locationManager = CLLocationManager()
-    
     var isFavorited = true
-    
     var viewModel: DetailsViewModel? {
         didSet {
             updateView()
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        detailsFoodView?.collectionView?.register(DetailsCollectionViewCell.self, forCellWithReuseIdentifier: "ImageCell")
+        detailsFoodView?.collectionView!.register(
+            DetailsCollectionViewCell.self,
+            forCellWithReuseIdentifier: "ImageCell")
         detailsFoodView?.collectionView?.dataSource = self
         detailsFoodView?.collectionView?.delegate = self
         detailsFoodView?.mapView?.delegate = self
         detailsFoodView?.mapView?.showsUserLocation = true
-        
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
         }
-        
         NetworkManager.isUnreachable { _ in
             self.showOfflinePage()
         }
-        
         // initialize the likes button to reflect the current state
         self.isFavorite.isSelected = self.likes
-        
         // set the titles for the likes button per state
         self.isFavorite.setTitle("YES", for: .normal)
         self.isFavorite.setTitleColor(UIColor(red: 0.2118, green: 0.749, blue: 0, alpha: 1.0), for: .normal)
         self.isFavorite.setTitle("NO", for: .selected)
         self.isFavorite.setTitleColor(.red, for: .selected)
     }
-   
-    private func showOfflinePage() -> Void {
+    private func showOfflinePage() {
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "NetworkUnavailable", sender: self)
         }
     }
-    
+
     @IBAction func getDirectionsButton(_ sender: Any) {
-        openMapsAppWithDirections(to: CLLocationCoordinate2D(latitude: (viewModel?.coordinate.latitude)!, longitude: ((viewModel?.coordinate.longitude)!)), destinationName: "Destination")
+        openMapsAppWithDirections(to: CLLocationCoordinate2D(
+            latitude: (viewModel?.coordinate.latitude)!,
+            longitude: ((viewModel?.coordinate.longitude)!)),
+            destinationName: "Destination")
     }
-    
-    private func mapView(MapView: MKMapView, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        
+    private func mapView(mapView: MKMapView,
+                         annotationView: MKAnnotationView,
+                         calloutAccessoryControlTapped control: UIControl) {
         if control == annotationView.leftCalloutAccessoryView {
             if let annotation = annotationView.annotation {
                 // Unwrap the double-optional annotation.title property or
@@ -75,9 +69,7 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
                 openMapsAppWithDirections(to: annotation.coordinate, destinationName: destinationName)
             }
         }
-        
     }
-    
     func openMapsAppWithDirections(to coordinate: CLLocationCoordinate2D, destinationName name: String) {
         let options = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
         let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
@@ -85,14 +77,12 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
         mapItem.name = viewModel?.name // Provide the name of the destination in the To: field
         mapItem.openInMaps(launchOptions: options)
     }
-    
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
         renderer.strokeColor = UIColor.blue
         renderer.lineWidth = 5.0
         return renderer
     }
-    
     func updateView() {
         if let viewModel = viewModel {
             detailsFoodView?.priceLabel?.text = viewModel.price
@@ -103,10 +93,9 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
             centerMap(for: viewModel.coordinate)
             print("Your destination is: \(viewModel.coordinate)")
             title = viewModel.name
-            print("title: \(title)")
+            print("title: \(String(describing: title))")
         }
     }
-    
     func centerMap(for coordinate: CLLocationCoordinate2D) {
         let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
         let annotation = MKPointAnnotation()
@@ -114,8 +103,7 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
         detailsFoodView?.mapView?.addAnnotation(annotation)
         detailsFoodView?.mapView?.setRegion(region, animated: true)
     }
-    
-    var likes : Bool {
+    var likes: Bool {
         get {
             return UserDefaults.standard.bool(forKey: "likes")
         }
@@ -123,7 +111,6 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
             UserDefaults.standard.set(newValue, forKey: "likes")
         }
     }
-    
     @IBAction func favoriteTapped(_ sender: AnyObject) {
         // toggle the likes state
         self.likes = !self.isFavorite.isSelected
@@ -133,24 +120,26 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
 }
 
 extension DetailsFoodViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.imageUrls.count ?? 0
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! DetailsCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell",
+                                                      for: indexPath) as! DetailsCollectionViewCell
         if let url = viewModel?.imageUrls[indexPath.item] {
             cell.imageView.af_setImage(withURL: url)
         }
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
         detailsFoodView?.pageControl?.currentPage = indexPath.item
     }
 }

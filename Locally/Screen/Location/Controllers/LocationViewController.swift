@@ -14,20 +14,18 @@ protocol LocationActions: class {
 }
 
 class LocationViewController: UIViewController {
-    
+
     @IBOutlet weak var locationView: LocationView!
-    
+
     let locationService = LocationService()
-    
+
     weak var delegate: LocationActions?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
 //        locationService.requestLocationAuthorization()
-        
-    
-        
+
         locationView.didTapAllow = {
             self.delegate?.didTapAllow()
              self.isLoading(true)
@@ -36,7 +34,7 @@ class LocationViewController: UIViewController {
             self.showOfflinePage()
         }
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         if hasLocationPermission() {
             DispatchQueue.main.async {
@@ -45,12 +43,11 @@ class LocationViewController: UIViewController {
                     .instantiateViewController(withIdentifier: "TabbarController") as? UITabBarController
                 self.present(tab!, animated: true, completion: nil)
                 //RestaurantTableViewController
-                
-                
+
             }
         }
     }
-    
+
     func hasLocationPermission() -> Bool {
         var hasPermission = false
         if CLLocationManager.locationServicesEnabled() {
@@ -59,15 +56,17 @@ class LocationViewController: UIViewController {
                 hasPermission = false
             case .authorizedAlways, .authorizedWhenInUse:
                 hasPermission = true
+            @unknown default:
+                fatalError()
             }
         } else {
             hasPermission = false
         }
-        
+
         return hasPermission
     }
-    
-    private func showOfflinePage() -> Void {
+
+    private func showOfflinePage() {
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "NetworkUnavailable", sender: self)
         }

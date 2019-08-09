@@ -25,7 +25,7 @@ struct RestaurantListViewModel {
     let imageUrl: URL
     let distance: Double
     let id: String
-    
+
     static var numberFormatter: NumberFormatter {
         let nf = NumberFormatter()
         nf.numberStyle = .decimal
@@ -33,11 +33,11 @@ struct RestaurantListViewModel {
         nf.minimumFractionDigits = 2
         return nf
     }
-    
+
     var formattedDistance: String {
         return RestaurantListViewModel.numberFormatter.string(from: distance as NSNumber)!
     }
-    
+
 }
 
 extension RestaurantListViewModel {

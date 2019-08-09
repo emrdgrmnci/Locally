@@ -25,7 +25,7 @@ class OfflineViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-    private func showMainController() -> Void {
+    private func showMainController() {
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "MainController", sender: self)
         }

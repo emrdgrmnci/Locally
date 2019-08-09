@@ -9,7 +9,7 @@
 import UIKit
 
 class TabCollectionViewCell: UICollectionViewCell {
-    
+
     @IBAction func dineline(_ sender: UIButton) {
         sender.shake()
     }
@@ -19,7 +19,7 @@ class TabCollectionViewCell: UICollectionViewCell {
     @IBAction func photos(_ sender: UIButton) {
         sender.shake()
     }
-    
+
     @IBAction func beenthere(_ sender: UIButton) {
         sender.shake()
     }

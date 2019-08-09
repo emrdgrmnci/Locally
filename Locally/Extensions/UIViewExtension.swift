@@ -14,7 +14,7 @@ extension UIViewController {
         let blurEffect = UIBlurEffect(style: .prominent)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.tag = 1000
-        blurEffectView.frame = self.view.bounds // TODO : Does not contain Navigation Controller
+        blurEffectView.frame = self.view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         blurEffectView.alpha = 0
         self.view.addSubview(blurEffectView)

@@ -9,23 +9,23 @@
 import UIKit
 
  class LocationView: BaseView {
- 
+
     @IBOutlet weak var allowButton: UIButton!
     @IBOutlet weak var denyButton: UIButton!
     @IBOutlet weak var locationImage: UIImageView!
-    
+
     let locationService = LocationService()
     let nav = UINavigationController()
     let restaurant = RestaurantTableViewController()
-    
+
     var didTapAllow: (() -> Void)?
-    
+
     @IBAction func allowAction(_ sender: UIButton) {
         didTapAllow?()
         locationService.requestLocationAuthorization()
     }
-    
+
     @IBAction func denyAction(_ sender: UIButton) {
-        
+
     }
 }

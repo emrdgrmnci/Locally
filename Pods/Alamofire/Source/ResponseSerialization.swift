@@ -111,7 +111,8 @@ extension DataRequest {
     ///
     /// - returns: The request.
     @discardableResult
-    public func response(queue: DispatchQueue? = nil, completionHandler: @escaping (DefaultDataResponse) -> Void) -> Self {
+    public func response(queue: DispatchQueue? = nil,
+                         completionHandler: @escaping (DefaultDataResponse) -> Void) -> Self {
         delegate.queue.addOperation {
             (queue ?? DispatchQueue.main).async {
                 var dataResponse = DefaultDataResponse(
@@ -144,8 +145,7 @@ extension DataRequest {
         queue: DispatchQueue? = nil,
         responseSerializer: T,
         completionHandler: @escaping (DataResponse<T.SerializedObject>) -> Void)
-        -> Self
-    {
+        -> Self {
         delegate.queue.addOperation {
             let result = responseSerializer.serializeResponse(
                 self.request,
@@ -182,8 +182,7 @@ extension DownloadRequest {
     public func response(
         queue: DispatchQueue? = nil,
         completionHandler: @escaping (DefaultDownloadResponse) -> Void)
-        -> Self
-    {
+        -> Self {
         delegate.queue.addOperation {
             (queue ?? DispatchQueue.main).async {
                 var downloadResponse = DefaultDownloadResponse(
@@ -218,8 +217,7 @@ extension DownloadRequest {
         queue: DispatchQueue? = nil,
         responseSerializer: T,
         completionHandler: @escaping (DownloadResponse<T.SerializedObject>) -> Void)
-        -> Self
-    {
+        -> Self {
         delegate.queue.addOperation {
             let result = responseSerializer.serializeResponse(
                 self.request,
@@ -356,8 +354,7 @@ extension Request {
         response: HTTPURLResponse?,
         data: Data?,
         error: Error?)
-        -> Result<String>
-    {
+        -> Result<String> {
         guard error == nil else { return .failure(error!) }
 
         if let response = response, emptyDataStatusCodes.contains(response.statusCode) { return .success("") }
@@ -379,7 +376,10 @@ extension Request {
         if let string = String(data: validData, encoding: actualEncoding) {
             return .success(string)
         } else {
-            return .failure(AFError.responseSerializationFailed(reason: .stringSerializationFailed(encoding: actualEncoding)))
+            return .failure(AFError
+                .responseSerializationFailed(
+                reason: .stringSerializationFailed(
+                encoding: actualEncoding)))
         }
     }
 }
@@ -411,8 +411,7 @@ extension DataRequest {
         queue: DispatchQueue? = nil,
         encoding: String.Encoding? = nil,
         completionHandler: @escaping (DataResponse<String>) -> Void)
-        -> Self
-    {
+        -> Self {
         return response(
             queue: queue,
             responseSerializer: DataRequest.stringResponseSerializer(encoding: encoding),
@@ -429,7 +428,8 @@ extension DownloadRequest {
     ///                       response, falling back to the default HTTP default character set, ISO-8859-1.
     ///
     /// - returns: A string response serializer.
-    public static func stringResponseSerializer(encoding: String.Encoding? = nil) -> DownloadResponseSerializer<String> {
+    public static func stringResponseSerializer(
+        encoding: String.Encoding? = nil) -> DownloadResponseSerializer<String> {
         return DownloadResponseSerializer { _, response, fileURL, error in
             guard error == nil else { return .failure(error!) }
 
