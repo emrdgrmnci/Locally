@@ -37,11 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // MARK: - Firebase
         FirebaseApp.configure()
 
-        let currentUser = Auth.auth().currentUser
-        if currentUser != nil {
-            let tabBar = storyboard.instantiateViewController(withIdentifier: "TabbarController") as! UITabBarController
-            window.rootViewController = tabBar
-        }
+//        let currentUser = Auth.auth().currentUser
+//        if currentUser != nil {
+//            let tabBar = storyboard.instantiateViewController(withIdentifier: "TabbarController") as! UITabBarController
+//            window.rootViewController = tabBar
+//        }
 
         NetworkManager.isUnreachable { _ in
             showOfflinePage()

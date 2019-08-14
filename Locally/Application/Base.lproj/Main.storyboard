@@ -89,7 +89,7 @@
                         <outlet property="passwordTextField" destination="wsD-vx-5cg" id="LnM-t5-RrE"/>
                         <outlet property="signInButton" destination="dk5-jD-OBL" id="lEw-Yc-7vp"/>
                         <segue destination="3eT-Tv-gYo" kind="showDetail" identifier="NetworkUnavailable" id="Pdj-g0-gvT"/>
-                        <segue destination="zjB-aX-u4A" kind="presentation" identifier="loginToRestaurant" modalPresentationStyle="fullScreen" id="Y6N-oV-vzC"/>
+                        <segue destination="bs3-3B-Eom" kind="show" identifier="loginToLocation" id="c1y-7H-uFd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmv-Np-ldG" userLabel="First Responder" sceneMemberID="firstResponder"/>

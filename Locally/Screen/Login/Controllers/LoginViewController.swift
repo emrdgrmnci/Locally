@@ -62,7 +62,7 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
             if error == nil {
                 print("User signed in")
-                self.performSegue(withIdentifier: "loginToRestaurant", sender: self)
+                self.performSegue(withIdentifier: "loginToLocation", sender: self)
             } else if error?._code == AuthErrorCode.userNotFound.rawValue {
                 self.createUser(email: email, password: password)
             } else {

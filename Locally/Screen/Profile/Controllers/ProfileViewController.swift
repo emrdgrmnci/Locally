@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import CoreLocation
 import CoreData
+import SDWebImage
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
@@ -20,6 +21,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var sideMenuConstraint: NSLayoutConstraint!
     @IBOutlet weak var addPhoto: UIButton!
     @IBOutlet weak var savePhoto: UIButton!
+    @IBOutlet weak var dinelineTableView: UITableView!
     var movingView = UIView()
     var imagePicker: UIImagePickerController!
     var img = #imageLiteral(resourceName: "home")
@@ -30,17 +32,27 @@ class ProfileViewController: UIViewController {
     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
     var imageArray = [NSData]()
     var idArray = [UUID]()
+    var userEmail = [String]()
+    var likes = [Int]()
+    var restaurantImage = [String]()
+    var documentIDs = [String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //        let screenWidth = UIScreen.main.bounds.width
         movingView = UIView(frame: CGRect(x: 10, y: -20, width: 50, height: 5))
         movingView.backgroundColor = .red
         horizontalLine.addSubview(movingView)
+
+        dinelineTableView.delegate = self
+        dinelineTableView.dataSource = self
+
         getUserDetails()
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(toggleSideMenu),
                                                name: NSNotification.Name("ToggleSideMenu"), object: nil)
         getData()
+        getDataFromFirestore()
     }
     override func viewDidDisappear(_ animated: Bool) {
         self.isLoading(false)
@@ -105,6 +117,44 @@ class ProfileViewController: UIViewController {
             print(output)
         }
     }
+    // MARK: - Get Database
+    func getDataFromFirestore() {
+        let firestoreDatabase = Firestore.firestore()
+        // TODO: - If you have get error about time use below code block!
+        /*let settings = firestoreDatabase.settings
+         settings.areTimestampsInSnapshotsEnabled = true
+         firestoreDatabase.settings = settings*/
+
+        firestoreDatabase.collection("Posts").order(by: "date", descending: true).addSnapshotListener { (snapshot, error) in
+            if error != nil {
+                print(error?.localizedDescription)
+            } else {
+                if snapshot?.isEmpty != true && snapshot != nil {
+
+                    self.restaurantImage.removeAll(keepingCapacity: false)
+                    self.userEmail.removeAll(keepingCapacity: false)
+                    self.likes.removeAll(keepingCapacity: false)
+                    self.documentIDs.removeAll(keepingCapacity: false)
+
+                    for document in snapshot!.documents {
+                        let documentID = document.documentID
+                        self.documentIDs.append(documentID)
+
+                        if let postedBy = document.get("postedBy") as? String {
+                            self.userEmail.append(postedBy)
+                        }
+                        if let likes = document.get("likes") as? Int {
+                            self.likes.append(likes)
+                        }
+                        if let imageUrl = document.get("imageUrl") as? String {
+                            self.restaurantImage.append(imageUrl)
+                        }
+                    }
+                    self.dinelineTableView.reloadData()
+                }
+            }
+        }
+    }
     @IBAction func dineline(_ sender: UIButton) {
         sender.shake()
         addPhoto.isHidden = false
@@ -153,21 +203,29 @@ class ProfileViewController: UIViewController {
     }
 }
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 115
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return userEmail.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = (tableView.dequeueReusableCell(withIdentifier: ""))!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dinelineCell", for: indexPath) as! DinelineTableViewCell
+        cell.userEmailLabel.text = userEmail[indexPath.row]
+        cell.likeLabel.text = String(likes[indexPath.row])
+        cell.commentLabel.text = "comment çokzel"
+        cell.restaurantImageView.sd_setImage(with: URL(string: self.restaurantImage[indexPath.row]))
+        cell.documentIdLabel.text = documentIDs[indexPath.row]
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        do {
-            try Auth.auth().signOut()
-            performSegue(withIdentifier: "logoutSegue", sender: nil)
-        } catch {
-            print("Log out error!")
-        }
-    }
+    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //        do {
+    //            try Auth.auth().signOut()
+    //            performSegue(withIdentifier: "logoutSegue", sender: nil)
+    //        } catch {
+    //            print("Log out error!")
+    //        }
+    //    }
 }
 extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
@@ -210,7 +268,7 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
                                     self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
                                 } else {
                                     self.collectionImageView.image = UIImage(named: "placeholder")
-                                    self.tabBarController?.selectedIndex = 1
+//                                    self.tabBarController?.selectedIndex = 1
                                 }
                             })
                         }

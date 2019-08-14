@@ -10,6 +10,7 @@
 		0A861FE574DC521576616C67 /* Pods_Locally.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9FB6FDF886CB0C2A4DE2C8 /* Pods_Locally.framework */; };
 		4707E88F22F724900086E965 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707E88E22F724900086E965 /* UIViewExtension.swift */; };
 		4732C9DB2304572000891A08 /* UIAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4732C9DA2304572000891A08 /* UIAlertExtension.swift */; };
+		4732C9DD230464E100891A08 /* DinelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4732C9DC230464E100891A08 /* DinelineTableViewCell.swift */; };
 		4749A71122F5772B009E14CB /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749A71022F5772B009E14CB /* SideMenuTableViewController.swift */; };
 		475C783F22E8820600C174AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F4E79622D0CCBA00DFD3A1 /* Assets.xcassets */; };
 		4781074A22F72B7C00EDEC7F /* Animations.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4781074922F72B7C00EDEC7F /* Animations.bundle */; };
@@ -68,6 +69,7 @@
 /* Begin PBXFileReference section */
 		4707E88E22F724900086E965 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		4732C9DA2304572000891A08 /* UIAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertExtension.swift; sourceTree = "<group>"; };
+		4732C9DC230464E100891A08 /* DinelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinelineTableViewCell.swift; sourceTree = "<group>"; };
 		4749A71022F5772B009E14CB /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		4781074922F72B7C00EDEC7F /* Animations.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Animations.bundle; sourceTree = "<group>"; };
 		478861DF22F74B04001CA421 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 			isa = PBXGroup;
 			children = (
 				47FBF1F122DE26B700CB8C9F /* TabCollectionViewCell.swift */,
+				4732C9DC230464E100891A08 /* DinelineTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -824,6 +827,7 @@
 				47FBF1F222DE26B700CB8C9F /* TabCollectionViewCell.swift in Sources */,
 				4749A71122F5772B009E14CB /* SideMenuTableViewController.swift in Sources */,
 				47FBF1ED22DDE86800CB8C9F /* ProfileViewController.swift in Sources */,
+				4732C9DD230464E100891A08 /* DinelineTableViewCell.swift in Sources */,
 				47F4E7C422D0E39400DFD3A1 /* DetailsFoodView.swift in Sources */,
 				478AF76322D880CA00D551C4 /* LocationViewController.swift in Sources */,
 				47CBC24222D77AAD00EEE826 /* TabbarController.swift in Sources */,
