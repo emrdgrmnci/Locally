@@ -33,8 +33,7 @@ class SideMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            let toLogin = self.storyboard!.instantiateViewController(withIdentifier: "LoginViewController")
-            self.present(toLogin, animated: true, completion: nil)
+            performSegue(withIdentifier: "logoutSegue", sender: nil)
         default:
             return
         }

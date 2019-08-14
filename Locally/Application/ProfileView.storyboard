@@ -195,9 +195,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="4N8-WM-bF1">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="sW8-rb-0SH">
-                            <color key="tintColor" red="0.99861580130000005" green="0.039089243859999998" blue="0.00063127692560000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="1" green="0.039215686274509803" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="didTapMenu:" destination="byf-c9-31r" id="iL3-gd-W0d"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Logout" image="exit" id="gG8-hc-eFV">
+                            <color key="tintColor" red="1" green="0.039215686274509803" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="logoutBarButtonTapped:" destination="byf-c9-31r" id="vYa-du-xii"/>
+                                <segue destination="COK-D3-JYE" kind="presentation" identifier="logoutBarButton" modalPresentationStyle="fullScreen" id="ffR-3q-t4l"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -215,6 +222,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhO-Hx-uPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1763.7681159420292" y="-931.47321428571422"/>
+        </scene>
+        <!--LoginViewController-->
+        <scene sceneID="y83-aV-Q2v">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="LoginViewController" id="COK-D3-JYE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yhc-sn-Nfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2569" y="-1043"/>
         </scene>
         <!--Side Menu Table View Controller-->
         <scene sceneID="bd7-gl-hrW">
@@ -264,6 +279,9 @@
                             <outlet property="delegate" destination="KhV-NI-Wh3" id="VJe-Yj-rCC"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="COK-D3-JYE" kind="presentation" identifier="logoutSegue" modalPresentationStyle="fullScreen" id="vE1-63-YBF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="siW-2c-09M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -292,9 +310,13 @@
     </scenes>
     <resources>
         <image name="define_location" width="30" height="30"/>
+        <image name="exit" width="30" height="30"/>
         <image name="menu" width="30" height="30"/>
         <image name="message" width="30" height="30"/>
         <image name="people" width="30" height="30"/>
         <image name="placeholder" width="343" height="153"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ffR-3q-t4l"/>
+    </inferredMetricsTieBreakers>
 </document>

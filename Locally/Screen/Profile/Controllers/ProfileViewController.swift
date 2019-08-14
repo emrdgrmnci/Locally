@@ -75,6 +75,9 @@ class ProfileViewController: UIViewController {
             print("error")
         }
     }
+    @IBAction func logoutBarButtonTapped(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "logoutSegue", sender: nil)
+    }
     @IBAction func didTapMenu(_ sender: UIBarButtonItem) {
         NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
     }
@@ -138,10 +141,10 @@ class ProfileViewController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.movingView.frame.origin.x = newx
         }
-        //        if addPhoto.isHidden == true {
-        //            let beenthere = UIImage(named: "beenthere")!
-        //            self.collectionImageView.image = beenthere
-        //        }
+        if addPhoto.isHidden == true {
+            let beenthere = UIImage(named: "beenthere")!
+            self.collectionImageView.image = beenthere
+        }
     }
 }
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
@@ -153,19 +156,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            if let loginViewController = self.mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
-                self.present(loginViewController, animated: true, completion: nil)
-            }
-            /*
-             if let viewController = storyboard?.instantiateViewController(identifier: "TrailViewController") as? TrailViewController {
-             viewController.trail = selectedTrail
-             navigationController?.pushViewController(viewController, animated: true)
-             }
-             */
-            //            let logout = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-            //            self.present(logout, animated: true, completion: nil)
-        }
+        performSegue(withIdentifier: "logoutSegue", sender: nil)
     }
 }
 extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {

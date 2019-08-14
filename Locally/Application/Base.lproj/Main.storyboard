@@ -38,7 +38,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ckR-ct-EB5">
-                                <rect key="frame" x="10" y="353" width="355" height="112"/>
+                                <rect key="frame" x="10" y="338" width="355" height="112"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="71m-lv-EZs">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
@@ -76,7 +76,7 @@
                         <constraints>
                             <constraint firstItem="ckR-ct-EB5" firstAttribute="leading" secondItem="FJm-Jn-wRO" secondAttribute="leading" constant="10" id="Dgd-GF-1Pg"/>
                             <constraint firstItem="yfe-8z-8pW" firstAttribute="top" secondItem="FJm-Jn-wRO" secondAttribute="top" constant="56" id="TKK-tq-0vx"/>
-                            <constraint firstItem="ckR-ct-EB5" firstAttribute="top" secondItem="yfe-8z-8pW" secondAttribute="bottom" constant="35" id="Vsr-Oa-uGW"/>
+                            <constraint firstItem="ckR-ct-EB5" firstAttribute="top" secondItem="yfe-8z-8pW" secondAttribute="bottom" constant="20" id="Vsr-Oa-uGW"/>
                             <constraint firstItem="yfe-8z-8pW" firstAttribute="leading" secondItem="FJm-Jn-wRO" secondAttribute="leading" constant="16" id="Z1T-3Q-xB2"/>
                             <constraint firstItem="FJm-Jn-wRO" firstAttribute="trailing" secondItem="ckR-ct-EB5" secondAttribute="trailing" constant="10" id="fp6-mP-cpg"/>
                             <constraint firstItem="FJm-Jn-wRO" firstAttribute="trailing" secondItem="yfe-8z-8pW" secondAttribute="trailing" constant="16" id="zLK-H6-RMn"/>
@@ -88,8 +88,8 @@
                         <outlet property="emailTextField" destination="71m-lv-EZs" id="Bkx-3H-wUL"/>
                         <outlet property="passwordTextField" destination="wsD-vx-5cg" id="LnM-t5-RrE"/>
                         <outlet property="signInButton" destination="dk5-jD-OBL" id="lEw-Yc-7vp"/>
-                        <segue destination="bs3-3B-Eom" kind="show" identifier="loginToLocation" id="Llv-qW-eqg"/>
                         <segue destination="3eT-Tv-gYo" kind="showDetail" identifier="NetworkUnavailable" id="Pdj-g0-gvT"/>
+                        <segue destination="zjB-aX-u4A" kind="presentation" identifier="loginToRestaurant" modalPresentationStyle="fullScreen" id="Y6N-oV-vzC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmv-Np-ldG" userLabel="First Responder" sceneMemberID="firstResponder"/>

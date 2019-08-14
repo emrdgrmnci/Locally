@@ -10,14 +10,11 @@ import UIKit
 import Firebase
 
 class LoginViewController: UIViewController {
-
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var chefImage: UIImageView!
-
     let locationServiceStatus = LocationService()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         signInButton.layer.cornerRadius = 5
@@ -37,7 +34,6 @@ class LoginViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         self.isLoading(true)
     }
-
     private func showOfflinePage() {
         DispatchQueue.main.async {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -45,7 +41,6 @@ class LoginViewController: UIViewController {
             self.present(offlineVC, animated: true, completion: nil)
         }
     }
-
     func createUser(email: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { (_, error) in
             if error == nil {
@@ -63,12 +58,11 @@ class LoginViewController: UIViewController {
             }
         }
     }
-
     func signInUser(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
             if error == nil {
                 print("User signed in")
-                self.performSegue(withIdentifier: "loginToLocation", sender: self)
+                self.performSegue(withIdentifier: "loginToRestaurant", sender: self)
             } else if error?._code == AuthErrorCode.userNotFound.rawValue {
                 self.createUser(email: email, password: password)
             } else {
@@ -82,9 +76,8 @@ class LoginViewController: UIViewController {
             }
         }
     }
-
     @IBAction func signInButtonTapped(_ sender: Any) {
-        //MARK: - UserDefaults
+        // MARK: - UserDefaults
         UserDefaults.standard.set(emailTextField.text, forKey: "email")
         UserDefaults.standard.set(passwordTextField.text, forKey: "password")
         signInUser(email: emailTextField!.text!, password: passwordTextField!.text!)
