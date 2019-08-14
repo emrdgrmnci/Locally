@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SideMenuTableViewController: UITableViewController {
 
@@ -33,7 +34,12 @@ class SideMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            performSegue(withIdentifier: "logoutSegue", sender: nil)
+            do {
+                try Auth.auth().signOut()
+                performSegue(withIdentifier: "logoutSegue", sender: nil)
+            } catch {
+                print("Log out error!")
+            }
         default:
             return
         }

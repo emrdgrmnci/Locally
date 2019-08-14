@@ -37,6 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // MARK: - Firebase
         FirebaseApp.configure()
 
+        let currentUser = Auth.auth().currentUser
+        if currentUser != nil {
+            let tabBar = storyboard.instantiateViewController(withIdentifier: "TabbarController") as! UITabBarController
+            window.rootViewController = tabBar
+        }
+
         NetworkManager.isUnreachable { _ in
             showOfflinePage()
         }
@@ -56,7 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self?.locationService.getLocation()
             }
         }
-
         locationService.newLocation = { [weak self ] result in
             switch result {
             case .success(let location):
@@ -67,7 +72,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             }
         }
-
         switch locationService.status {
         case .notDetermined:
             let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
@@ -88,7 +92,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
-
     private func loadDetails(for viewController: UIViewController, with id: String) {
         service.request(.details(id: id)) { [weak self] (result) in
             switch result {
@@ -103,7 +106,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
     private func loadBusinesses(with coordinate: CLLocationCoordinate2D) {
         service.request(.search(lat: coordinate.latitude, long: coordinate.longitude)) { [weak self] (result) in
             guard let strongSelf = self else { return }
@@ -113,16 +115,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let viewModels = root?.businesses
                     .compactMap(RestaurantListViewModel.init)
                     .sorted(by: { $0.distance < $1.distance })
-                    self?.data = viewModels
-                    self?.restaurant.viewModels = viewModels ?? []
-                    let tab = strongSelf.storyboard.instantiateViewController(withIdentifier: "TabbarController") as! TabbarController
-                    self?.window.rootViewController = tab
+                self?.data = viewModels
+                self?.restaurant.viewModels = viewModels ?? []
+                let tab = strongSelf.storyboard.instantiateViewController(withIdentifier: "TabbarController") as! TabbarController
+                self?.window.rootViewController = tab
             case .failure(let error):
                 print ("Error: \(error)")
             }
         }
     }
-
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
         /*
@@ -150,9 +151,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
-
     // MARK: - Core Data Saving support
-
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -167,7 +166,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 }
-
 extension AppDelegate: ListActions, LocationActions {
     func didTapAllow() {
         locationService.requestLocationAuthorization()
@@ -177,7 +175,6 @@ extension AppDelegate: ListActions, LocationActions {
         loadDetails(for: viewController, with: viewModel.id)
     }
 }
-
 extension AppDelegate {
     static var shared: AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate

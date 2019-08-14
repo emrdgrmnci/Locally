@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
 import CoreLocation
 import CoreData
 
@@ -76,7 +76,12 @@ class ProfileViewController: UIViewController {
         }
     }
     @IBAction func logoutBarButtonTapped(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "logoutSegue", sender: nil)
+        do {
+            try Auth.auth().signOut()
+            performSegue(withIdentifier: "logoutSegue", sender: nil)
+        } catch {
+            print("Log out error!")
+        }
     }
     @IBAction func didTapMenu(_ sender: UIBarButtonItem) {
         NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
@@ -156,7 +161,12 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "logoutSegue", sender: nil)
+        do {
+            try Auth.auth().signOut()
+            performSegue(withIdentifier: "logoutSegue", sender: nil)
+        } catch {
+            print("Log out error!")
+        }
     }
 }
 extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
@@ -172,17 +182,54 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
         present(imagePicker, animated: true, completion: nil)
     }
     @IBAction func savePhoto(_ sender: Any) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let data = (collectionImageView?.image)!.pngData() //.jpegData(compressionQuality: 0.5)
-        let newUser = NSEntityDescription.insertNewObject(forEntityName: "LocalData", into: context)
-        newUser.setValue(data, forKey: "image")
-        do {
-            try context.save()
-            print("success")
-        } catch {
-            print("error")
+        let storage = Storage.storage()
+        let storageReference = storage.reference()
+
+        let mediaFolder = storageReference.child("media")
+
+        if let data = collectionImageView.image?.jpegData(compressionQuality: 0.5) {
+            let uuid = UUID().uuidString
+            let imageReference = mediaFolder.child("\(uuid).jpg")
+            imageReference.putData(data, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
+                } else {
+                    imageReference.downloadURL(completion: { (url, error) in
+                        if error == nil {
+                            let imageUrl = url?.absoluteString
+
+                            //DATABASE
+                            let firestoreDatabase = Firestore.firestore()
+                            var firestoreReference: DocumentReference? = nil
+                            let firestorePost = ["imageUrl": imageUrl!,
+                                                 "postedBy": Auth.auth().currentUser!.email!,
+                                                 "date": FieldValue.serverTimestamp(),
+                                                 "likes": 0] as [String : Any]
+                            firestoreReference = firestoreDatabase.collection("Posts").addDocument(data: firestorePost, completion: { (error) in
+                                if error != nil {
+                                    self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
+                                } else {
+                                    self.collectionImageView.image = UIImage(named: "placeholder")
+                                    self.tabBarController?.selectedIndex = 1
+                                }
+                            })
+                        }
+                    })
+                }
+            }
+
         }
+        //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        //        let context = appDelegate.persistentContainer.viewContext
+        //        let data = (collectionImageView?.image)!.pngData() //.jpegData(compressionQuality: 0.5)
+        //        let newUser = NSEntityDescription.insertNewObject(forEntityName: "LocalData", into: context)
+        //        newUser.setValue(data, forKey: "image")
+        //        do {
+        //            try context.save()
+        //            print("success")
+        //        } catch {
+        //            print("error")
+        //        }
     }
 }
 extension UITableView {

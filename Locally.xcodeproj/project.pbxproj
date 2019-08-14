@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A861FE574DC521576616C67 /* Pods_Locally.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9FB6FDF886CB0C2A4DE2C8 /* Pods_Locally.framework */; };
 		4707E88F22F724900086E965 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707E88E22F724900086E965 /* UIViewExtension.swift */; };
+		4732C9DB2304572000891A08 /* UIAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4732C9DA2304572000891A08 /* UIAlertExtension.swift */; };
 		4749A71122F5772B009E14CB /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749A71022F5772B009E14CB /* SideMenuTableViewController.swift */; };
 		475C783F22E8820600C174AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F4E79622D0CCBA00DFD3A1 /* Assets.xcassets */; };
 		4781074A22F72B7C00EDEC7F /* Animations.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4781074922F72B7C00EDEC7F /* Animations.bundle */; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		4707E88E22F724900086E965 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		4732C9DA2304572000891A08 /* UIAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertExtension.swift; sourceTree = "<group>"; };
 		4749A71022F5772B009E14CB /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		4781074922F72B7C00EDEC7F /* Animations.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Animations.bundle; sourceTree = "<group>"; };
 		478861DF22F74B04001CA421 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			children = (
 				47E080F022F1DCE300541192 /* UIButtonExtension.swift */,
 				4707E88E22F724900086E965 /* UIViewExtension.swift */,
+				4732C9DA2304572000891A08 /* UIAlertExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -824,6 +827,7 @@
 				47F4E7C422D0E39400DFD3A1 /* DetailsFoodView.swift in Sources */,
 				478AF76322D880CA00D551C4 /* LocationViewController.swift in Sources */,
 				47CBC24222D77AAD00EEE826 /* TabbarController.swift in Sources */,
+				4732C9DB2304572000891A08 /* UIAlertExtension.swift in Sources */,
 				47F4E7CC22D0E55200DFD3A1 /* RestaurantTableViewCell.swift in Sources */,
 				47F4E7DC22D1002100DFD3A1 /* Models.swift in Sources */,
 				47F4E78D22D0CCB900DFD3A1 /* AppDelegate.swift in Sources */,
