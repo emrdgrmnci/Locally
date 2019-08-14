@@ -13,7 +13,7 @@
         <!--Launch View Controller-->
         <scene sceneID="9HB-WR-oaA">
             <objects>
-                <viewController storyboardIdentifier="LaunchViewController" id="Z7K-5D-6Ik" customClass="LaunchViewController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LaunchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z7K-5D-6Ik" customClass="LaunchViewController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="3eT-Tv-gYo" kind="show" identifier="NetworkUnavailable" id="c0S-4d-7Xs"/>
                         <segue destination="1BQ-ar-Cqj" kind="show" identifier="MainController" id="eud-XY-4nM"/>
@@ -26,7 +26,7 @@
         <!--Login View Controller-->
         <scene sceneID="v4g-kY-M5l">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="1BQ-ar-Cqj" customClass="LoginViewController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1BQ-ar-Cqj" customClass="LoginViewController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6p1-Na-jb8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,7 +101,7 @@
         <!--Location View Controller-->
         <scene sceneID="AgV-ts-LZk">
             <objects>
-                <viewController storyboardIdentifier="LocationViewController" id="bs3-3B-Eom" customClass="LocationViewController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bs3-3B-Eom" customClass="LocationViewController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hW9-FY-TUQ" customClass="LocationView" customModule="Locally" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -180,7 +180,7 @@
         <!--Offline View Controller-->
         <scene sceneID="oOT-zP-nsO">
             <objects>
-                <viewController storyboardIdentifier="OfflineViewController" id="3eT-Tv-gYo" customClass="OfflineViewController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OfflineViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3eT-Tv-gYo" customClass="OfflineViewController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ck5-sw-3mJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

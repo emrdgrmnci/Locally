@@ -20,14 +20,20 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         signInButton.layer.cornerRadius = 5
-
         NetworkManager.isUnreachable { _ in
             self.showOfflinePage()
         }
-    }
+        let storedEmail = UserDefaults.standard.object(forKey: "email")
+        let storedPassword = UserDefaults.standard.object(forKey: "password")
 
+        if let email = storedEmail as? String {
+            emailTextField.text = email
+        }
+        if let password = storedPassword as? String {
+            passwordTextField.text = password
+        }
+    }
     override func viewWillDisappear(_ animated: Bool) {
         self.isLoading(true)
     }
@@ -78,6 +84,9 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func signInButtonTapped(_ sender: Any) {
+        //MARK: - UserDefaults
+        UserDefaults.standard.set(emailTextField.text, forKey: "email")
+        UserDefaults.standard.set(passwordTextField.text, forKey: "password")
         signInUser(email: emailTextField!.text!, password: passwordTextField!.text!)
     }
 }

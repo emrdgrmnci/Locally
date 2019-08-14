@@ -27,6 +27,7 @@ class ProfileViewController: UIViewController {
     private let locationManager = CLLocationManager()
     private let locationService = LocationService()
     let cellId = "cellId"
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
     var imageArray = [NSData]()
     var idArray = [UUID]()
     override func viewDidLoad() {
@@ -153,9 +154,10 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
-            self.present(loginVC, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                let loginViewController = self.mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
+                self.present(loginViewController!, animated: true, completion: nil)
+            }
             //            let logout = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             //            self.present(logout, animated: true, completion: nil)
         }
