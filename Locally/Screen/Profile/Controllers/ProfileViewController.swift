@@ -154,10 +154,15 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            DispatchQueue.main.async {
-                let loginViewController = self.mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
-                self.present(loginViewController!, animated: true, completion: nil)
+            if let loginViewController = self.mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+                self.present(loginViewController, animated: true, completion: nil)
             }
+            /*
+             if let viewController = storyboard?.instantiateViewController(identifier: "TrailViewController") as? TrailViewController {
+             viewController.trail = selectedTrail
+             navigationController?.pushViewController(viewController, animated: true)
+             }
+             */
             //            let logout = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             //            self.present(logout, animated: true, completion: nil)
         }
@@ -184,38 +189,14 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
         do {
             try context.save()
             print("success")
-    } catch {
-    print("error")
+        } catch {
+            print("error")
         }
     }
-
-//        let newImage = NSEntityDescription.insertNewObject(forEntityName: "LocalData",
-//                                                           into: context)
-//        //Attributes
-//        newImage.setValue(UUID(), forKey: "id")
-//        let data = collectionImageView.image?.jpegData(compressionQuality: 0.5)
-//        newImage.setValue(data, forKey: "image")
-//        do {
-//            try context.save()
-//            print("success")
-//        } catch {
-//            print("error")
-//        }
-    }
-
+}
 extension UITableView {
     //Hides the empty cells at the bottom of the table view.
     func hideEmptyCellsFooter() {
         tableFooterView = UIView()
     }
 }
-
-/*
-let data = (collectionImageView?.image)!.pngData() //.jpegData(compressionQuality: 0.5)
-let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
-let newUser = NSEntityDescription.insertNewObject(forEntityName: "LocalData", into: context!)
-newUser.setValue(data, forKey: "image")
-do {
- try Constant.context?.save()
- }
- */
