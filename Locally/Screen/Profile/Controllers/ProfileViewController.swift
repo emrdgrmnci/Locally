@@ -19,14 +19,12 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userLocationLabel: UILabel!
     @IBOutlet weak var collectionImageView: UIImageView!
     @IBOutlet weak var horizontalLine: UIView!
-    @IBOutlet weak var sideMenuConstraint: NSLayoutConstraint!
     @IBOutlet weak var addPhoto: UIButton!
     @IBOutlet weak var savePhoto: UIButton!
     @IBOutlet weak var dinelineTableView: UITableView!
     var movingView = UIView()
     var imagePicker: UIImagePickerController!
     var img = #imageLiteral(resourceName: "home")
-    var isSideMenuOpen = false
     private let locationManager = CLLocationManager()
     private let locationService = LocationService()
     let cellId = "cellId"
@@ -50,9 +48,6 @@ class ProfileViewController: UIViewController {
         dinelineTableView.dataSource = self
 
         getUserDetails()
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(toggleSideMenu),
-                                               name: NSNotification.Name("ToggleSideMenu"), object: nil)
         getData()
         getDataFromFirestore()
     }
@@ -61,15 +56,6 @@ class ProfileViewController: UIViewController {
     }
     override func viewDidDisappear(_ animated: Bool) {
         self.isLoading(false)
-    }
-    @objc func toggleSideMenu() {
-        if isSideMenuOpen {
-            isSideMenuOpen = false
-            sideMenuConstraint.constant = -240
-        } else {
-            isSideMenuOpen = true
-            sideMenuConstraint.constant = 0
-        }
     }
     func getData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -83,7 +69,7 @@ class ProfileViewController: UIViewController {
                     self.idArray.append(id)
                 }
                 if let imageData = result.value(forKey: "image") as? NSData {
-                    if let image = UIImage(data:imageData as Data) {
+                    if let image = UIImage(data: imageData as Data) {
                         collectionImageView.image = image
                     }
                 }
@@ -91,17 +77,6 @@ class ProfileViewController: UIViewController {
         } catch {
             print("error")
         }
-    }
-    @IBAction func logoutBarButtonTapped(_ sender: UIBarButtonItem) {
-        do {
-            try Auth.auth().signOut()
-            performSegue(withIdentifier: "logoutSegue", sender: nil)
-        } catch {
-            print("Log out error!")
-        }
-    }
-    @IBAction func didTapMenu(_ sender: UIBarButtonItem) {
-        NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
     }
     func getUserDetails() {
         if Auth.auth().currentUser != nil {

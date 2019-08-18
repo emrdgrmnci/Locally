@@ -224,6 +224,7 @@
                     <connections>
                         <segue destination="6lY-dx-6Pd" kind="relationship" relationship="viewControllers" id="SMs-f0-b3V"/>
                         <segue destination="VDY-0J-pcc" kind="relationship" relationship="viewControllers" id="laj-Lq-gLG"/>
+                        <segue destination="N8D-hc-27D" kind="relationship" relationship="viewControllers" id="lq7-pH-VBg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToK-As-9zz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -238,7 +239,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RWE-yL-ybD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077" y="-1578"/>
+            <point key="canvasLocation" x="1096" y="-1302"/>
         </scene>
         <!--ProfileView-->
         <scene sceneID="KKR-S7-dMM">
@@ -248,7 +249,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0S8-It-zMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="-1129"/>
+            <point key="canvasLocation" x="1049" y="-1209"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="7Mj-09-W1h">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="N8D-hc-27D" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="d3t-bf-d52"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MpF-SB-Zoi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1100" y="-1137"/>
         </scene>
     </scenes>
     <resources>
@@ -257,6 +268,6 @@
         <image name="locationPermission" width="640" height="700"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pdj-g0-gvT"/>
+        <segue reference="c0S-4d-7Xs"/>
     </inferredMetricsTieBreakers>
 </document>

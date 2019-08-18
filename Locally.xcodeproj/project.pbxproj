@@ -11,11 +11,11 @@
 		4707E88F22F724900086E965 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707E88E22F724900086E965 /* UIViewExtension.swift */; };
 		4732C9DB2304572000891A08 /* UIAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4732C9DA2304572000891A08 /* UIAlertExtension.swift */; };
 		4732C9DD230464E100891A08 /* DinelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4732C9DC230464E100891A08 /* DinelineTableViewCell.swift */; };
-		4749A71122F5772B009E14CB /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749A71022F5772B009E14CB /* SideMenuTableViewController.swift */; };
-		475C783F22E8820600C174AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F4E79622D0CCBA00DFD3A1 /* Assets.xcassets */; };
+		4749A71122F5772B009E14CB /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749A71022F5772B009E14CB /* SettingsTableViewController.swift */; };
 		4781074A22F72B7C00EDEC7F /* Animations.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4781074922F72B7C00EDEC7F /* Animations.bundle */; };
 		478861E022F74B04001CA421 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478861DF22F74B04001CA421 /* Constants.swift */; };
 		478AF76322D880CA00D551C4 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AF76222D880CA00D551C4 /* LocationViewController.swift */; };
+		478E55342309564A00A54595 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478E55332309564A00A54595 /* Settings.storyboard */; };
 		47A36BC522D1FF90002571D4 /* DetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A36BC422D1FF90002571D4 /* DetailsCollectionViewCell.swift */; };
 		47B163F522D5DD0D0025EF81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47B163F422D5DD0C0025EF81 /* GoogleService-Info.plist */; };
 		47B163F822D5E7930025EF81 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B163F722D5E7930025EF81 /* NetworkManager.swift */; };
@@ -23,6 +23,9 @@
 		47B163FF22D5EAEA0025EF81 /* OfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B163FE22D5EAEA0025EF81 /* OfflineViewController.swift */; };
 		47C196C322D9094400E012D0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C196C222D9094400E012D0 /* NavigationController.swift */; };
 		47CBC24222D77AAD00EEE826 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBC24122D77AAD00EEE826 /* TabbarController.swift */; };
+		47DE17392309651300E84A76 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE17382309651300E84A76 /* SettingsTableViewCell.swift */; };
+		47DE173A2309659200E84A76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F4E79622D0CCBA00DFD3A1 /* Assets.xcassets */; };
+		47DE173C23096F3200E84A76 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE173B23096F3200E84A76 /* SettingsViewController.swift */; };
 		47E080F122F1DCE300541192 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E080F022F1DCE300541192 /* UIButtonExtension.swift */; };
 		47EDAE6922FD94AC00A55A5C /* RestaurantTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47EDAE6822FD94AC00A55A5C /* RestaurantTableView.storyboard */; };
 		47EDAE6B22FD971D00A55A5C /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47EDAE6A22FD971D00A55A5C /* ProfileView.storyboard */; };
@@ -70,10 +73,11 @@
 		4707E88E22F724900086E965 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		4732C9DA2304572000891A08 /* UIAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertExtension.swift; sourceTree = "<group>"; };
 		4732C9DC230464E100891A08 /* DinelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinelineTableViewCell.swift; sourceTree = "<group>"; };
-		4749A71022F5772B009E14CB /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
+		4749A71022F5772B009E14CB /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = "../New Group/SettingsTableViewController.swift"; sourceTree = "<group>"; };
 		4781074922F72B7C00EDEC7F /* Animations.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Animations.bundle; sourceTree = "<group>"; };
 		478861DF22F74B04001CA421 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		478AF76222D880CA00D551C4 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		478E55332309564A00A54595 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		47A36BC422D1FF90002571D4 /* DetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		47AB579022E87B4D000718FF /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B163F422D5DD0C0025EF81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 		47B163FE22D5EAEA0025EF81 /* OfflineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineViewController.swift; sourceTree = "<group>"; };
 		47C196C222D9094400E012D0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		47CBC24122D77AAD00EEE826 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		47DE17382309651300E84A76 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		47DE173B23096F3200E84A76 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		47E080F022F1DCE300541192 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		47EDAE6822FD94AC00A55A5C /* RestaurantTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RestaurantTableView.storyboard; sourceTree = "<group>"; };
 		47EDAE6A22FD971D00A55A5C /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
@@ -162,7 +168,6 @@
 		4749A70F22F5770E009E14CB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4749A71022F5772B009E14CB /* SideMenuTableViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				47F4E79022D0CCB900DFD3A1 /* Main.storyboard */,
 				47EDAE6822FD94AC00A55A5C /* RestaurantTableView.storyboard */,
 				47EDAE6A22FD971D00A55A5C /* ProfileView.storyboard */,
+				478E55332309564A00A54595 /* Settings.storyboard */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -289,6 +295,7 @@
 		479D574522FBFE47009E7786 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				47CBC24122D77AAD00EEE826 /* TabbarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -328,7 +335,6 @@
 			isa = PBXGroup;
 			children = (
 				479D574522FBFE47009E7786 /* Controllers */,
-				47CBC24122D77AAD00EEE826 /* TabbarController.swift */,
 				47CBC24022D77A8D00EEE826 /* Views */,
 			);
 			path = Tabbar;
@@ -337,6 +343,32 @@
 		47CBC24022D77A8D00EEE826 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		47DE1735230964B200E84A76 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				47DE17372309650000E84A76 /* Views */,
+				47DE1736230964D800E84A76 /* Controllers */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		47DE1736230964D800E84A76 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4749A71022F5772B009E14CB /* SettingsTableViewController.swift */,
+				47DE173B23096F3200E84A76 /* SettingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		47DE17372309650000E84A76 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				47DE17382309651300E84A76 /* SettingsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -411,6 +443,7 @@
 		47F4E7BD22D0E26C00DFD3A1 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				47DE1735230964B200E84A76 /* Settings */,
 				47F4E7BE22D0E28500DFD3A1 /* BaseView.swift */,
 				47F4E7C022D0E35F00DFD3A1 /* Details */,
 				47B163FA22D5E9E30025EF81 /* Launch */,
@@ -541,7 +574,6 @@
 				47F4E78622D0CCB900DFD3A1 /* Frameworks */,
 				47F4E78722D0CCB900DFD3A1 /* Resources */,
 				690EFED1B2DAEF794CC51275 /* [CP] Embed Pods Frameworks */,
-				D5FD174A1660A42EE69DD9A1 /* [CP] Copy Pods Resources */,
 				47EDAE6722FD5C0100A55A5C /* ShellScript */,
 			);
 			buildRules = (
@@ -648,8 +680,9 @@
 				4781074A22F72B7C00EDEC7F /* Animations.bundle in Resources */,
 				47F4E7D722D0F38900DFD3A1 /* Podfile in Resources */,
 				47EDAE6922FD94AC00A55A5C /* RestaurantTableView.storyboard in Resources */,
+				478E55342309564A00A54595 /* Settings.storyboard in Resources */,
+				47DE173A2309659200E84A76 /* Assets.xcassets in Resources */,
 				47F4E79222D0CCB900DFD3A1 /* Main.storyboard in Resources */,
-				475C783F22E8820600C174AE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,23 +825,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D5FD174A1660A42EE69DD9A1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Locally/Pods-Locally-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Locally/Pods-Locally-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Locally/Pods-Locally-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -825,7 +841,7 @@
 				47B163F822D5E7930025EF81 /* NetworkManager.swift in Sources */,
 				4707E88F22F724900086E965 /* UIViewExtension.swift in Sources */,
 				47FBF1F222DE26B700CB8C9F /* TabCollectionViewCell.swift in Sources */,
-				4749A71122F5772B009E14CB /* SideMenuTableViewController.swift in Sources */,
+				4749A71122F5772B009E14CB /* SettingsTableViewController.swift in Sources */,
 				47FBF1ED22DDE86800CB8C9F /* ProfileViewController.swift in Sources */,
 				4732C9DD230464E100891A08 /* DinelineTableViewCell.swift in Sources */,
 				47F4E7C422D0E39400DFD3A1 /* DetailsFoodView.swift in Sources */,
@@ -834,10 +850,12 @@
 				4732C9DB2304572000891A08 /* UIAlertExtension.swift in Sources */,
 				47F4E7CC22D0E55200DFD3A1 /* RestaurantTableViewCell.swift in Sources */,
 				47F4E7DC22D1002100DFD3A1 /* Models.swift in Sources */,
+				47DE17392309651300E84A76 /* SettingsTableViewCell.swift in Sources */,
 				47F4E78D22D0CCB900DFD3A1 /* AppDelegate.swift in Sources */,
 				47B163FF22D5EAEA0025EF81 /* OfflineViewController.swift in Sources */,
 				47F4E7BF22D0E28500DFD3A1 /* BaseView.swift in Sources */,
 				47F4E7D022D0E68400DFD3A1 /* LocationView.swift in Sources */,
+				47DE173C23096F3200E84A76 /* SettingsViewController.swift in Sources */,
 				47F4E7DA22D0F5D300DFD3A1 /* NetworkService.swift in Sources */,
 				47C196C322D9094400E012D0 /* NavigationController.swift in Sources */,
 				47E080F122F1DCE300541192 /* UIButtonExtension.swift in Sources */,
