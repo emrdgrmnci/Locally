@@ -144,6 +144,7 @@ PODS:
   - SDWebImage (5.0.6):
     - SDWebImage/Core (= 5.0.6)
   - SDWebImage/Core (5.0.6)
+  - SkeletonView (1.7)
   - SwiftLint (0.33.1)
 
 DEPENDENCIES:
@@ -160,6 +161,7 @@ DEPENDENCIES:
   - Moya
   - ReachabilitySwift
   - SDWebImage (~> 5.0)
+  - SkeletonView
   - SwiftLint
 
 SPEC REPOS:
@@ -192,6 +194,7 @@ SPEC REPOS:
     - ReachabilitySwift
     - Result
     - SDWebImage
+    - SkeletonView
     - SwiftLint
 
 SPEC CHECKSUMS:
@@ -223,8 +226,9 @@ SPEC CHECKSUMS:
   ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  SkeletonView: 7d7378731b708f8a6e6b1ffefb68cc3903f10a03
   SwiftLint: 9fc1143bbacec37f94994a7d0d2a85b2154b6294
 
-PODFILE CHECKSUM: d4ee366ded42c598f61c65c5bf9a88bd292ffb30
+PODFILE CHECKSUM: 743215c636ba4d96beb1246481e1fb443f083de6
 
 COCOAPODS: 1.7.5

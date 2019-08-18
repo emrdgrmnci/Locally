@@ -15,11 +15,12 @@ pod 'Firebase/Auth'
 pod 'ReachabilitySwift'
 pod 'FirebaseUI/Auth'
 pod 'FirebaseUI/Email'
-pod 'FirebaseUI/Google'
+pod 'FirebaseUI/Google8'
 pod 'IQKeyboardManagerSwift'
 pod 'lottie-ios' 
 pod 'SwiftLint'
 pod 'SDWebImage', '~> 5.0'
+pod "SkeletonView"
 target 'LocallyTests' do
     inherit! :search_paths
     # Pods for testing

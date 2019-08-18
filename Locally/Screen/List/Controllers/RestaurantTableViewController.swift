@@ -8,19 +8,17 @@
 
 import UIKit
 import CoreLocation
+import SkeletonView
 
 protocol ListActions: class {
     func didTapCell(_ viewController: UIViewController, viewModel: RestaurantListViewModel)
 }
 
-class RestaurantTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class RestaurantTableViewController: UIViewController, SkeletonTableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var yourLocationLabel: UILabel!
-
     private let locationManager = CLLocationManager()
     private let locationService = LocationService()
-
     @IBOutlet weak var tableView: UITableView!
-
     // i got all data nw from app delegate directly you will find i create variable names data in app delegate and i access it here
     // and please notice there is amount of time till got all data before show so u need show loading or something
     let appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -37,14 +35,12 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.showAnimatedGradientSkeleton()
         print("did load")
-
         userCurrentLocation()
         NetworkManager.isUnreachable { _ in
             self.showOfflinePage()
         }
-
         print(">>>>>>>>>\(String(describing: appDelegate!.data))")
         tableView.reloadData()
     }
@@ -56,6 +52,7 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
         tableView.reloadData()
         tableView.dataSource = self
         tableView.delegate = self
+        self.view.hideSkeleton()
     }
 
     private func showOfflinePage() {
@@ -78,7 +75,7 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
             if let town = placemark.subLocality {
                 output += "\(town)"
             }
-//            guard let _ = self.yourLocationLabel?.text = "\(output)" else { return }
+            //            guard let _ = self.yourLocationLabel?.text = "\(output)" else { return }
             if self.yourLocationLabel?.text != nil {
                 self.yourLocationLabel?.text = "\(output)"
             }
@@ -88,6 +85,10 @@ class RestaurantTableViewController: UIViewController, UITableViewDataSource, UI
     }
 
     // MARK: - Table view data source
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return "RestaurantCell"
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("number of rows ----------------------- \(String(describing: viewModels.count))")
         print(viewModels)

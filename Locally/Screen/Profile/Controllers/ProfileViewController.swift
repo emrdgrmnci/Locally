@@ -11,6 +11,7 @@ import Firebase
 import CoreLocation
 import CoreData
 import SDWebImage
+import SkeletonView
 
 class ProfileViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
@@ -39,6 +40,7 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.showAnimatedGradientSkeleton()
         //        let screenWidth = UIScreen.main.bounds.width
         movingView = UIView(frame: CGRect(x: 10, y: -20, width: 50, height: 5))
         movingView.backgroundColor = .red
@@ -53,6 +55,9 @@ class ProfileViewController: UIViewController {
                                                name: NSNotification.Name("ToggleSideMenu"), object: nil)
         getData()
         getDataFromFirestore()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.view.hideSkeleton()
     }
     override func viewDidDisappear(_ animated: Bool) {
         self.isLoading(false)
@@ -202,7 +207,10 @@ class ProfileViewController: UIViewController {
         }
     }
 }
-extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+extension ProfileViewController: UITableViewDelegate, SkeletonTableViewDataSource {
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return "dinelineCell"
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 115
     }
@@ -268,7 +276,7 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
                                     self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
                                 } else {
                                     self.collectionImageView.image = UIImage(named: "placeholder")
-//                                    self.tabBarController?.selectedIndex = 1
+                                    //                                    self.tabBarController?.selectedIndex = 1
                                 }
                             })
                         }
