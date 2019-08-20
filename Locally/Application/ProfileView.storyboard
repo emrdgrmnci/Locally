@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Emre DEĞİRMENCİ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oH-rj-ll9">
-                                <rect key="frame" x="20" y="108" width="213" height="31.5"/>
+                                <rect key="frame" x="20" y="103" width="213" height="31.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="k1r-U1-0Kr">
-                                <rect key="frame" x="20" y="135" width="296" height="30"/>
+                                <rect key="frame" x="20" y="139" width="296" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message" translatesAutoresizingMaskIntoConstraints="NO" id="mgy-Jc-WSk">
@@ -140,7 +140,7 @@
                                 </constraints>
                             </containerView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Fdh-Ad-rhK">
-                                <rect key="frame" x="50" y="782" width="230" height="36"/>
+                                <rect key="frame" x="60" y="782" width="230" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHf-AT-sXC">
                                         <rect key="frame" x="0.0" y="0.0" width="103" height="36"/>
@@ -190,7 +190,7 @@
                                                             <rect key="frame" x="94" y="0.0" width="213" height="90.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Email: emre@emre.comsad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7U-Fl-14q">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="24"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="27"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -199,8 +199,8 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Comment: Çok beğendim! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJY-ZY-kA4">
-                                                                    <rect key="frame" x="0.0" y="27" width="213" height="23.5"/>
-                                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                                    <rect key="frame" x="0.0" y="30" width="188" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <userDefinedRuntimeAttributes>
@@ -290,7 +290,7 @@
                             <constraint firstItem="nqn-UM-1WD" firstAttribute="top" secondItem="tPe-gV-19b" secondAttribute="bottom" constant="17" id="Ez7-xu-QVT"/>
                             <constraint firstItem="tPe-gV-19b" firstAttribute="top" secondItem="EPA-a5-Sev" secondAttribute="bottom" constant="24" id="FsT-yF-BkF"/>
                             <constraint firstItem="Eld-tj-Llp" firstAttribute="leading" secondItem="MMx-za-vXu" secondAttribute="leading" id="G8X-o2-lmu"/>
-                            <constraint firstItem="Fdh-Ad-rhK" firstAttribute="leading" secondItem="oKw-8R-Qrc" secondAttribute="trailing" constant="50" id="I62-m5-tDT"/>
+                            <constraint firstItem="Fdh-Ad-rhK" firstAttribute="leading" secondItem="oKw-8R-Qrc" secondAttribute="trailing" constant="60" id="I62-m5-tDT"/>
                             <constraint firstAttribute="trailing" secondItem="Eld-tj-Llp" secondAttribute="trailing" id="J1g-YV-FLw"/>
                             <constraint firstItem="oKw-8R-Qrc" firstAttribute="top" secondItem="MMx-za-vXu" secondAttribute="top" id="JWO-Z1-B2T"/>
                             <constraint firstItem="c3s-Vw-85q" firstAttribute="leading" secondItem="MMx-za-vXu" secondAttribute="leading" id="Ng4-11-sVe"/>
@@ -306,7 +306,7 @@
                             <constraint firstItem="sq1-jm-LDa" firstAttribute="leading" secondItem="MMx-za-vXu" secondAttribute="leading" id="nTP-B0-sxJ"/>
                             <constraint firstItem="c3s-Vw-85q" firstAttribute="top" secondItem="nqn-UM-1WD" secondAttribute="bottom" id="pbs-qS-76y"/>
                             <constraint firstItem="MMx-za-vXu" firstAttribute="trailing" secondItem="c3s-Vw-85q" secondAttribute="trailing" id="tGx-8q-U6H"/>
-                            <constraint firstItem="9oH-rj-ll9" firstAttribute="top" secondItem="MMx-za-vXu" secondAttribute="top" constant="20" id="xVp-os-WmZ"/>
+                            <constraint firstItem="9oH-rj-ll9" firstAttribute="top" secondItem="MMx-za-vXu" secondAttribute="top" constant="15" id="xVp-os-WmZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MMx-za-vXu"/>
                         <userDefinedRuntimeAttributes>
