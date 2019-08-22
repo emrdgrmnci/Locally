@@ -91,6 +91,7 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
             detailsFoodView?.hoursLabel?.text = viewModel.isOpen
             detailsFoodView?.locationLabel?.text = viewModel.phoneNumber
             detailsFoodView?.ratingsLabel?.text = viewModel.rating
+            detailsFoodView?.reviewCountLabel?.text = viewModel.reviewCount
             detailsFoodView?.collectionView?.reloadData()
             centerMap(for: viewModel.coordinate)
             print("Your destination is: \(viewModel.coordinate)")

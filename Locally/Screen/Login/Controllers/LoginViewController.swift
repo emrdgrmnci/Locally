@@ -77,7 +77,7 @@ class LoginViewController: UIViewController {
         }
     }
     @IBAction func signInButtonTapped(_ sender: Any) {
-        self.isLoading(true)
+        
         // MARK: - UserDefaults
         UserDefaults.standard.set(emailTextField.text, forKey: "email")
         UserDefaults.standard.set(passwordTextField.text, forKey: "password")

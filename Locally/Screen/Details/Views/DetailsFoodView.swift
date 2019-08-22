@@ -16,6 +16,7 @@ import MapKit
     @IBOutlet weak var hoursLabel: UILabel?
     @IBOutlet weak var locationLabel: UILabel?
     @IBOutlet weak var ratingsLabel: UILabel?
+    @IBOutlet weak var reviewCountLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView?
 
     @IBAction func handleControl(_ sender: UIPageControl) {

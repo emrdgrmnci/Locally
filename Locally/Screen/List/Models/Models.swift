@@ -54,6 +54,7 @@ struct Details: Decodable {
     let phone: String
     let isClosed: Bool
     let rating: Double
+    let reviewCount: Int
     let name: String
     let photos: [URL]
     let coordinates: CLLocationCoordinate2D
@@ -78,6 +79,7 @@ struct DetailsViewModel {
     let isOpen: String
     let phoneNumber: String
     let rating: String
+    let reviewCount: String
     let imageUrls: [URL]
     let coordinate: CLLocationCoordinate2D
 }
@@ -89,6 +91,7 @@ extension DetailsViewModel {
         self.isOpen = details.isClosed ? "Closed" : "Open"
         self.phoneNumber = details.phone
         self.rating = "\(details.rating) / 5.0"
+        self.reviewCount = "\(details.reviewCount) people have been here!"
         self.imageUrls = details.photos
         self.coordinate = details.coordinates
     }
