@@ -32,7 +32,6 @@ class LoginViewController: UIViewController {
         }
     }
     override func viewWillDisappear(_ animated: Bool) {
-        self.isLoading(true)
     }
     private func showOfflinePage() {
         DispatchQueue.main.async {

@@ -196,7 +196,7 @@ extension ProfileViewController: UITableViewDelegate, SkeletonTableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: "dinelineCell", for: indexPath) as! DinelineTableViewCell
         cell.userEmailLabel.text = userEmail[indexPath.row]
         cell.likeLabel.text = String(likes[indexPath.row])
-        cell.commentLabel.text = "comment çokzel"
+        cell.commentLabel.text = "Burası çok güzel!"
         cell.restaurantImageView.sd_setImage(with: URL(string: self.restaurantImage[indexPath.row]))
         cell.documentIdLabel.text = documentIDs[indexPath.row]
         return cell
