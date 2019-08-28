@@ -19,11 +19,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>DynamicBlurView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Firebase-Auth-Core-CoreOnly-Firestore-Storage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -105,11 +100,6 @@
 			<false/>
 		</dict>
 		<key>Pods-LocallyUITests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>PopupDialog.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

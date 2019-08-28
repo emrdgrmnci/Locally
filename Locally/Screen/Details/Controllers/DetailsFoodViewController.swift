@@ -15,6 +15,7 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
     @IBOutlet weak var detailsFoodView: DetailsFoodView?
     @IBOutlet weak var isFavorite: UIButton!
     let locationManager = CLLocationManager()
+    var imagePicker: UIImagePickerController!
     var isFavorited = true
     var viewModel: DetailsViewModel? {
         didSet {
@@ -60,11 +61,34 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
         }
     }
 
+    func dialNumber(number : String) {
+
+        if let url = URL(string: "tel://\(number)"),
+            UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler:nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        } else {
+            // add error message here
+        }
+    }
+
+    @IBAction func phoneCallButton(_ sender: UIButton) {
+        dialNumber(number: viewModel!.phoneNumber)
+    }
+
+    /*guard let phoneNumber = sender.locationLabel?.text, let url = URL(string: "telprompt://\(phoneNumber)") else {
+     return
+     }
+     UIApplication.shared.open(url)*/
+
     @IBAction func getDirectionsButton(_ sender: Any) {
         openMapsAppWithDirections(to: CLLocationCoordinate2D(
             latitude: (viewModel?.coordinate.latitude)!,
             longitude: ((viewModel?.coordinate.longitude)!)),
-            destinationName: "Destination")
+                                  destinationName: "Destination")
     }
     private func mapView(mapView: MKMapView,
                          annotationView: MKAnnotationView,
@@ -128,6 +152,18 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
     }
 }
 
+extension DetailsFoodViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func addPhoto(_ sender: Any) {
+        imagePicker =  UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true, completion: nil)
+    }
+}
 extension DetailsFoodViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.imageUrls.count ?? 0
