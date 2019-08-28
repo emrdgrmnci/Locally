@@ -46,6 +46,12 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
         self.isFavorite.setTitle("NO", for: .selected)
         self.isFavorite.setTitleColor(.red, for: .selected)
     }
+    override func viewDidAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     private func showOfflinePage() {
         DispatchQueue.main.async {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

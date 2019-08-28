@@ -18,6 +18,7 @@ pod 'lottie-ios'
 pod 'SwiftLint'
 pod 'SDWebImage', '~> 5.0'
 pod "SkeletonView"
+pod 'PopupDialog', '~> 1.1'
 target 'LocallyTests' do
     inherit! :search_paths
     # Pods for testing

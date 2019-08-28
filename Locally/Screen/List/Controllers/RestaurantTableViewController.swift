@@ -55,6 +55,7 @@ class RestaurantTableViewController: UIViewController, SkeletonTableViewDataSour
         tableView.dataSource = self
         tableView.delegate = self
         self.view.hideSkeleton()
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     private func showOfflinePage() {
