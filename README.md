@@ -6,7 +6,7 @@ If you want to see the full screen flow in video you can check this link:
 https://youtu.be/YteVGgByczw
 
 <h3>Here are the screens</h3>
-<img src="Locally.png" width="800" height= "1100" align= "left"/>&nbsp; 
+<img src="LocallyScreens.png" width="800" height= "1100" align= "left"/>&nbsp; 
 
 
 
