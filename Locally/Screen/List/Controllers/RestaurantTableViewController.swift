@@ -100,6 +100,8 @@ class RestaurantTableViewController: UIViewController, SkeletonTableViewDataSour
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! RestaurantTableViewCell
+        //        cell.layer.cornerRadius = 10
+        //        cell.layer.masksToBounds = true
         let vm = appDelegate!.data?[indexPath.row]
         cell.configure(with: vm!)
         print("vm \(String(describing: vm))")
