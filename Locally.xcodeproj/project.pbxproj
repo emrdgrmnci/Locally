@@ -10,6 +10,7 @@
 		0A861FE574DC521576616C67 /* Pods_Locally.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9FB6FDF886CB0C2A4DE2C8 /* Pods_Locally.framework */; };
 		4707E88F22F724900086E965 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707E88E22F724900086E965 /* UIViewExtension.swift */; };
 		470D6389231A616A0065783C /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470D6388231A616A0065783C /* ShadowView.swift */; };
+		470E421E231BD209004306FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 470E421D231BD209004306FD /* Assets.xcassets */; };
 		4732C9DB2304572000891A08 /* UIAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4732C9DA2304572000891A08 /* UIAlertExtension.swift */; };
 		4732C9DD230464E100891A08 /* DinelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4732C9DC230464E100891A08 /* DinelineTableViewCell.swift */; };
 		4749A71122F5772B009E14CB /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749A71022F5772B009E14CB /* SettingsTableViewController.swift */; };
@@ -24,7 +25,6 @@
 		47B163FC22D5EA020025EF81 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B163FB22D5EA020025EF81 /* LaunchViewController.swift */; };
 		47B163FF22D5EAEA0025EF81 /* OfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B163FE22D5EAEA0025EF81 /* OfflineViewController.swift */; };
 		47C196C322D9094400E012D0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C196C222D9094400E012D0 /* NavigationController.swift */; };
-		47CA10C92316AD2600EA2000 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F4E79622D0CCBA00DFD3A1 /* Assets.xcassets */; };
 		47CBC24222D77AAD00EEE826 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBC24122D77AAD00EEE826 /* TabbarController.swift */; };
 		47DE17392309651300E84A76 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE17382309651300E84A76 /* SettingsTableViewCell.swift */; };
 		47DE173C23096F3200E84A76 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE173B23096F3200E84A76 /* SettingsViewController.swift */; };
@@ -74,6 +74,7 @@
 /* Begin PBXFileReference section */
 		4707E88E22F724900086E965 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		470D6388231A616A0065783C /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		470E421D231BD209004306FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4732C9DA2304572000891A08 /* UIAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertExtension.swift; sourceTree = "<group>"; };
 		4732C9DC230464E100891A08 /* DinelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinelineTableViewCell.swift; sourceTree = "<group>"; };
 		4749A71022F5772B009E14CB /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = "../New Group/SettingsTableViewController.swift"; sourceTree = "<group>"; };
@@ -391,6 +392,7 @@
 		47F4E78022D0CCB900DFD3A1 = {
 			isa = PBXGroup;
 			children = (
+				470E421D231BD209004306FD /* Assets.xcassets */,
 				47AB579022E87B4D000718FF /* GoogleToolboxForMac.framework */,
 				6B7C082148BBA3DCC49835B7 /* Frameworks */,
 				47F4E78B22D0CCB900DFD3A1 /* Locally */,
@@ -687,7 +689,7 @@
 				47F4E7D722D0F38900DFD3A1 /* Podfile in Resources */,
 				47EDAE6922FD94AC00A55A5C /* RestaurantTableView.storyboard in Resources */,
 				478E55342309564A00A54595 /* Settings.storyboard in Resources */,
-				47CA10C92316AD2600EA2000 /* Assets.xcassets in Resources */,
+				470E421E231BD209004306FD /* Assets.xcassets in Resources */,
 				47F4E79222D0CCB900DFD3A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
