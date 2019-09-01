@@ -17,8 +17,9 @@ class SettingsViewController: UIViewController {
         settingsTableViewController?.delegate = self
     }
 }
-extension SettingsViewController : SettingsTableViewControllerDelegate {
+extension SettingsViewController: SettingsTableViewControllerDelegate {
     func signoutTapped() {
-        performSegue(withIdentifier: "logoutSegue", sender: nil)
+        self.sureAlert(titleInput: "Log out", messageInput: "Are you sure you want to log out?")
+//        performSegue(withIdentifier: "logoutSegue", sender: nil)
     }
 }
