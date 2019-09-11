@@ -547,7 +547,7 @@
         <scene sceneID="Vf7-l4-24r">
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="C59-DF-dnl" customClass="RatingViewController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nwV-S1-4qu">
+                    <view key="view" alpha="0.5" contentMode="scaleToFill" id="nwV-S1-4qu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -626,7 +626,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.5012192079399671" green="0.97098162195820115" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="dCv-9K-gFW" firstAttribute="centerY" secondItem="xJP-R6-0uQ" secondAttribute="centerY" id="F17-ky-xRl"/>
                                     <constraint firstItem="dCv-9K-gFW" firstAttribute="centerX" secondItem="xJP-R6-0uQ" secondAttribute="centerX" id="HN6-Nq-W2o"/>
@@ -634,7 +634,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.49542487157534248" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xJP-R6-0uQ" firstAttribute="centerX" secondItem="nwV-S1-4qu" secondAttribute="centerX" id="98q-Ad-dwA"/>
                             <constraint firstItem="xJP-R6-0uQ" firstAttribute="leading" secondItem="6Ot-cZ-Qs2" secondAttribute="leading" constant="20" id="9GT-X3-Cy6"/>

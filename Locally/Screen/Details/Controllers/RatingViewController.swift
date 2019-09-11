@@ -15,6 +15,7 @@ class RatingViewController: UIViewController {
         super.viewDidLoad()
         popupView.layer.cornerRadius = 10
         popupView.layer.masksToBounds = true
+        setupKeyboardDismissRecognizer()
     }
     @IBAction func oneStarTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -29,6 +30,16 @@ class RatingViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func fiveStarTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    func setupKeyboardDismissRecognizer() {
+        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(RatingViewController.dismissView))
+
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    @objc func dismissView() {
         dismiss(animated: true, completion: nil)
     }
 }
