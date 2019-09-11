@@ -161,6 +161,7 @@ extension DetailsFoodViewController: UINavigationControllerDelegate, UIImagePick
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
+        imagePicker.modalPresentationStyle = .fullScreen
         present(imagePicker, animated: true, completion: nil)
     }
 }

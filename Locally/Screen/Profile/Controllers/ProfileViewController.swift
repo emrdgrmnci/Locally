@@ -220,6 +220,7 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
+        imagePicker.modalPresentationStyle = .fullScreen
         present(imagePicker, animated: true, completion: nil)
     }
     @IBAction func savePhoto(_ sender: Any) {

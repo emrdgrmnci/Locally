@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
         }
     }
     func createUser(email: String, password: String) {
-        Auth.auth().createUser(withEmail: email, password: password) { (_, error) in
+        Auth.auth().createUser(withEmail: email, password: password) {(_, error) in
             if error == nil {
                 //User created
                 print("User created")
@@ -76,7 +76,6 @@ class LoginViewController: UIViewController {
         }
     }
     @IBAction func signInButtonTapped(_ sender: Any) {
-        
         // MARK: - UserDefaults
         UserDefaults.standard.set(emailTextField.text, forKey: "email")
         UserDefaults.standard.set(passwordTextField.text, forKey: "password")
