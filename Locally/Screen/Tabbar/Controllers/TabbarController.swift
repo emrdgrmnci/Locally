@@ -20,7 +20,7 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
-
+        self.modalPresentationStyle = .fullScreen
     }
 
     func setUpTabBar() {

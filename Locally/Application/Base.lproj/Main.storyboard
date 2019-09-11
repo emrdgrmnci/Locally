@@ -24,7 +24,7 @@
         <!--Login View Controller-->
         <scene sceneID="UHc-f4-yb2">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="KAo-rO-wzT" customClass="LoginViewController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" id="KAo-rO-wzT" customClass="LoginViewController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v9z-ZR-GWy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,7 @@
                         <outlet property="passwordTextField" destination="wsD-vx-5cg" id="LnM-t5-RrE"/>
                         <outlet property="signInButton" destination="dk5-jD-OBL" id="lEw-Yc-7vp"/>
                         <segue destination="3eT-Tv-gYo" kind="showDetail" identifier="NetworkUnavailable" id="Pdj-g0-gvT"/>
-                        <segue destination="bs3-3B-Eom" kind="presentation" identifier="loginToLocation" modalPresentationStyle="fullScreen" id="c1y-7H-uFd"/>
+                        <segue destination="bs3-3B-Eom" kind="presentation" identifier="loginToLocation" modalPresentationStyle="currentContext" id="c1y-7H-uFd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmv-Np-ldG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -95,7 +95,7 @@
         <!--Location View Controller-->
         <scene sceneID="AgV-ts-LZk">
             <objects>
-                <viewController storyboardIdentifier="LocationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bs3-3B-Eom" customClass="LocationViewController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bs3-3B-Eom" customClass="LocationViewController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hW9-FY-TUQ" customClass="LocationView" customModule="Locally" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,7 +209,7 @@
         <!--Tabbar Controller-->
         <scene sceneID="LyC-eL-mC3">
             <objects>
-                <tabBarController storyboardIdentifier="TabbarController" automaticallyAdjustsScrollViewInsets="NO" id="zjB-aX-u4A" customClass="TabbarController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabbarController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="zjB-aX-u4A" customClass="TabbarController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EBt-aO-dYP">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

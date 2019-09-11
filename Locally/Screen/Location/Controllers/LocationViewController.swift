@@ -42,6 +42,7 @@ class LocationViewController: UIViewController {
                 let tab = self.storyboard!
                     .instantiateViewController(withIdentifier: "TabbarController") as? UITabBarController
                 self.present(tab!, animated: true, completion: nil)
+                self.modalPresentationStyle = .fullScreen
                 //RestaurantTableViewController
 
             }

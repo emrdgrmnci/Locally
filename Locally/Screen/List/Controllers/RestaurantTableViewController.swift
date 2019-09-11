@@ -43,7 +43,7 @@ class RestaurantTableViewController: UIViewController, SkeletonTableViewDataSour
         NetworkManager.isUnreachable { _ in
             self.showOfflinePage()
         }
-//        print(">>>>>>>>>\(String(describing: appDelegate!.data))")
+        //        print(">>>>>>>>>\(String(describing: appDelegate!.data))")
         tableView.reloadData()
     }
 
@@ -104,7 +104,7 @@ class RestaurantTableViewController: UIViewController, SkeletonTableViewDataSour
         //        cell.layer.masksToBounds = true
         let vm = appDelegate!.data?[indexPath.row]
         cell.configure(with: vm!)
-//        print("vm \(String(describing: vm))")
+        //        print("vm \(String(describing: vm))")
         return cell
     }
 

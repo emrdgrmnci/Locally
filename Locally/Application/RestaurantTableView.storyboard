@@ -11,7 +11,7 @@
         <!--DISCOVER-->
         <scene sceneID="KTE-F7-TYd">
             <objects>
-                <navigationController storyboardIdentifier="RestaurantNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bk7-Vs-unW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RestaurantNavigationController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bk7-Vs-unW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="DISCOVER" image="compass" id="2ya-bJ-c1T">
                         <color key="badgeColor" red="1" green="0.20392156859999999" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
@@ -35,7 +35,7 @@
         <!--Restaurant Table View Controller-->
         <scene sceneID="2nn-wa-YVA">
             <objects>
-                <viewController storyboardIdentifier="RestaurantTableViewController" id="8dy-yJ-ceV" customClass="RestaurantTableViewController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RestaurantTableViewController" modalPresentationStyle="fullScreen" id="8dy-yJ-ceV" customClass="RestaurantTableViewController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qri-ua-2zF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -19,7 +19,11 @@ extension UIViewController {
         let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
         let cancelButton = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
         let logoutButton = UIAlertAction(title: "Log out", style: UIAlertAction.Style.default, handler: {(_: UIAlertAction!) in
-            self.performSegue(withIdentifier: "logoutSegue", sender: nil)
+//            self.performSegue(withIdentifier: "logoutSegue", sender: nil)
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginVC: UIViewController = (mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController)!
+            self.present(loginVC, animated: true, completion: nil)
+            self.modalPresentationStyle = .fullScreen
         })
         alert.addAction(cancelButton)
         alert.addAction(logoutButton)
