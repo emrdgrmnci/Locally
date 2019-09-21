@@ -63,7 +63,11 @@ class LoginViewController: UIViewController {
 //    }
 
     func signInUser(email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
+        let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        //Signing in the user
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if error == nil {
                 print("User signed in")
                 self.performSegue(withIdentifier: "loginToLocation", sender: self)

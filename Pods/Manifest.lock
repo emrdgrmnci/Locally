@@ -19,6 +19,9 @@ PODS:
   - Firebase/Firestore (6.4.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 1.4.1)
+  - Firebase/Functions (6.4.0):
+    - Firebase/CoreOnly
+    - FirebaseFunctions (~> 2.5.1)
   - Firebase/Storage (6.4.0):
     - Firebase/CoreOnly
     - FirebaseStorage (~> 3.3.0)
@@ -56,6 +59,10 @@ PODS:
     - leveldb-library (~> 1.20)
     - nanopb (~> 0.3.901)
     - Protobuf (~> 3.1)
+  - FirebaseFunctions (2.5.1):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 6.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseInstanceID (4.2.1):
     - FirebaseCore (~> 6.0)
     - GoogleUtilities/Environment (~> 6.0)
@@ -132,6 +139,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
+  - Firebase/Functions
   - Firebase/Storage
   - IQKeyboardManagerSwift
   - lottie-ios
@@ -152,6 +160,7 @@ SPEC REPOS:
     - FirebaseAuthInterop
     - FirebaseCore
     - FirebaseFirestore
+    - FirebaseFunctions
     - FirebaseInstanceID
     - FirebaseStorage
     - GoogleAppMeasurement
@@ -181,6 +190,7 @@ SPEC CHECKSUMS:
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
   FirebaseCore: 7ea99e200f0024262650be56623fbe6a7bef1707
   FirebaseFirestore: f9d8dbe06cb1e50b5025d0d9ece41e173d0c7e00
+  FirebaseFunctions: 5af7c35d1c5e41608fecbb667eb6c4e672e318d0
   FirebaseInstanceID: 9782fcfb89e4d7da76cc28eac4b8543dc7be4a4b
   FirebaseStorage: fdf753138620fbb9257679357daec4f266627c37
   GoogleAppMeasurement: 1e45fa601e6280c180880d57010390f6679cd971
@@ -200,6 +210,6 @@ SPEC CHECKSUMS:
   SkeletonView: 7d7378731b708f8a6e6b1ffefb68cc3903f10a03
   SwiftLint: 9fc1143bbacec37f94994a7d0d2a85b2154b6294
 
-PODFILE CHECKSUM: 64c4b7b4092943073e2cd354277adc98b1652620
+PODFILE CHECKSUM: a006f6d0953573c30303c292cac62ecbea1cadde
 
 COCOAPODS: 1.7.5

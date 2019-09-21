@@ -34,6 +34,7 @@ class SignUpViewController: UIViewController {
         Utilities.styleTextField(lastNameTextField)
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
+        Utilities.styleFilledButton(signUpButton)
     }
 
     //Check the fields and validate that the data is correct. If everything is correct, this method returns nil. Otherwise, it returns the error message.

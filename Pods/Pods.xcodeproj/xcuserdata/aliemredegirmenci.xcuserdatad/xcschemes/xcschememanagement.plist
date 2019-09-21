@@ -19,7 +19,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Firebase-Auth-Core-CoreOnly-Firestore-Storage.xcscheme</key>
+		<key>Firebase-Auth-Core-CoreOnly-Firestore-Functions-Storage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -50,6 +50,11 @@
 			<false/>
 		</dict>
 		<key>FirebaseFirestore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FirebaseFunctions.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
