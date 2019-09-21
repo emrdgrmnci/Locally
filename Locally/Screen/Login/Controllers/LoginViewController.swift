@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var chefImage: UIImageView!
     let locationServiceStatus = LocationService()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         signInButton.layer.cornerRadius = 5
@@ -31,8 +32,10 @@ class LoginViewController: UIViewController {
             passwordTextField.text = password
         }
     }
+
     override func viewWillDisappear(_ animated: Bool) {
     }
+
     private func showOfflinePage() {
         DispatchQueue.main.async {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -40,6 +43,7 @@ class LoginViewController: UIViewController {
             self.present(offlineVC, animated: true, completion: nil)
         }
     }
+
     func createUser(email: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) {(_, error) in
             if error == nil {
@@ -57,6 +61,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
+
     func signInUser(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
             if error == nil {
@@ -75,6 +80,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
+
     @IBAction func signInButtonTapped(_ sender: Any) {
         // MARK: - UserDefaults
         UserDefaults.standard.set(emailTextField.text, forKey: "email")

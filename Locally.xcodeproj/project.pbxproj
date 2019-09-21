@@ -13,6 +13,7 @@
 		470E421E231BD209004306FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 470E421D231BD209004306FD /* Assets.xcassets */; };
 		4714CA9923361BBA0017FF53 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714CA9823361BBA0017FF53 /* SignUpViewController.swift */; };
 		4717EBED23361FF900745478 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717EBEC23361FF900745478 /* Utilities.swift */; };
+		4717EBF02336232E00745478 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717EBEF2336232E00745478 /* SplashViewController.swift */; };
 		4732C9DB2304572000891A08 /* UIAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4732C9DA2304572000891A08 /* UIAlertExtension.swift */; };
 		4732C9DD230464E100891A08 /* DinelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4732C9DC230464E100891A08 /* DinelineTableViewCell.swift */; };
 		4749A71122F5772B009E14CB /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749A71022F5772B009E14CB /* SettingsTableViewController.swift */; };
@@ -22,6 +23,7 @@
 		478AF76322D880CA00D551C4 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478AF76222D880CA00D551C4 /* LocationViewController.swift */; };
 		478E55342309564A00A54595 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 478E55332309564A00A54595 /* Settings.storyboard */; };
 		47A36BC522D1FF90002571D4 /* DetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A36BC422D1FF90002571D4 /* DetailsCollectionViewCell.swift */; };
+		47A6698223362C9400B55042 /* SplashNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A6698123362C9400B55042 /* SplashNavigationController.swift */; };
 		47B163F522D5DD0D0025EF81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47B163F422D5DD0C0025EF81 /* GoogleService-Info.plist */; };
 		47B163F822D5E7930025EF81 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B163F722D5E7930025EF81 /* NetworkManager.swift */; };
 		47B163FC22D5EA020025EF81 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B163FB22D5EA020025EF81 /* LaunchViewController.swift */; };
@@ -79,6 +81,7 @@
 		470E421D231BD209004306FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4714CA9823361BBA0017FF53 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4717EBEC23361FF900745478 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		4717EBEF2336232E00745478 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		4732C9DA2304572000891A08 /* UIAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertExtension.swift; sourceTree = "<group>"; };
 		4732C9DC230464E100891A08 /* DinelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinelineTableViewCell.swift; sourceTree = "<group>"; };
 		4749A71022F5772B009E14CB /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = "../New Group/SettingsTableViewController.swift"; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 		478AF76222D880CA00D551C4 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		478E55332309564A00A54595 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		47A36BC422D1FF90002571D4 /* DetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCollectionViewCell.swift; sourceTree = "<group>"; };
+		47A6698123362C9400B55042 /* SplashNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashNavigationController.swift; sourceTree = "<group>"; };
 		47AB579022E87B4D000718FF /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B163F422D5DD0C0025EF81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		47B163F722D5E7930025EF81 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -199,6 +203,22 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		4717EBEE2336231200745478 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				4717EBF12336233B00745478 /* Controllers */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		4717EBF12336233B00745478 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4717EBEF2336232E00745478 /* SplashViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		4749A70F22F5770E009E14CB /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				47C196C222D9094400E012D0 /* NavigationController.swift */,
+				47A6698123362C9400B55042 /* SplashNavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -479,6 +500,7 @@
 		47F4E7BD22D0E26C00DFD3A1 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				4717EBEE2336231200745478 /* Splash */,
 				4714CA9723361B9F0017FF53 /* SignUp */,
 				47DE1735230964B200E84A76 /* Settings */,
 				47F4E7BE22D0E28500DFD3A1 /* BaseView.swift */,
@@ -873,6 +895,7 @@
 				478861E022F74B04001CA421 /* Constants.swift in Sources */,
 				47F4E7D522D0EAE600DFD3A1 /* LocationServices.swift in Sources */,
 				47B163FC22D5EA020025EF81 /* LaunchViewController.swift in Sources */,
+				4717EBF02336232E00745478 /* SplashViewController.swift in Sources */,
 				47F4E79522D0CCB900DFD3A1 /* Locally.xcdatamodeld in Sources */,
 				470D6389231A616A0065783C /* ShadowView.swift in Sources */,
 				47F4E78F22D0CCB900DFD3A1 /* LoginViewController.swift in Sources */,
@@ -887,6 +910,7 @@
 				47F4E7C422D0E39400DFD3A1 /* DetailsFoodView.swift in Sources */,
 				478AF76322D880CA00D551C4 /* LocationViewController.swift in Sources */,
 				47CBC24222D77AAD00EEE826 /* TabbarController.swift in Sources */,
+				47A6698223362C9400B55042 /* SplashNavigationController.swift in Sources */,
 				4732C9DB2304572000891A08 /* UIAlertExtension.swift in Sources */,
 				47F4E7CC22D0E55200DFD3A1 /* RestaurantTableViewCell.swift in Sources */,
 				47F4E7DC22D1002100DFD3A1 /* Models.swift in Sources */,

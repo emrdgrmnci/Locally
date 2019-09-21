@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         switch locationService.status {
         case .notDetermined:
-            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
+            let loginViewController = storyboard.instantiateViewController(withIdentifier: "SplashNavigationController") as? SplashNavigationController
             window.rootViewController = loginViewController
         case .denied, .restricted:
             let locationViewController = storyboard.instantiateViewController(withIdentifier: "LocationViewController") as? LocationViewController

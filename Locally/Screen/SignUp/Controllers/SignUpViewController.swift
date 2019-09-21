@@ -11,7 +11,7 @@ import UIKit
 class SignUpViewController: UIViewController {
 
     @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var lasstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
@@ -19,6 +19,18 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupElements()
+    }
+
+    func setupElements() {
+        //Hide the error label
+        errorLabel.alpha = 0
+
+        //Customization for textfields
+        Utilities.styleTextField(firstNameTextField)
+        Utilities.styleTextField(lastNameTextField)
+        Utilities.styleTextField(emailTextField)
+        Utilities.styleTextField(passwordTextField)
     }
 
     @IBAction func signUpTapped(_ sender: Any) {
