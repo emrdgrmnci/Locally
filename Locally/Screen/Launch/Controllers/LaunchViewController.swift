@@ -19,7 +19,7 @@ class LaunchViewController: UIViewController {
         }
 
         NetworkManager.isReachable { _ in
-            self.showMainPage()
+            self.showLoginPage()
         }
     }
 
@@ -31,10 +31,10 @@ class LaunchViewController: UIViewController {
         }
     }
 
-    private func showMainPage() {
+    private func showLoginPage() {
         DispatchQueue.main.async {
             self.performSegue(
-                withIdentifier: "LoginController",
+                withIdentifier: "SplashViewController",
                 sender: self
             )
         }

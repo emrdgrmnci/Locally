@@ -11,6 +11,8 @@
 		4707E88F22F724900086E965 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707E88E22F724900086E965 /* UIViewExtension.swift */; };
 		470D6389231A616A0065783C /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470D6388231A616A0065783C /* ShadowView.swift */; };
 		470E421E231BD209004306FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 470E421D231BD209004306FD /* Assets.xcassets */; };
+		4714CA9923361BBA0017FF53 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714CA9823361BBA0017FF53 /* SignUpViewController.swift */; };
+		4717EBED23361FF900745478 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717EBEC23361FF900745478 /* Utilities.swift */; };
 		4732C9DB2304572000891A08 /* UIAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4732C9DA2304572000891A08 /* UIAlertExtension.swift */; };
 		4732C9DD230464E100891A08 /* DinelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4732C9DC230464E100891A08 /* DinelineTableViewCell.swift */; };
 		4749A71122F5772B009E14CB /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749A71022F5772B009E14CB /* SettingsTableViewController.swift */; };
@@ -75,11 +77,13 @@
 		4707E88E22F724900086E965 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		470D6388231A616A0065783C /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		470E421D231BD209004306FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4714CA9823361BBA0017FF53 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		4717EBEC23361FF900745478 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		4732C9DA2304572000891A08 /* UIAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertExtension.swift; sourceTree = "<group>"; };
 		4732C9DC230464E100891A08 /* DinelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinelineTableViewCell.swift; sourceTree = "<group>"; };
 		4749A71022F5772B009E14CB /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = "../New Group/SettingsTableViewController.swift"; sourceTree = "<group>"; };
 		4781074922F72B7C00EDEC7F /* Animations.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Animations.bundle; sourceTree = "<group>"; };
-		478861DF22F74B04001CA421 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		478861DF22F74B04001CA421 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
 		4789E4162316A94500319730 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		478AF76222D880CA00D551C4 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		478E55332309564A00A54595 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -168,6 +172,31 @@
 				47C196C422D9094F00E012D0 /* Views */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		4714CA9723361B9F0017FF53 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				4714CA9A23361BC10017FF53 /* Controllers */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		4714CA9A23361BC10017FF53 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4714CA9823361BBA0017FF53 /* SignUpViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4717EBEB23361FDD00745478 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				478861DF22F74B04001CA421 /* Constants.swift */,
+				4717EBEC23361FF900745478 /* Utilities.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		4749A70F22F5770E009E14CB /* Views */ = {
@@ -417,6 +446,7 @@
 		47F4E78B22D0CCB900DFD3A1 /* Locally */ = {
 			isa = PBXGroup;
 			children = (
+				4717EBEB23361FDD00745478 /* Helpers */,
 				4781074522F72B1C00EDEC7F /* Supporting Files */,
 				47E080EF22F1DCD500541192 /* Extensions */,
 				47B163F622D5E7760025EF81 /* Network Manager */,
@@ -424,7 +454,6 @@
 				47F4E79322D0CCB900DFD3A1 /* Locally.xcdatamodeld */,
 				47F4E7BD22D0E26C00DFD3A1 /* Screen */,
 				47F4E7D822D0F58700DFD3A1 /* Services */,
-				478861DF22F74B04001CA421 /* Constants.swift */,
 			);
 			path = Locally;
 			sourceTree = "<group>";
@@ -450,6 +479,7 @@
 		47F4E7BD22D0E26C00DFD3A1 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				4714CA9723361B9F0017FF53 /* SignUp */,
 				47DE1735230964B200E84A76 /* Settings */,
 				47F4E7BE22D0E28500DFD3A1 /* BaseView.swift */,
 				47F4E7C022D0E35F00DFD3A1 /* Details */,
@@ -850,6 +880,7 @@
 				47B163F822D5E7930025EF81 /* NetworkManager.swift in Sources */,
 				4707E88F22F724900086E965 /* UIViewExtension.swift in Sources */,
 				47FBF1F222DE26B700CB8C9F /* TabCollectionViewCell.swift in Sources */,
+				4714CA9923361BBA0017FF53 /* SignUpViewController.swift in Sources */,
 				4749A71122F5772B009E14CB /* SettingsTableViewController.swift in Sources */,
 				47FBF1ED22DDE86800CB8C9F /* ProfileViewController.swift in Sources */,
 				4732C9DD230464E100891A08 /* DinelineTableViewCell.swift in Sources */,
@@ -863,6 +894,7 @@
 				47F4E78D22D0CCB900DFD3A1 /* AppDelegate.swift in Sources */,
 				47B163FF22D5EAEA0025EF81 /* OfflineViewController.swift in Sources */,
 				4789E4172316A94500319730 /* RatingViewController.swift in Sources */,
+				4717EBED23361FF900745478 /* Utilities.swift in Sources */,
 				47F4E7BF22D0E28500DFD3A1 /* BaseView.swift in Sources */,
 				47F4E7D022D0E68400DFD3A1 /* LocationView.swift in Sources */,
 				47DE173C23096F3200E84A76 /* SettingsViewController.swift in Sources */,
