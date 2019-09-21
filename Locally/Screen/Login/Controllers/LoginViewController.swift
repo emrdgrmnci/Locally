@@ -44,32 +44,34 @@ class LoginViewController: UIViewController {
         }
     }
 
-    func createUser(email: String, password: String) {
-        Auth.auth().createUser(withEmail: email, password: password) {(_, error) in
-            if error == nil {
-                //User created
-                print("User created")
-                //User signed in
-                self.signInUser(email: email, password: password)
-            } else {
-                print(error?.localizedDescription ?? "error")
-                let alert = UIAlertController(title: error!.localizedDescription, message: "", preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                DispatchQueue.main.async(execute: {
-                    self.present(alert, animated: true, completion: nil)
-                })
-            }
-        }
-    }
+//    func createUser(email: String, password: String) {
+//        Auth.auth().createUser(withEmail: email, password: password) {(_, error) in
+//            if error == nil {
+//                //User created
+//                print("User created")
+//                //User signed in
+//                self.signInUser(email: email, password: password)
+//            } else {
+//                print(error?.localizedDescription ?? "error")
+//                let alert = UIAlertController(title: error!.localizedDescription, message: "", preferredStyle: UIAlertController.Style.alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+//                DispatchQueue.main.async(execute: {
+//                    self.present(alert, animated: true, completion: nil)
+//                })
+//            }
+//        }
+//    }
 
     func signInUser(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
             if error == nil {
                 print("User signed in")
                 self.performSegue(withIdentifier: "loginToLocation", sender: self)
-            } else if error?._code == AuthErrorCode.userNotFound.rawValue {
-                self.createUser(email: email, password: password)
-            } else {
+            }
+//            else if error?._code == AuthErrorCode.userNotFound.rawValue {
+//                self.createUser(email: email, password: password)
+//            }
+            else {
                 print(error ?? "error")
                 print(error?.localizedDescription ?? "error")
                 let alert = UIAlertController(title: error!.localizedDescription, message: "", preferredStyle: UIAlertController.Style.alert)
