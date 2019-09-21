@@ -28,6 +28,7 @@
 		47B163F822D5E7930025EF81 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B163F722D5E7930025EF81 /* NetworkManager.swift */; };
 		47B163FC22D5EA020025EF81 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B163FB22D5EA020025EF81 /* LaunchViewController.swift */; };
 		47B163FF22D5EAEA0025EF81 /* OfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B163FE22D5EAEA0025EF81 /* OfflineViewController.swift */; };
+		47B5702723363C97005B4091 /* loginbg.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 47B5702623363C97005B4091 /* loginbg.mp4 */; };
 		47C196C322D9094400E012D0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C196C222D9094400E012D0 /* NavigationController.swift */; };
 		47CBC24222D77AAD00EEE826 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBC24122D77AAD00EEE826 /* TabbarController.swift */; };
 		47DE17392309651300E84A76 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE17382309651300E84A76 /* SettingsTableViewCell.swift */; };
@@ -97,6 +98,7 @@
 		47B163F722D5E7930025EF81 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		47B163FB22D5EA020025EF81 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		47B163FE22D5EAEA0025EF81 /* OfflineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineViewController.swift; sourceTree = "<group>"; };
+		47B5702623363C97005B4091 /* loginbg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginbg.mp4; sourceTree = "<group>"; };
 		47C196C222D9094400E012D0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		47CBC24122D77AAD00EEE826 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		47DE17382309651300E84A76 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -380,6 +382,14 @@
 			path = Offline;
 			sourceTree = "<group>";
 		};
+		47B5702523363C7E005B4091 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				47B5702623363C97005B4091 /* loginbg.mp4 */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
 		47C196C422D9094F00E012D0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,6 +477,7 @@
 		47F4E78B22D0CCB900DFD3A1 /* Locally */ = {
 			isa = PBXGroup;
 			children = (
+				47B5702523363C7E005B4091 /* Media */,
 				4717EBEB23361FDD00745478 /* Helpers */,
 				4781074522F72B1C00EDEC7F /* Supporting Files */,
 				47E080EF22F1DCD500541192 /* Extensions */,
@@ -740,6 +751,7 @@
 				4781074A22F72B7C00EDEC7F /* Animations.bundle in Resources */,
 				47F4E7D722D0F38900DFD3A1 /* Podfile in Resources */,
 				47EDAE6922FD94AC00A55A5C /* RestaurantTableView.storyboard in Resources */,
+				47B5702723363C97005B4091 /* loginbg.mp4 in Resources */,
 				478E55342309564A00A54595 /* Settings.storyboard in Resources */,
 				470E421E231BD209004306FD /* Assets.xcassets in Resources */,
 				47F4E79222D0CCB900DFD3A1 /* Main.storyboard in Resources */,
