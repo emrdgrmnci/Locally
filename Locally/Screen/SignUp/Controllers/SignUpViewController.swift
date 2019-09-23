@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-
 class SignUpViewController: UIViewController {
 
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -22,9 +21,20 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTextFieldPlaceholders()
         setupElements()
     }
-
+    func setupTextFieldPlaceholders() {
+        let iVar = class_getInstanceVariable(UITextField.self, "_placeholderLabel")!
+        let placeholderLabelName = object_getIvar(firstNameTextField, iVar) as! UILabel
+        placeholderLabelName.textColor = .red
+        let placeholderLabelLastName = object_getIvar(lastNameTextField, iVar) as! UILabel
+        placeholderLabelLastName.textColor = .red
+        let placeholderLabel = object_getIvar(emailTextField, iVar) as! UILabel
+        placeholderLabel.textColor = .red
+        let placeholderLabelPassword = object_getIvar(passwordTextField, iVar) as! UILabel
+        placeholderLabelPassword.textColor = .red
+    }
     func setupElements() {
         //Hide the error label
         errorLabel.alpha = 0

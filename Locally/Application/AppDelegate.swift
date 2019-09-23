@@ -86,6 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.navigationController = nav
             window.rootViewController = nav
             locationService.getLocation()
+            nav?.modalPresentationStyle = .fullScreen
             (nav?.topViewController as? RestaurantTableViewController)?.delegate = self
         }
         window.makeKeyAndVisible()
@@ -118,6 +119,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self?.data = viewModels
                 self?.restaurant.viewModels = viewModels ?? []
                 let tab = strongSelf.storyboard.instantiateViewController(withIdentifier: "TabbarController") as! TabbarController
+                tab.modalPresentationStyle = .fullScreen
                 self?.window.rootViewController = tab
             case .failure(let error):
                 print ("Error: \(error)")

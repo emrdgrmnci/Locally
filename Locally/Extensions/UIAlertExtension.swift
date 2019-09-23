@@ -22,8 +22,8 @@ extension UIViewController {
 //            self.performSegue(withIdentifier: "logoutSegue", sender: nil)
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let loginVC: UIViewController = (mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController)!
+            loginVC.modalPresentationStyle = .fullScreen
             self.present(loginVC, animated: true, completion: nil)
-            self.modalPresentationStyle = .fullScreen
         })
         alert.addAction(cancelButton)
         alert.addAction(logoutButton)

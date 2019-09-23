@@ -453,8 +453,8 @@
 			isa = PBXGroup;
 			children = (
 				470E421D231BD209004306FD /* Assets.xcassets */,
-				47AB579022E87B4D000718FF /* GoogleToolboxForMac.framework */,
 				6B7C082148BBA3DCC49835B7 /* Frameworks */,
+				47AB579022E87B4D000718FF /* GoogleToolboxForMac.framework */,
 				47F4E78B22D0CCB900DFD3A1 /* Locally */,
 				47F4E7A322D0CCBA00DFD3A1 /* LocallyTests */,
 				47F4E7AE22D0CCBA00DFD3A1 /* LocallyUITests */,
@@ -1122,7 +1122,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NMCVZ8F7S5;
 				INFOPLIST_FILE = "$(SRCROOT)/Locally/Supporting Files/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1143,7 +1143,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NMCVZ8F7S5;
 				INFOPLIST_FILE = "$(SRCROOT)/Locally/Supporting Files/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

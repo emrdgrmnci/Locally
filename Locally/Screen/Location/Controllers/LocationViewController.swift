@@ -24,11 +24,11 @@ class LocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        locationService.requestLocationAuthorization()
+        //        locationService.requestLocationAuthorization()
 
         locationView.didTapAllow = {
             self.delegate?.didTapAllow()
-             self.isLoading(true)
+            self.isLoading(true)
         }
         NetworkManager.isUnreachable { _ in
             self.showOfflinePage()
@@ -41,10 +41,9 @@ class LocationViewController: UIViewController {
                 self.isLoading(false)
                 let tab = self.storyboard!
                     .instantiateViewController(withIdentifier: "TabbarController") as? UITabBarController
+                tab!.modalPresentationStyle = .fullScreen
                 self.present(tab!, animated: true, completion: nil)
-                self.modalPresentationStyle = .fullScreen
                 //RestaurantTableViewController
-
             }
         }
     }
