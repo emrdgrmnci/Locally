@@ -36,6 +36,8 @@
 		47E080F122F1DCE300541192 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E080F022F1DCE300541192 /* UIButtonExtension.swift */; };
 		47EDAE6922FD94AC00A55A5C /* RestaurantTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47EDAE6822FD94AC00A55A5C /* RestaurantTableView.storyboard */; };
 		47EDAE6B22FD971D00A55A5C /* ProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47EDAE6A22FD971D00A55A5C /* ProfileView.storyboard */; };
+		47F234CA2338BF3A00D3BDA6 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F234C92338BF3A00D3BDA6 /* SwitchTableViewCell.swift */; };
+		47F234CD2338C45F00D3BDA6 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F234CC2338C45F00D3BDA6 /* FiltersViewController.swift */; };
 		47F4E78D22D0CCB900DFD3A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F4E78C22D0CCB900DFD3A1 /* AppDelegate.swift */; };
 		47F4E78F22D0CCB900DFD3A1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F4E78E22D0CCB900DFD3A1 /* LoginViewController.swift */; };
 		47F4E79222D0CCB900DFD3A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F4E79022D0CCB900DFD3A1 /* Main.storyboard */; };
@@ -106,6 +108,8 @@
 		47E080F022F1DCE300541192 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		47EDAE6822FD94AC00A55A5C /* RestaurantTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RestaurantTableView.storyboard; sourceTree = "<group>"; };
 		47EDAE6A22FD971D00A55A5C /* ProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileView.storyboard; sourceTree = "<group>"; };
+		47F234C92338BF3A00D3BDA6 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		47F234CC2338C45F00D3BDA6 /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		47F4E78922D0CCB900DFD3A1 /* Locally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Locally.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F4E78C22D0CCB900DFD3A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47F4E78E22D0CCB900DFD3A1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -449,6 +453,31 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		47F234C72338BF0A00D3BDA6 /* FilteredRestaurants */ = {
+			isa = PBXGroup;
+			children = (
+				47F234CB2338C44B00D3BDA6 /* Controllers */,
+				47F234C82338BF1800D3BDA6 /* Views */,
+			);
+			path = FilteredRestaurants;
+			sourceTree = "<group>";
+		};
+		47F234C82338BF1800D3BDA6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				47F234C92338BF3A00D3BDA6 /* SwitchTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		47F234CB2338C44B00D3BDA6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				47F234CC2338C45F00D3BDA6 /* FiltersViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		47F4E78022D0CCB900DFD3A1 = {
 			isa = PBXGroup;
 			children = (
@@ -511,6 +540,7 @@
 		47F4E7BD22D0E26C00DFD3A1 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				47F234C72338BF0A00D3BDA6 /* FilteredRestaurants */,
 				4717EBEE2336231200745478 /* Splash */,
 				4714CA9723361B9F0017FF53 /* SignUp */,
 				47DE1735230964B200E84A76 /* Settings */,
@@ -909,6 +939,8 @@
 				47B163FC22D5EA020025EF81 /* LaunchViewController.swift in Sources */,
 				4717EBF02336232E00745478 /* SplashViewController.swift in Sources */,
 				47F4E79522D0CCB900DFD3A1 /* Locally.xcdatamodeld in Sources */,
+				47F234CA2338BF3A00D3BDA6 /* SwitchTableViewCell.swift in Sources */,
+				47F234CD2338C45F00D3BDA6 /* FiltersViewController.swift in Sources */,
 				470D6389231A616A0065783C /* ShadowView.swift in Sources */,
 				47F4E78F22D0CCB900DFD3A1 /* LoginViewController.swift in Sources */,
 				47F4E7C922D0E52200DFD3A1 /* RestaurantTableViewController.swift in Sources */,

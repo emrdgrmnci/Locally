@@ -16,6 +16,8 @@ class RestaurantTableViewCell: UITableViewCell {
     @IBOutlet weak var makerImageView: UIImageView!
     @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var restaurantType: UILabel!
+
     let cornerRadius : CGFloat = 10.0
 
     override func awakeFromNib() {

@@ -14,7 +14,7 @@ protocol ListActions: class {
     func didTapCell(_ viewController: UIViewController, viewModel: RestaurantListViewModel)
 }
 
-class RestaurantTableViewController: UIViewController, SkeletonTableViewDataSource, UITableViewDelegate {
+class RestaurantTableViewController: UIViewController, SkeletonTableViewDataSource, UITableViewDelegate, FiltersViewControllerDelegate {
     @IBOutlet weak var yourLocationLabel: UILabel!
     private let locationManager = CLLocationManager()
     private let locationService = LocationService()
@@ -117,4 +117,13 @@ class RestaurantTableViewController: UIViewController, SkeletonTableViewDataSour
         appDelegate!.didTapCell(detailsViewController, viewModel: vm!)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navigationController = segue.destination as! UINavigationController
+        let filtersViewController = navigationController.topViewController as! FiltersViewController
+        filtersViewController.delegate = self as! FiltersViewControllerDelegate
+    }
+
+    func filtersViewController(filtersViewController: FiltersViewController, didUpdateFilters filters: [String : Any]) {
+        <#code#>
+    }
 }
