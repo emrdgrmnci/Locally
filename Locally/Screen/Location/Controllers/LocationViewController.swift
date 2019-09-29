@@ -11,6 +11,7 @@ import CoreLocation
 
 protocol LocationActions: class {
     func didTapAllow()
+    func didTapDeny()
 }
 
 class LocationViewController: UIViewController {
@@ -29,6 +30,19 @@ class LocationViewController: UIViewController {
         locationView.didTapAllow = {
             self.delegate?.didTapAllow()
             self.isLoading(true)
+        }
+        locationView.didTapDeny = {
+            self.delegate?.didTapDeny()
+            let alert = UIAlertController(title: "Settings", message: "Allow location from settings", preferredStyle: UIAlertController.Style.alert)
+            self.present(alert, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: "", style: .default, handler: { action in
+                switch action.style {
+                case .default: UIApplication.shared.openURL(NSURL(string: UIApplication.openSettingsURLString)! as URL)
+                self.isLoading(false)
+                case .cancel: print("cancel")
+                case .destructive: print("destructive")
+                }
+            }))
         }
         NetworkManager.isUnreachable { _ in
             self.showOfflinePage()
@@ -54,6 +68,9 @@ class LocationViewController: UIViewController {
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined, .restricted, .denied:
                 hasPermission = false
+                DispatchQueue.main.async {
+                    self.isLoading(false)
+                }
             case .authorizedAlways, .authorizedWhenInUse:
                 hasPermission = true
             @unknown default:

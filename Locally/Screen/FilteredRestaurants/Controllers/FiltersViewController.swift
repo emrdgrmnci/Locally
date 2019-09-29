@@ -38,9 +38,13 @@ class FiltersViewController: UIViewController, SwitchCellDelegate {
         return [
             ["name": "Arabian", "code": "arabian"],
             ["name": "Afghan", "code": "afghani"],
+            ["name": "Bakeries", "code": "bakeries"],
             ["name": "Beer Hall", "code": "beerhall"],
+            ["name": "Buffets", "code": "buffets"],
             ["name": "Chicken Wings", "code": "chicken_wings"],
             ["name": "Chinese", "code": "chinese"],
+            ["name": "Giblets", "code": "giblets"],
+            ["name": "Fast Food", "code": "fast-food"],
             ["name": "Halal", "code": "halal"],
             ["name": "Latin American", "code": "latin"],
             ["name": "Meatballs", "code": "meatballs"],

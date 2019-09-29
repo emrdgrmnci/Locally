@@ -19,7 +19,7 @@ extension UIViewController {
         let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
         let cancelButton = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
         let logoutButton = UIAlertAction(title: "Log out", style: UIAlertAction.Style.default, handler: {(_: UIAlertAction!) in
-//            self.performSegue(withIdentifier: "logoutSegue", sender: nil)
+            //            self.performSegue(withIdentifier: "logoutSegue", sender: nil)
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let loginVC: UIViewController = (mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController)!
             loginVC.modalPresentationStyle = .fullScreen
@@ -27,6 +27,12 @@ extension UIViewController {
         })
         alert.addAction(cancelButton)
         alert.addAction(logoutButton)
+        self.present(alert, animated: true, completion: nil)
+    }
+    func phoneCallAndMapAlert(titleInput: String, messageInput: String) {
+        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
+        let cancelButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil)
+        alert.addAction(cancelButton)
         self.present(alert, animated: true, completion: nil)
     }
 }

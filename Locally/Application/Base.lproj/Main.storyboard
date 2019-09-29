@@ -160,7 +160,6 @@
         <!--Log in to Locally-->
         <scene sceneID="UHc-f4-yb2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gmv-Np-ldG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="LoginViewController" id="KAo-rO-wzT" customClass="LoginViewController" customModule="Locally" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v9z-ZR-GWy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -234,6 +233,7 @@
                         <segue destination="bs3-3B-Eom" kind="presentation" identifier="loginToLocation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="c1y-7H-uFd"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gmv-Np-ldG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-503.19999999999999" y="-927.88605697151434"/>
         </scene>

@@ -18,6 +18,7 @@ struct Business: Codable {
     let name: String
     let imageUrl: URL
     let distance: Double
+    let categories: [Category]
 }
 
 struct RestaurantListViewModel {
@@ -25,12 +26,13 @@ struct RestaurantListViewModel {
     let imageUrl: URL
     let distance: Double
     let id: String
+    let categories: [Category]
 
     static var numberFormatter: NumberFormatter {
         let nf = NumberFormatter()
         nf.numberStyle = .decimal
-        nf.maximumFractionDigits = 2
-        nf.minimumFractionDigits = 2
+        nf.maximumFractionDigits = 0
+        nf.minimumFractionDigits = 0
         return nf
     }
 
@@ -46,7 +48,13 @@ extension RestaurantListViewModel {
         self.id = business.id
         self.imageUrl = business.imageUrl
         self.distance = business.distance
+        self.categories = business.categories
     }
+}
+
+struct Category: Codable {
+//    let alias: String
+    let title: String
 }
 
 struct Details: Decodable {

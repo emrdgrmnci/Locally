@@ -120,10 +120,6 @@ class RestaurantTableViewController: UIViewController, SkeletonTableViewDataSour
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navigationController = segue.destination as! UINavigationController
         let filtersViewController = navigationController.topViewController as! FiltersViewController
-        filtersViewController.delegate = self as! FiltersViewControllerDelegate
-    }
-
-    func filtersViewController(filtersViewController: FiltersViewController, didUpdateFilters filters: [String : Any]) {
-        <#code#>
+        filtersViewController.delegate = self as FiltersViewControllerDelegate
     }
 }

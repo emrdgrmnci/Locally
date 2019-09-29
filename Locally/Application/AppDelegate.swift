@@ -172,7 +172,8 @@ extension AppDelegate: ListActions, LocationActions {
     func didTapAllow() {
         locationService.requestLocationAuthorization()
     }
-
+    func didTapDeny() {
+    }
     func didTapCell(_ viewController: UIViewController, viewModel: RestaurantListViewModel) {
         loadDetails(for: viewController, with: viewModel.id)
     }

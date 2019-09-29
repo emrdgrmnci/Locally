@@ -19,6 +19,7 @@ import UIKit
     let restaurant = RestaurantTableViewController()
 
     var didTapAllow: (() -> Void)?
+    var didTapDeny: (() -> Void)?
 
     @IBAction func allowAction(_ sender: UIButton) {
         didTapAllow?()
@@ -26,6 +27,7 @@ import UIKit
     }
 
     @IBAction func denyAction(_ sender: UIButton) {
+        didTapDeny?()
 
     }
 }

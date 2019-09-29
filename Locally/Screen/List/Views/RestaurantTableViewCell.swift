@@ -47,6 +47,10 @@ class RestaurantTableViewCell: UITableViewCell {
         restaurantImageView.af_setImage(withURL: viewModel.imageUrl)
         restaurantNameLabel.text = viewModel.name
         locationLabel.text = "\(viewModel.formattedDistance) m"
+        if let restaurantType: String = String(viewModel.categories[0].title) {
+                      self.restaurantType.text = restaurantType
+        }
+//        restaurantType.text = "\(viewModel.categories.description)"
     }
 
 }
