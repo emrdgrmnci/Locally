@@ -20,7 +20,10 @@
                                 <rect key="frame" x="20" y="103" width="296" height="130"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Emre DEĞİRMENCİ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oH-rj-ll9">
-                                        <rect key="frame" x="0.0" y="0.0" width="213" height="31.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="31.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="qJ9-Li-lWM"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

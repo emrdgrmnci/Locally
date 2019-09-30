@@ -44,13 +44,18 @@ class RestaurantTableViewCell: UITableViewCell {
     }
 
     func configure(with viewModel: RestaurantListViewModel) {
-        restaurantImageView.af_setImage(withURL: viewModel.imageUrl)
-        restaurantNameLabel.text = viewModel.name
-        locationLabel.text = "\(viewModel.formattedDistance) m"
-        if let restaurantType: String = String(viewModel.categories[0].title) {
-                      self.restaurantType.text = restaurantType
+        // For background thread
+        DispatchQueue.global(qos: .background).async {
+            DispatchQueue.main.async {
+                self.restaurantImageView.af_setImage(withURL: viewModel.imageUrl)
+                self.restaurantNameLabel.text = viewModel.name
+                self.locationLabel.text = "\(viewModel.formattedDistance) m"
+            }
         }
-//        restaurantType.text = "\(viewModel.categories.description)"
+        if let restaurantType: String = String(viewModel.categories[0].title) {
+            self.restaurantType.text = restaurantType
+        }
+        //        restaurantType.text = "\(viewModel.categories.description)"
     }
 
 }

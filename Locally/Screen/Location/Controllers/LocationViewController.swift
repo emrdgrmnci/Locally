@@ -15,27 +15,26 @@ protocol LocationActions: class {
 }
 
 class LocationViewController: UIViewController {
-
+    
     @IBOutlet weak var locationView: LocationView!
-
     let locationService = LocationService()
-
     weak var delegate: LocationActions?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //        locationService.requestLocationAuthorization()
-
         locationView.didTapAllow = {
             self.delegate?.didTapAllow()
-            self.isLoading(true)
+            DispatchQueue.main.async {
+                self.showActivityIndicator(onView: self.view)
+            }
         }
         locationView.didTapDeny = {
             self.delegate?.didTapDeny()
-            let alert = UIAlertController(title: "Settings", message: "Allow location from settings", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Settings", message: "Please go to settings and turn on the location permissions!", preferredStyle: UIAlertController.Style.alert)
             self.present(alert, animated: true, completion: nil)
-            alert.addAction(UIAlertAction(title: "", style: .default, handler: { action in
+            let cancelButton = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
+            alert.addAction(cancelButton)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                 switch action.style {
                 case .default: UIApplication.shared.openURL(NSURL(string: UIApplication.openSettingsURLString)! as URL)
                 self.isLoading(false)
@@ -48,7 +47,6 @@ class LocationViewController: UIViewController {
             self.showOfflinePage()
         }
     }
-
     override func viewDidAppear(_ animated: Bool) {
         if hasLocationPermission() {
             DispatchQueue.main.async {
@@ -61,28 +59,47 @@ class LocationViewController: UIViewController {
             }
         }
     }
-
+    func alertLocationAccessNeeded() {
+        let settingsAppURL = URL(string: UIApplication.openSettingsURLString)!
+        let alert = UIAlertController(
+            title: "Need Location Access",
+            message: "Location access is required for including the location of the hazard.",
+            preferredStyle: UIAlertController.Style.alert
+        )
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Allow Location Access",
+                                      style: .cancel,
+                                      handler: {(alert) -> Void in
+                                        UIApplication.shared.open(settingsAppURL,
+                                                                  options: [:],
+                                                                  completionHandler: nil)
+        }))
+        present(alert, animated: true, completion: nil)
+    }
     func hasLocationPermission() -> Bool {
         var hasPermission = false
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
-            case .notDetermined, .restricted, .denied:
+            case .notDetermined:
                 hasPermission = false
                 DispatchQueue.main.async {
                     self.isLoading(false)
                 }
+            case .restricted, .denied:
+                self.alertLocationAccessNeeded()
             case .authorizedAlways, .authorizedWhenInUse:
                 hasPermission = true
+//                 DispatchQueue.main.async {
+//                           self.showActivityIndicator()
+//                }
             @unknown default:
                 fatalError()
             }
         } else {
             hasPermission = false
         }
-
         return hasPermission
     }
-
     private func showOfflinePage() {
         DispatchQueue.main.async {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

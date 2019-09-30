@@ -166,7 +166,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chef-512" translatesAutoresizingMaskIntoConstraints="NO" id="yfe-8z-8pW">
-                                <rect key="frame" x="16" y="89" width="343" height="242"/>
+                                <rect key="frame" x="16" y="59" width="343" height="242"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="242" id="ffx-Wt-wbn"/>
                                 </constraints>
@@ -215,7 +215,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FJm-Jn-wRO" firstAttribute="bottom" secondItem="8SC-RU-37a" secondAttribute="bottom" constant="100" id="39m-H9-t7V"/>
-                            <constraint firstItem="yfe-8z-8pW" firstAttribute="top" secondItem="FJm-Jn-wRO" secondAttribute="top" constant="45" id="TKK-tq-0vx"/>
+                            <constraint firstItem="yfe-8z-8pW" firstAttribute="top" secondItem="FJm-Jn-wRO" secondAttribute="top" constant="15" id="TKK-tq-0vx"/>
                             <constraint firstItem="yfe-8z-8pW" firstAttribute="leading" secondItem="FJm-Jn-wRO" secondAttribute="leading" constant="16" id="Z1T-3Q-xB2"/>
                             <constraint firstItem="8SC-RU-37a" firstAttribute="leading" secondItem="FJm-Jn-wRO" secondAttribute="leading" constant="40" id="q9i-yN-bSW"/>
                             <constraint firstItem="FJm-Jn-wRO" firstAttribute="trailing" secondItem="8SC-RU-37a" secondAttribute="trailing" constant="40" id="rYJ-9n-zwl"/>
@@ -411,6 +411,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oLi-VC-dhC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.99861580130000005" green="0.039089243859999998" blue="0.00063127692560000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -26,7 +26,9 @@ class SplashViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setUpVideo()
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
     func setupElements() {
         Utilities.styleFilledButton(signUpButton)
         Utilities.styleHollowButton(loginButton)

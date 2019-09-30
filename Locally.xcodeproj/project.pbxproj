@@ -11,6 +11,7 @@
 		4707E88F22F724900086E965 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707E88E22F724900086E965 /* UIViewExtension.swift */; };
 		470D6389231A616A0065783C /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470D6388231A616A0065783C /* ShadowView.swift */; };
 		470E421E231BD209004306FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 470E421D231BD209004306FD /* Assets.xcassets */; };
+		470F2A072342298E00544AF0 /* UIActivityIndicatorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F2A062342298E00544AF0 /* UIActivityIndicatorExtension.swift */; };
 		4714CA9923361BBA0017FF53 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714CA9823361BBA0017FF53 /* SignUpViewController.swift */; };
 		4717EBED23361FF900745478 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717EBEC23361FF900745478 /* Utilities.swift */; };
 		4717EBF02336232E00745478 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717EBEF2336232E00745478 /* SplashViewController.swift */; };
@@ -82,6 +83,7 @@
 		4707E88E22F724900086E965 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		470D6388231A616A0065783C /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		470E421D231BD209004306FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		470F2A062342298E00544AF0 /* UIActivityIndicatorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorExtension.swift; sourceTree = "<group>"; };
 		4714CA9823361BBA0017FF53 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4717EBEC23361FF900745478 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		4717EBEF2336232E00745478 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 				47E080F022F1DCE300541192 /* UIButtonExtension.swift */,
 				4707E88E22F724900086E965 /* UIViewExtension.swift */,
 				4732C9DA2304572000891A08 /* UIAlertExtension.swift */,
+				470F2A062342298E00544AF0 /* UIActivityIndicatorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -950,6 +953,7 @@
 				4714CA9923361BBA0017FF53 /* SignUpViewController.swift in Sources */,
 				4749A71122F5772B009E14CB /* SettingsTableViewController.swift in Sources */,
 				47FBF1ED22DDE86800CB8C9F /* ProfileViewController.swift in Sources */,
+				470F2A072342298E00544AF0 /* UIActivityIndicatorExtension.swift in Sources */,
 				4732C9DD230464E100891A08 /* DinelineTableViewCell.swift in Sources */,
 				47F4E7C422D0E39400DFD3A1 /* DetailsFoodView.swift in Sources */,
 				478AF76322D880CA00D551C4 /* LocationViewController.swift in Sources */,

@@ -46,7 +46,9 @@ class RestaurantTableViewController: UIViewController, SkeletonTableViewDataSour
         //        print(">>>>>>>>>\(String(describing: appDelegate!.data))")
         tableView.reloadData()
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        self.isLoading(true)
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("did appear")

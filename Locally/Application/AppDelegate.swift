@@ -68,8 +68,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self?.loadBusinesses(with: location.coordinate)
             case .failure(let error):
                 assertionFailure("Error getting the users location \(error)")
-                let alert = UIAlertController(title: error.localizedDescription, message: "", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: error.localizedDescription, message: "Error getting your location! Please allow location permission of Locally", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self?.window.rootViewController?.present(alert, animated: true, completion: nil)
             }
         }
         switch locationService.status {

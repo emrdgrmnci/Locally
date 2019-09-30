@@ -21,6 +21,7 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = false
         setupTextFieldPlaceholders()
         setupElements()
     }

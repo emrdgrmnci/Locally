@@ -28,6 +28,5 @@ import UIKit
 
     @IBAction func denyAction(_ sender: UIButton) {
         didTapDeny?()
-
     }
 }
