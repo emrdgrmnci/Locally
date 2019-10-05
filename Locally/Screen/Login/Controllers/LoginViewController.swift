@@ -75,7 +75,7 @@ class LoginViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                 DispatchQueue.main.async(execute: {
                     self.present(alert, animated: true, completion: nil)
-                    self.isLoading(false)
+                    self.removeActivityIndicator()
                 })
             }
         }
@@ -86,6 +86,6 @@ class LoginViewController: UIViewController {
         UserDefaults.standard.set(emailTextField.text, forKey: "email")
         UserDefaults.standard.set(passwordTextField.text, forKey: "password")
         signInUser(email: emailTextField!.text!, password: passwordTextField!.text!)
-        self.isLoading(true)
+        self.showActivityIndicator(onView: view)
     }
 }

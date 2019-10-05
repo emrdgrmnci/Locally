@@ -18,6 +18,7 @@
 		4732C9DB2304572000891A08 /* UIAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4732C9DA2304572000891A08 /* UIAlertExtension.swift */; };
 		4732C9DD230464E100891A08 /* DinelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4732C9DC230464E100891A08 /* DinelineTableViewCell.swift */; };
 		4749A71122F5772B009E14CB /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749A71022F5772B009E14CB /* SettingsTableViewController.swift */; };
+		4774327223491D4F00E40F71 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4774327123491D4F00E40F71 /* UITableViewExtension.swift */; };
 		4781074A22F72B7C00EDEC7F /* Animations.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4781074922F72B7C00EDEC7F /* Animations.bundle */; };
 		478861E022F74B04001CA421 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478861DF22F74B04001CA421 /* Constants.swift */; };
 		4789E4172316A94500319730 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4789E4162316A94500319730 /* RatingViewController.swift */; };
@@ -90,6 +91,7 @@
 		4732C9DA2304572000891A08 /* UIAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertExtension.swift; sourceTree = "<group>"; };
 		4732C9DC230464E100891A08 /* DinelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinelineTableViewCell.swift; sourceTree = "<group>"; };
 		4749A71022F5772B009E14CB /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = "../New Group/SettingsTableViewController.swift"; sourceTree = "<group>"; };
+		4774327123491D4F00E40F71 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		4781074922F72B7C00EDEC7F /* Animations.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Animations.bundle; sourceTree = "<group>"; };
 		478861DF22F74B04001CA421 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
 		4789E4162316A94500319730 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 				4707E88E22F724900086E965 /* UIViewExtension.swift */,
 				4732C9DA2304572000891A08 /* UIAlertExtension.swift */,
 				470F2A062342298E00544AF0 /* UIActivityIndicatorExtension.swift */,
+				4774327123491D4F00E40F71 /* UITableViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -943,6 +946,7 @@
 				4717EBF02336232E00745478 /* SplashViewController.swift in Sources */,
 				47F4E79522D0CCB900DFD3A1 /* Locally.xcdatamodeld in Sources */,
 				47F234CA2338BF3A00D3BDA6 /* SwitchTableViewCell.swift in Sources */,
+				4774327223491D4F00E40F71 /* UITableViewExtension.swift in Sources */,
 				47F234CD2338C45F00D3BDA6 /* FiltersViewController.swift in Sources */,
 				470D6389231A616A0065783C /* ShadowView.swift in Sources */,
 				47F4E78F22D0CCB900DFD3A1 /* LoginViewController.swift in Sources */,

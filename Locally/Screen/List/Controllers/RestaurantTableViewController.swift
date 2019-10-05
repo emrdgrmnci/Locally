@@ -43,16 +43,22 @@ class RestaurantTableViewController: UIViewController, SkeletonTableViewDataSour
         NetworkManager.isUnreachable { _ in
             self.showOfflinePage()
         }
+        if appDelegate?.data?.count == 0 {
+                   tableView.setEmptyView(title: "There are no restaurants in your current location.", message: "Please change your location and try again!")
+               }
         //        print(">>>>>>>>>\(String(describing: appDelegate!.data))")
         tableView.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.isLoading(true)
+        self.showActivityIndicator(onView: view)
+        if appDelegate?.data?.count == 0 {
+            tableView.setEmptyView(title: "There are no restaurants in your current location.", message: "Please change your location and try again!")
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("did appear")
-        self.isLoading(false)
+        self.removeActivityIndicator()
         tableView.reloadData()
         tableView.dataSource = self
         tableView.delegate = self
@@ -95,8 +101,11 @@ class RestaurantTableViewController: UIViewController, SkeletonTableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("number of rows ----------------------- \(String(describing: viewModels.count))")
+        print("number of rows \(String(describing: viewModels.count))")
         print(viewModels)
+        if appDelegate?.data?.count == 0 {
+            self.tableView.setEmptyView(title: "There are no restaurants in your current location.", message: "Please change your location and try again!")
+        }
         return appDelegate!.data?.count ?? 0
     }
 

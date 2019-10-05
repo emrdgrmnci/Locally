@@ -1,6 +1,7 @@
 disabled_rules: # rule identifiers to exclude from running
   - line_length
   - force_cast
+  - trailing_whitespace
 identifier_name:
   min_length: 1 # only min_length
   error: 4 # only error

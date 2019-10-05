@@ -55,7 +55,7 @@ class ProfileViewController: UIViewController {
         self.view.hideSkeleton()
     }
     override func viewDidDisappear(_ animated: Bool) {
-        self.isLoading(false)
+        self.removeActivityIndicator()
     }
     func getData() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

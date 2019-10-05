@@ -37,7 +37,7 @@ class LocationViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                 switch action.style {
                 case .default: UIApplication.shared.openURL(NSURL(string: UIApplication.openSettingsURLString)! as URL)
-                self.isLoading(false)
+                self.removeActivityIndicator()
                 case .cancel: print("cancel")
                 case .destructive: print("destructive")
                 }
@@ -50,7 +50,7 @@ class LocationViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if hasLocationPermission() {
             DispatchQueue.main.async {
-                self.isLoading(false)
+                self.removeActivityIndicator()
                 let tab = self.storyboard!
                     .instantiateViewController(withIdentifier: "TabbarController") as? UITabBarController
                 tab!.modalPresentationStyle = .fullScreen
@@ -83,7 +83,7 @@ class LocationViewController: UIViewController {
             case .notDetermined:
                 hasPermission = false
                 DispatchQueue.main.async {
-                    self.isLoading(false)
+                    self.removeActivityIndicator()
                 }
             case .restricted, .denied:
                 self.alertLocationAccessNeeded()
