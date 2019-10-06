@@ -15,7 +15,7 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     let window = UIWindow()
     let network = NetworkManager.sharedInstance
     let locationService = LocationService()
@@ -28,25 +28,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let locationManager = CLLocationManager()
     var data: [RestaurantListViewModel]?
     var restaurant = RestaurantTableViewController()
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+        
         // MARK: - IQKeyboardMangaer
         IQKeyboardManager.shared.enable = true
-
+        
         // MARK: - Firebase
         FirebaseApp.configure()
-
-//        let currentUser = Auth.auth().currentUser
-//        if currentUser != nil {
-//            let tabBar = storyboard.instantiateViewController(withIdentifier: "TabbarController") as! UITabBarController
-//            window.rootViewController = tabBar
-//        }
-
+        
+        //        let currentUser = Auth.auth().currentUser
+        //        if currentUser != nil {
+        //            let tabBar = storyboard.instantiateViewController(withIdentifier: "TabbarController") as! UITabBarController
+        //            window.rootViewController = tabBar
+        //        }
+        
         NetworkManager.isUnreachable { _ in
             showOfflinePage()
         }
-
+        
         func showOfflinePage() {
             DispatchQueue.main.async {
                 let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -54,9 +54,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window.rootViewController = initialViewController
             }
         }
-
+        
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-
+        
         locationService.didChangeStatus = { [weak self] success in
             if success {
                 self?.locationService.getLocation()
@@ -91,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             (nav?.topViewController as? RestaurantTableViewController)?.delegate = self
         }
         window.makeKeyAndVisible()
-
+        
         return true
     }
     private func loadDetails(for viewController: UIViewController, with id: String) {
@@ -140,7 +140,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-
+                
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.

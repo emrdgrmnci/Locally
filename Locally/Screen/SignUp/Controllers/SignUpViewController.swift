@@ -25,6 +25,7 @@ class SignUpViewController: UIViewController {
         setupTextFieldPlaceholders()
         setupElements()
     }
+
     func setupTextFieldPlaceholders() {
         let iVar = class_getInstanceVariable(UITextField.self, "_placeholderLabel")!
         let placeholderLabelName = object_getIvar(firstNameTextField, iVar) as! UILabel
@@ -36,6 +37,7 @@ class SignUpViewController: UIViewController {
         let placeholderLabelPassword = object_getIvar(passwordTextField, iVar) as! UILabel
         placeholderLabelPassword.textColor = .red
     }
+    
     func setupElements() {
         //Hide the error label
         errorLabel.alpha = 0
@@ -104,7 +106,7 @@ class SignUpViewController: UIViewController {
                         }
                     }
                     //Transition to the home screen
-                    self.trasitionToHome()
+                    self.transitionToLocationView()
                 }
             }
 
@@ -116,7 +118,7 @@ class SignUpViewController: UIViewController {
         errorLabel.alpha = 1
     }
 
-    func trasitionToHome() {
+    func transitionToLocationView() {
         let locationViewController = storyboard?.instantiateViewController(withIdentifier: "LocationViewController") as? LocationViewController
 
         view.window?.rootViewController = locationViewController
