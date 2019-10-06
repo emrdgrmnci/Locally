@@ -8,6 +8,7 @@ https://youtu.be/YteVGgByczw
 <h3>Here are the screens</h3>
 <img src="LocallyScreens.png" width="650" height= "1100" align= "left"/>&nbsp;
 <p>
+  
 ### ABOUT
 Hungry? <b>Locally</b> is restaurant viewing app that show delicious restaurants from your location. Locally shows local restaurants near of you! 
 
