@@ -1,4 +1,4 @@
-<img src="locallyLogo.png" width="220" style="max-width:100%;"/>&nbsp;  
+<img src="/ScreenImages/locallyLogo.png" width="220" style="max-width:100%;"/>&nbsp;  
 # RESTAURANT VIEWING APP [![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)]() [![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)]()
 
 If you want to see the full screen flow in video, you can check this link: 
@@ -27,7 +27,7 @@ Show your restaurant reviews to other users.
 <li>Firebase email login & Authentication</li>
 <li>Firebase backend (full realtime actions)</li>
 <li>Used <a href="https://github.com/hackiftekhar/IQKeyboardManager">IQKeyboardManager</a> keyboard manager for textfields.
-<li>Used <a href="https://github.com/Moya/Moya">MOYA</a> for network call.
+<li>Used <a href="https://github.com/Moya/Moya">Moya</a> for network call.
 <li>Used <a href="https://github.com/airbnb/lottie-ios">Lottie</a> for animations.
 <li>Used <a href="https://github.com/realm/SwiftLint">SwiftLint</a> for enforce Swift style and conventions.
 <li>Deployment target: iOS 11.2+</li>
