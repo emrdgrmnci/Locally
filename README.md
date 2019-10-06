@@ -1,5 +1,5 @@
 # Locally
-# FOOD DELIVERY APP [![Swift](https://img.shields.io/badge/Swift-4.0-orange.svg)]() [![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)]()
+# RESTAURANT VIEWING APP [![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)]() [![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)]()
 
 This project is about viewing restaurants where you are currently locating.
 
@@ -8,7 +8,7 @@ https://youtu.be/YteVGgByczw
 
 <h3>Here are the screens</h3>
 <img src="LocallyScreens.png" width="650" height= "1100" align= "left"/>&nbsp;
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   
 ### ABOUT
 Hungry? <b>Locally</b> is restaurant viewing app that show delicious restaurants from your location. Locally shows local restaurants near of you! 
