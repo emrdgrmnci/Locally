@@ -46,10 +46,9 @@ class Utilities {
     }
 
     static func isPasswordValid(_ password : String) -> Bool {
-
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+        let passwordRegex = "(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}" //same as Obj-C
+        let passwordTest = NSPredicate(format:"SELF MATCHES %@", passwordRegex)
         return passwordTest.evaluate(with: password)
     }
-
 }
 

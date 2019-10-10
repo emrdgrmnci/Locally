@@ -28,6 +28,10 @@ class SignUpViewController: UIViewController {
         lastNameTextField.delegate = self
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        self.showActivityIndicator(onView: view)
+    }
+
     func setupTextFieldPlaceholders() {
         let iVar = class_getInstanceVariable(UITextField.self, "_placeholderLabel")!
         let placeholderLabelName = object_getIvar(firstNameTextField, iVar) as! UILabel
@@ -111,6 +115,7 @@ class SignUpViewController: UIViewController {
                     self.transitionToLocationView()
                 }
             }
+            self.showActivityIndicator(onView: view)
 
         }
     }
