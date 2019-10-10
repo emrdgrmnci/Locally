@@ -112,11 +112,10 @@ class SignUpViewController: UIViewController {
                         }
                     }
                     //Transition to the home screen
-                    self.transitionToLocationView()
+                    self.transitionToLoginView()
                 }
             }
             self.showActivityIndicator(onView: view)
-
         }
     }
 
@@ -125,10 +124,9 @@ class SignUpViewController: UIViewController {
         errorLabel.alpha = 1
     }
 
-    func transitionToLocationView() {
-        let locationViewController = storyboard?.instantiateViewController(withIdentifier: "LocationViewController") as? LocationViewController
-
-        view.window?.rootViewController = locationViewController
+    func transitionToLoginView() {
+        let loginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
+        view.window?.rootViewController = loginViewController
         view.window?.makeKeyAndVisible()
     }
 }

@@ -21,9 +21,9 @@ extension UIViewController {
         let logoutButton = UIAlertAction(title: "Log out", style: UIAlertAction.Style.default, handler: {(_: UIAlertAction!) in
             //            self.performSegue(withIdentifier: "logoutSegue", sender: nil)
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let loginVC: UIViewController = (mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController)!
-            loginVC.modalPresentationStyle = .fullScreen
-            self.present(loginVC, animated: true, completion: nil)
+            let splashVC: UIViewController = (mainStoryboard.instantiateViewController(withIdentifier: "SplashViewController") as? SplashViewController)!
+            splashVC.modalPresentationStyle = .fullScreen
+            self.present(splashVC, animated: true, completion: nil)
         })
         alert.addAction(cancelButton)
         alert.addAction(logoutButton)

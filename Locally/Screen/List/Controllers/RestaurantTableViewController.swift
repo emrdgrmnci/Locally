@@ -50,7 +50,7 @@ class RestaurantTableViewController: UIViewController, SkeletonTableViewDataSour
         tableView.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.showActivityIndicator(onView: view)
+//        self.showActivityIndicator(onView: view)
         if appDelegate?.data?.count == 0 {
             tableView.setEmptyView(title: "There are no restaurants in your current location.", message: "Please change your location and try again!")
         }

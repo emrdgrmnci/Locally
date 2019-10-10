@@ -254,6 +254,10 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
                                     self.collectionImageView.image = UIImage(named: "placeholder")
                                     //                                    self.tabBarController?.selectedIndex = 1
                                 }
+                                //TODO: Add Activity Indicator for adding photo to profile view controller
+//                                DispatchQueue.main.async {
+//                                    self.showActivityIndicator(onView: self.view)
+//                                }
                             })
                         }
                     })

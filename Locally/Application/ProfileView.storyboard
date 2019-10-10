@@ -129,7 +129,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nqn-UM-1WD">
-                                <rect key="frame" x="0.0" y="280" width="115" height="30"/>
+                                <rect key="frame" x="0.0" y="300" width="115" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -290,7 +290,7 @@
                             <constraint firstItem="oKw-8R-Qrc" firstAttribute="top" secondItem="MMx-za-vXu" secondAttribute="top" id="JWO-Z1-B2T"/>
                             <constraint firstItem="yq9-Ro-7tO" firstAttribute="leading" secondItem="oKw-8R-Qrc" secondAttribute="trailing" constant="20" id="Mog-Ee-OSE"/>
                             <constraint firstItem="c3s-Vw-85q" firstAttribute="leading" secondItem="MMx-za-vXu" secondAttribute="leading" id="Ng4-11-sVe"/>
-                            <constraint firstItem="nqn-UM-1WD" firstAttribute="top" secondItem="UDl-lC-sqX" secondAttribute="top" constant="280" id="aDA-GS-eN0"/>
+                            <constraint firstItem="nqn-UM-1WD" firstAttribute="top" secondItem="UDl-lC-sqX" secondAttribute="top" constant="300" id="aDA-GS-eN0"/>
                             <constraint firstItem="oKw-8R-Qrc" firstAttribute="leading" secondItem="MMx-za-vXu" secondAttribute="leading" constant="-240" id="ag6-mu-EsI"/>
                             <constraint firstItem="MMx-za-vXu" firstAttribute="trailing" secondItem="tPe-gV-19b" secondAttribute="trailing" id="b3a-lk-Zvm"/>
                             <constraint firstItem="oKw-8R-Qrc" firstAttribute="bottom" secondItem="MMx-za-vXu" secondAttribute="bottom" id="bG1-G8-sel"/>
