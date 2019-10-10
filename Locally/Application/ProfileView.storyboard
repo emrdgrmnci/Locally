@@ -84,10 +84,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="tPe-gV-19b">
-                                <rect key="frame" x="0.0" y="251.5" width="414" height="45.5"/>
+                                <rect key="frame" x="0.0" y="251.5" width="414" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXn-FY-Zwg">
-                                        <rect key="frame" x="0.0" y="0.0" width="85" height="45.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="85" height="30"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
                                         <state key="normal" title="Dineline">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -97,7 +97,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lx0-GV-M23">
-                                        <rect key="frame" x="110" y="0.0" width="84.5" height="45.5"/>
+                                        <rect key="frame" x="110" y="0.0" width="84.5" height="30"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
                                         <state key="normal" title="Reviews">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -107,7 +107,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPF-l4-Fbx">
-                                        <rect key="frame" x="219.5" y="0.0" width="85" height="45.5"/>
+                                        <rect key="frame" x="219.5" y="0.0" width="85" height="30"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
                                         <state key="normal" title="Photos">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -117,7 +117,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUh-rD-FEf">
-                                        <rect key="frame" x="329.5" y="0.0" width="84.5" height="45.5"/>
+                                        <rect key="frame" x="329.5" y="0.0" width="84.5" height="30"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="12"/>
                                         <state key="normal" title="Been There">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -129,7 +129,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nqn-UM-1WD">
-                                <rect key="frame" x="0.0" y="305" width="115" height="10"/>
+                                <rect key="frame" x="0.0" y="280" width="115" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -146,7 +146,7 @@
                                 </constraints>
                             </containerView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Fdh-Ad-rhK">
-                                <rect key="frame" x="90" y="782" width="230" height="36"/>
+                                <rect key="frame" x="60" y="782" width="230" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHf-AT-sXC">
                                         <rect key="frame" x="0.0" y="0.0" width="103" height="36"/>
@@ -282,16 +282,15 @@
                             <constraint firstItem="tPe-gV-19b" firstAttribute="leading" secondItem="UDl-lC-sqX" secondAttribute="leading" id="6Zk-XR-Rm6"/>
                             <constraint firstItem="MMx-za-vXu" firstAttribute="trailing" secondItem="nqn-UM-1WD" secondAttribute="trailing" constant="299" id="7xE-zt-wkB"/>
                             <constraint firstItem="yq9-Ro-7tO" firstAttribute="top" secondItem="MMx-za-vXu" secondAttribute="top" constant="15" id="9Pi-1v-nA8"/>
-                            <constraint firstItem="Eld-tj-Llp" firstAttribute="top" secondItem="nqn-UM-1WD" secondAttribute="bottom" constant="8" symbolic="YES" id="B7Q-u6-mpS"/>
-                            <constraint firstItem="nqn-UM-1WD" firstAttribute="top" secondItem="tPe-gV-19b" secondAttribute="bottom" constant="8" id="Ez7-xu-QVT"/>
+                            <constraint firstItem="Eld-tj-Llp" firstAttribute="top" secondItem="nqn-UM-1WD" secondAttribute="bottom" constant="13" id="B7Q-u6-mpS"/>
                             <constraint firstItem="Eld-tj-Llp" firstAttribute="leading" secondItem="MMx-za-vXu" secondAttribute="leading" id="G8X-o2-lmu"/>
                             <constraint firstItem="sq1-jm-LDa" firstAttribute="top" secondItem="yq9-Ro-7tO" secondAttribute="bottom" id="Gwc-Ls-nRK"/>
-                            <constraint firstItem="Fdh-Ad-rhK" firstAttribute="leading" secondItem="oKw-8R-Qrc" secondAttribute="trailing" constant="90" id="I62-m5-tDT"/>
+                            <constraint firstItem="Fdh-Ad-rhK" firstAttribute="leading" secondItem="oKw-8R-Qrc" secondAttribute="trailing" constant="60" id="I62-m5-tDT"/>
                             <constraint firstAttribute="trailing" secondItem="Eld-tj-Llp" secondAttribute="trailing" id="J1g-YV-FLw"/>
                             <constraint firstItem="oKw-8R-Qrc" firstAttribute="top" secondItem="MMx-za-vXu" secondAttribute="top" id="JWO-Z1-B2T"/>
                             <constraint firstItem="yq9-Ro-7tO" firstAttribute="leading" secondItem="oKw-8R-Qrc" secondAttribute="trailing" constant="20" id="Mog-Ee-OSE"/>
                             <constraint firstItem="c3s-Vw-85q" firstAttribute="leading" secondItem="MMx-za-vXu" secondAttribute="leading" id="Ng4-11-sVe"/>
-                            <constraint firstItem="nqn-UM-1WD" firstAttribute="top" secondItem="UDl-lC-sqX" secondAttribute="top" constant="305" id="aDA-GS-eN0"/>
+                            <constraint firstItem="nqn-UM-1WD" firstAttribute="top" secondItem="UDl-lC-sqX" secondAttribute="top" constant="280" id="aDA-GS-eN0"/>
                             <constraint firstItem="oKw-8R-Qrc" firstAttribute="leading" secondItem="MMx-za-vXu" secondAttribute="leading" constant="-240" id="ag6-mu-EsI"/>
                             <constraint firstItem="MMx-za-vXu" firstAttribute="trailing" secondItem="tPe-gV-19b" secondAttribute="trailing" id="b3a-lk-Zvm"/>
                             <constraint firstItem="oKw-8R-Qrc" firstAttribute="bottom" secondItem="MMx-za-vXu" secondAttribute="bottom" id="bG1-G8-sel"/>
@@ -300,7 +299,7 @@
                             <constraint firstItem="nqn-UM-1WD" firstAttribute="leading" secondItem="tPe-gV-19b" secondAttribute="leading" id="e52-us-Zj1"/>
                             <constraint firstItem="Fdh-Ad-rhK" firstAttribute="top" secondItem="Eld-tj-Llp" secondAttribute="bottom" constant="-3" id="m8e-wB-FvS"/>
                             <constraint firstItem="sq1-jm-LDa" firstAttribute="leading" secondItem="MMx-za-vXu" secondAttribute="leading" id="nTP-B0-sxJ"/>
-                            <constraint firstItem="c3s-Vw-85q" firstAttribute="top" secondItem="nqn-UM-1WD" secondAttribute="bottom" id="pbs-qS-76y"/>
+                            <constraint firstItem="c3s-Vw-85q" firstAttribute="top" secondItem="nqn-UM-1WD" secondAttribute="bottom" constant="5" id="pbs-qS-76y"/>
                             <constraint firstItem="MMx-za-vXu" firstAttribute="trailing" secondItem="c3s-Vw-85q" secondAttribute="trailing" id="tGx-8q-U6H"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MMx-za-vXu"/>
