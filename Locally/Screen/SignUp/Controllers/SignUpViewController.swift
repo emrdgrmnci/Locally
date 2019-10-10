@@ -24,6 +24,8 @@ class SignUpViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         setupTextFieldPlaceholders()
         setupElements()
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
     }
 
     func setupTextFieldPlaceholders() {
@@ -123,5 +125,19 @@ class SignUpViewController: UIViewController {
 
         view.window?.rootViewController = locationViewController
         view.window?.makeKeyAndVisible()
+    }
+}
+
+extension SignUpViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: ".*[^A-Za-z ].*", options: [])
+            if regex.firstMatch(in: string, options: [], range: NSMakeRange(0, string.count)) != nil {
+                return false
+            } }
+        catch {
+            self.makeAlert(titleInput: "Character Warning!", messageInput: "An error ocurred when filling in the name and surname fields")
+        }
+        return true
     }
 }
