@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftMessages
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
@@ -68,6 +69,7 @@ class LoginViewController: UIViewController {
             if error == nil {
                 print("User signed in")
                 self.performSegue(withIdentifier: "loginToLocation", sender: self)
+                self.showStatusLine("Logged in successfully!")
             } else {
                 print(error ?? "error")
                 print(error?.localizedDescription ?? "error")
@@ -80,6 +82,12 @@ class LoginViewController: UIViewController {
             }
         }
     }
+
+    func showStatusLine(_ message: String) {
+          let view: MessageView = try! SwiftMessages.viewFromNib(named: "StatusLine")
+          SwiftMessages.show(view: view)
+          view.bodyLabel?.text = message
+      }
 
     @IBAction func signInButtonTapped(_ sender: Any) {
         // MARK: - UserDefaults

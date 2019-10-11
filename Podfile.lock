@@ -133,6 +133,9 @@ PODS:
   - SDWebImage/Core (5.0.6)
   - SkeletonView (1.7)
   - SwiftLint (0.33.1)
+  - SwiftMessages (7.0.1):
+    - SwiftMessages/App (= 7.0.1)
+  - SwiftMessages/App (7.0.1)
 
 DEPENDENCIES:
   - AlamofireImage
@@ -148,9 +151,10 @@ DEPENDENCIES:
   - SDWebImage (~> 5.0)
   - SkeletonView
   - SwiftLint
+  - SwiftMessages
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireImage
     - BoringSSL-GRPC
@@ -179,6 +183,8 @@ SPEC REPOS:
     - SDWebImage
     - SkeletonView
     - SwiftLint
+  trunk:
+    - SwiftMessages
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
@@ -209,7 +215,8 @@ SPEC CHECKSUMS:
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SkeletonView: 7d7378731b708f8a6e6b1ffefb68cc3903f10a03
   SwiftLint: 9fc1143bbacec37f94994a7d0d2a85b2154b6294
+  SwiftMessages: b577dc7043be8b299857ab35bb663dbff6483bd0
 
-PODFILE CHECKSUM: a006f6d0953573c30303c292cac62ecbea1cadde
+PODFILE CHECKSUM: 4a40fb2b6629d8d13c307b337b2eb56bc1cc3b70
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.3

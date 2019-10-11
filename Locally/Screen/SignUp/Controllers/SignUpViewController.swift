@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import SwiftMessages
 
 class SignUpViewController: UIViewController {
 
@@ -100,6 +101,7 @@ class SignUpViewController: UIViewController {
 
                     //There was an error creting the user
                     self.showError("Error creating user")
+                    self.showStatusLine("Error creating user")
                 } else {
                     //User was created successfully, now store the first name and last name
                     let db = Firestore.firestore()
@@ -109,6 +111,7 @@ class SignUpViewController: UIViewController {
                         if error != nil {
                             //Show error message
                             self.showError("Error saving user data")
+                            self.showStatusLine("Error saving user data")
                         }
                     }
                     //Transition to the home screen
@@ -116,10 +119,11 @@ class SignUpViewController: UIViewController {
                 }
             }
             self.showActivityIndicator(onView: view)
+            self.showStatusLine("You have signed up successfully!")
         }
     }
 
-    func showError(_ message:String) {
+    func showError(_ message: String) {
         errorLabel.text = message
         errorLabel.alpha = 1
     }
@@ -128,6 +132,13 @@ class SignUpViewController: UIViewController {
         let loginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
         view.window?.rootViewController = loginViewController
         view.window?.makeKeyAndVisible()
+    }
+
+    func showStatusLine(_ message: String) {
+        let view: MessageView = try! SwiftMessages.viewFromNib(named: "StatusLine")
+        SwiftMessages.show(view: view)
+        view.bodyLabel?.textColor = .green
+        view.bodyLabel?.text = message
     }
 }
 

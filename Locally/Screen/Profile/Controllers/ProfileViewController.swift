@@ -48,6 +48,7 @@ class ProfileViewController: UIViewController {
         dinelineTableView.dataSource = self
 
         getUserDetails()
+        print("USER DETAILS: ----- \(getUserDetails())")
         getData()
         getDataFromFirestore()
     }
@@ -82,6 +83,8 @@ class ProfileViewController: UIViewController {
         if Auth.auth().currentUser != nil {
             guard let email = Auth.auth().currentUser?.email else {return}
             userEmailLabel.text = email
+            guard let name = Auth.auth().currentUser?.displayName else {return}
+            userNameLabel.text = name
         }
         guard let exposedLocation = self.locationService.exposedLocation else {
             print("*** Error in \(#function): exposedLocation is nil")
@@ -131,6 +134,8 @@ class ProfileViewController: UIViewController {
                         }
                     }
                     self.dinelineTableView.reloadData()
+                } else {
+                    self.dinelineTableView.setEmptyView(title: "Add review to your visited restaurants!", message: "You have not any review yet!")
                 }
             }
         }
@@ -143,8 +148,6 @@ class ProfileViewController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.movingView.frame.origin.x = newx
         }
-        //        let dineline = UIImage(named: "dineline")!
-        //        self.collectionImageView.image = dineline
     }
     @IBAction func reviews(_ sender: UIButton) {
         sender.shake()
@@ -154,8 +157,6 @@ class ProfileViewController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.movingView.frame.origin.x = newx
         }
-        //        let review = UIImage(named: "review")!
-        //        self.collectionImageView.image = review
     }
     @IBAction func photos(_ sender: UIButton) {
         sender.shake()
@@ -165,9 +166,8 @@ class ProfileViewController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.movingView.frame.origin.x = newx
         }
-        //        let photos = UIImage(named: "photos")!
-        //        self.collectionImageView.image = photos
     }
+
     @IBAction func beenThere(_ sender: UIButton) {
         sender.shake()
         addPhoto.isHidden = true
@@ -181,40 +181,7 @@ class ProfileViewController: UIViewController {
             self.collectionImageView.image = beenthere
         }
     }
-}
-extension ProfileViewController: UITableViewDelegate, SkeletonTableViewDataSource {
-    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
-        return "dinelineCell"
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 115
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userEmail.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dinelineCell", for: indexPath) as! DinelineTableViewCell
-        cell.userEmailLabel.text = userEmail[indexPath.row]
-        cell.likeLabel.text = String(likes[indexPath.row])
-        cell.commentLabel.text = "Burası çok güzel!"
-        cell.restaurantImageView.sd_setImage(with: URL(string: self.restaurantImage[indexPath.row]))
-        cell.documentIdLabel.text = documentIDs[indexPath.row]
-        return cell
-    }
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        do {
-    //            try Auth.auth().signOut()
-    //            performSegue(withIdentifier: "logoutSegue", sender: nil)
-    //        } catch {
-    //            print("Log out error!")
-    //        }
-    //    }
-}
-extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        collectionImageView.image = info[.originalImage] as? UIImage
-        imagePicker.dismiss(animated: true, completion: nil)
-    }
+
     @IBAction func addPhoto(_ sender: Any) {
         imagePicker =  UIImagePickerController()
         imagePicker.delegate = self
@@ -223,6 +190,7 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
         imagePicker.modalPresentationStyle = .fullScreen
         present(imagePicker, animated: true, completion: nil)
     }
+
     @IBAction func savePhoto(_ sender: Any) {
         let storage = Storage.storage()
         let storageReference = storage.reference()
@@ -255,9 +223,9 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
                                     //                                    self.tabBarController?.selectedIndex = 1
                                 }
                                 //TODO: Add Activity Indicator for adding photo to profile view controller
-//                                DispatchQueue.main.async {
-//                                    self.showActivityIndicator(onView: self.view)
-//                                }
+                                //                                DispatchQueue.main.async {
+                                //                                    self.showActivityIndicator(onView: self.view)
+                                //                                }
                             })
                         }
                     })
@@ -265,22 +233,37 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
             }
 
         }
-        //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        //        let context = appDelegate.persistentContainer.viewContext
-        //        let data = (collectionImageView?.image)!.pngData() //.jpegData(compressionQuality: 0.5)
-        //        let newUser = NSEntityDescription.insertNewObject(forEntityName: "LocalData", into: context)
-        //        newUser.setValue(data, forKey: "image")
-        //        do {
-        //            try context.save()
-        //            print("success")
-        //        } catch {
-        //            print("error")
-        //        }
     }
 }
-extension UITableView {
-    //Hides the empty cells at the bottom of the table view.
-    func hideEmptyCellsFooter() {
-        tableFooterView = UIView()
+
+extension ProfileViewController: UITableViewDelegate, SkeletonTableViewDataSource {
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return "dinelineCell"
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 115
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return userEmail.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dinelineCell", for: indexPath) as! DinelineTableViewCell
+        cell.userEmailLabel.text = userEmail[indexPath.row]
+        cell.likeLabel.text = String(likes[indexPath.row])
+        cell.commentLabel.text = "Burası çok güzel!"
+        cell.restaurantImageView.sd_setImage(with: URL(string: self.restaurantImage[indexPath.row]))
+        cell.documentIdLabel.text = documentIDs[indexPath.row]
+        return cell
     }
 }
+
+extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        collectionImageView.image = info[.originalImage] as? UIImage
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+}
+

@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
- #platform :ios, '12.0'
+ platform :ios, '12.0'
 
 target 'Locally' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -19,6 +19,7 @@ pod 'lottie-ios'
 pod 'SwiftLint'
 pod 'SDWebImage', '~> 5.0'
 pod "SkeletonView"
+pod 'SwiftMessages'
 target 'LocallyTests' do
     inherit! :search_paths
     # Pods for testing

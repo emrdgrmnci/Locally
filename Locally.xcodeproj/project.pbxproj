@@ -12,6 +12,7 @@
 		470D6389231A616A0065783C /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470D6388231A616A0065783C /* ShadowView.swift */; };
 		470E421E231BD209004306FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 470E421D231BD209004306FD /* Assets.xcassets */; };
 		470F2A072342298E00544AF0 /* UIActivityIndicatorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F2A062342298E00544AF0 /* UIActivityIndicatorExtension.swift */; };
+		47129B3D2350B5DD00F7CBEA /* StatusLine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47129B3C2350B5DD00F7CBEA /* StatusLine.xib */; };
 		4714CA9923361BBA0017FF53 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4714CA9823361BBA0017FF53 /* SignUpViewController.swift */; };
 		4717EBED23361FF900745478 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717EBEC23361FF900745478 /* Utilities.swift */; };
 		4717EBF02336232E00745478 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717EBEF2336232E00745478 /* SplashViewController.swift */; };
@@ -85,6 +86,7 @@
 		470D6388231A616A0065783C /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		470E421D231BD209004306FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		470F2A062342298E00544AF0 /* UIActivityIndicatorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActivityIndicatorExtension.swift; sourceTree = "<group>"; };
+		47129B3C2350B5DD00F7CBEA /* StatusLine.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusLine.xib; sourceTree = "<group>"; };
 		4714CA9823361BBA0017FF53 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4717EBEC23361FF900745478 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		4717EBEF2336232E00745478 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		478E55332309564A00A54595 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		47A36BC422D1FF90002571D4 /* DetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		47A6698123362C9400B55042 /* SplashNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashNavigationController.swift; sourceTree = "<group>"; };
+		47A9DA86235098C70018A3C1 /* Locally.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Locally.entitlements; sourceTree = "<group>"; };
 		47AB579022E87B4D000718FF /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B163F422D5DD0C0025EF81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		47B163F722D5E7930025EF81 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -188,9 +191,18 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		47129B3B2350B57800F7CBEA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				47129B3C2350B5DD00F7CBEA /* StatusLine.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		4714CA9723361B9F0017FF53 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				47129B3B2350B57800F7CBEA /* Views */,
 				4714CA9A23361BC10017FF53 /* Controllers */,
 			);
 			path = SignUp;
@@ -512,6 +524,7 @@
 		47F4E78B22D0CCB900DFD3A1 /* Locally */ = {
 			isa = PBXGroup;
 			children = (
+				47A9DA86235098C70018A3C1 /* Locally.entitlements */,
 				47B5702523363C7E005B4091 /* Media */,
 				4717EBEB23361FDD00745478 /* Helpers */,
 				4781074522F72B1C00EDEC7F /* Supporting Files */,
@@ -782,6 +795,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47F4E79A22D0CCBA00DFD3A1 /* LaunchScreen.storyboard in Resources */,
+				47129B3D2350B5DD00F7CBEA /* StatusLine.xib in Resources */,
 				47EDAE6B22FD971D00A55A5C /* ProfileView.storyboard in Resources */,
 				47B163F522D5DD0D0025EF81 /* GoogleService-Info.plist in Resources */,
 				4781074A22F72B7C00EDEC7F /* Animations.bundle in Resources */,
@@ -1159,6 +1173,7 @@
 			baseConfigurationReference = D76A7E641E41B13FD9AEB0BC /* Pods-Locally.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Locally/Locally.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 554X8TL4T7;
 				INFOPLIST_FILE = "$(SRCROOT)/Locally/Supporting Files/Resources/Info.plist";
@@ -1180,6 +1195,7 @@
 			baseConfigurationReference = 7B5F4023EFF53EC3B457F8CD /* Pods-Locally.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Locally/Locally.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 554X8TL4T7;
 				INFOPLIST_FILE = "$(SRCROOT)/Locally/Supporting Files/Resources/Info.plist";

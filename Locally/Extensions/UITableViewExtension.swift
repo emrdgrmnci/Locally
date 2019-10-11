@@ -39,4 +39,8 @@ extension UITableView {
         self.backgroundView = nil
         self.separatorStyle = .singleLine
     }
+        //Hides the empty cells at the bottom of the table view.
+        func hideEmptyCellsFooter() {
+            tableFooterView = UIView()
+        }
 }
