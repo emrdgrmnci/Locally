@@ -139,6 +139,7 @@ class SignUpViewController: UIViewController {
         SwiftMessages.show(view: view)
         view.bodyLabel?.textColor = .green
         view.bodyLabel?.text = message
+        
     }
 }
 
