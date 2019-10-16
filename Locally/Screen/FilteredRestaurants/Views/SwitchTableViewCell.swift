@@ -21,14 +21,14 @@ class SwitchTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        onSwitch.addTarget(self, action: "switchValueChanged", for: UIControl.Event.valueChanged)
+        onSwitch.addTarget(self, action: #selector(switchValueChanged), for: UIControl.Event.valueChanged)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 
-    func switchValueChanged() {
+    @objc func switchValueChanged() {
         delegate?.switchCell?(switchCell: self, didChangeValue: onSwitch.isOn)
     }
 
