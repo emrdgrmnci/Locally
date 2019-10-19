@@ -66,6 +66,13 @@ class RestaurantTableViewController: UIViewController, SkeletonTableViewDataSour
         self.tabBarController?.tabBar.isHidden = false
     }
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
+        // Update your user interface based on the appearance
+    }
+    
     private func showOfflinePage() {
         DispatchQueue.main.async {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

@@ -19,6 +19,7 @@ class FiltersViewController: UIViewController, SwitchCellDelegate {
 
     var categories: [[String: String]]!
     var switchStates = [Int: Bool]()
+    var categoryList = [Category]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class FiltersViewController: UIViewController, SwitchCellDelegate {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func searchButtonTapped(_ sender: Any) {
-        var filters = [String: Any]()
+        let filters = [String: Any]()
         delegate?.filtersViewController?(filtersViewController: self, didUpdateFilters: filters)
     }
 
@@ -76,5 +77,6 @@ extension FiltersViewController: UITableViewDataSource, UITableViewDelegate {
     func switchCell(switchCell: SwitchTableViewCell, didChangeValue value: Bool) {
         let indexPath = filtersTableView.indexPath(for: switchCell)!
         switchStates[indexPath.row] = value
+        categoryList.filter({$0.alias == "Turkish"})
     }
 }

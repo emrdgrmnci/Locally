@@ -53,7 +53,7 @@ extension RestaurantListViewModel {
 }
 
 struct Category: Codable {
-//    let alias: String
+    let alias: String
     let title: String
 }
 

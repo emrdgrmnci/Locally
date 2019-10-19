@@ -69,7 +69,7 @@ class LocationViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "Allow Location Access",
                                       style: .cancel,
-                                      handler: {(alert) -> Void in
+                                      handler: {(_) -> Void in
                                         UIApplication.shared.open(settingsAppURL,
                                                                   options: [:],
                                                                   completionHandler: nil)

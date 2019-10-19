@@ -231,7 +231,6 @@ class ProfileViewController: UIViewController {
                     })
                 }
             }
-
         }
     }
 }
