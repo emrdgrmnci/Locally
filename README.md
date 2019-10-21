@@ -21,6 +21,7 @@ Show your restaurant reviews to other users.
 
 ### FEATURES
 <ul>
+  <li>Dark Mode 🌚</li>
 <li>Select restaurants near-by</li>
 <li>Restaurant phone call</li>
 <li>Draw directions on map with MapKit</li>
