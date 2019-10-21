@@ -40,6 +40,9 @@ class RestaurantTableViewController: UIViewController, SkeletonTableViewDataSour
         view.showAnimatedGradientSkeleton(usingGradient: gradient, animation: animation)
         print("did load")
         userCurrentLocation()
+        DispatchQueue.main.async {
+            self.tabBarController?.tabBar.isHidden = false
+        }
         NetworkManager.isUnreachable { _ in
             self.showOfflinePage()
         }
@@ -63,7 +66,9 @@ class RestaurantTableViewController: UIViewController, SkeletonTableViewDataSour
         tableView.dataSource = self
         tableView.delegate = self
         self.view.hideSkeleton()
+        DispatchQueue.main.async {
         self.tabBarController?.tabBar.isHidden = false
+        }
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

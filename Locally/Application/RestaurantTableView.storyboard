@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -169,7 +169,7 @@
                                 </userDefinedRuntimeAttributes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Pej-7h-lZ7" firstAttribute="leading" secondItem="SSr-vc-7jW" secondAttribute="leading" id="V7n-Rh-ZkK"/>
                             <constraint firstItem="SSr-vc-7jW" firstAttribute="trailing" secondItem="Pej-7h-lZ7" secondAttribute="trailing" id="cI5-Po-Jvc"/>
@@ -184,7 +184,7 @@
                     <navigationItem key="navigationItem" id="USN-Fd-VBq">
                         <leftBarButtonItems>
                             <barButtonItem title="Filters" id="cQO-R3-H4e">
-                                <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="VMb-3E-Wnn" kind="presentation" modalPresentationStyle="fullScreen" id="z4t-7h-lRN"/>
                                 </connections>
@@ -270,13 +270,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="wfJ-b9-twX">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="scI-PY-wrb">
-                            <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancelButtonTapped:" destination="yak-VP-odh" id="VAI-zL-Bs9"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Search" id="qwf-Fy-kxv">
-                            <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="searchButtonTapped:" destination="yak-VP-odh" id="9u8-rG-QDe"/>
                             </connections>
@@ -538,6 +538,7 @@
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ReviewBar" translatesAutoresizingMaskIntoConstraints="NO" id="Lpm-dc-Uak">
                                         <rect key="frame" x="53.5" y="922" width="307" height="66"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="307" id="NU4-qt-Sf8"/>
                                             <constraint firstAttribute="height" constant="66" id="kde-fI-Zi8"/>

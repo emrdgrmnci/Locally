@@ -20,14 +20,18 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupElements()
+        DispatchQueue.main.async {
         self.navigationController?.navigationBar.isHidden = true
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         setUpVideo()
     }
     override func viewDidAppear(_ animated: Bool) {
+        DispatchQueue.main.async {
         self.navigationController?.navigationBar.isHidden = true
+        }
     }
     func setupElements() {
         Utilities.styleFilledButton(signUpButton)

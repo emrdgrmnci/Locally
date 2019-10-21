@@ -12,12 +12,69 @@ import CoreLocation
 import CoreData
 import SDWebImage
 import SkeletonView
+import SwiftUI
 
+//#if DEBUG
+//
+//
+////MARK: - Preview UIKit in Preview
+//struct ProfileViewControllerPreviews : PreviewProvider, UIViewControllerRepresentable {
+//
+//    // MARK: PreviewProvider
+//
+//    static var previews: some View {
+//
+//        ProfileViewControllerPreviews()
+//    }
+//
+//    // MARK: UIViewControllerRepresentable
+//
+//    typealias UIViewControllerType = ProfileViewController
+//
+//    func makeUIViewController(
+//        context: Context
+//        ) -> ProfileViewController {
+//          let mainStoryboard: UIStoryboard = UIStoryboard(name: "ProfileView", bundle: nil)
+//
+//          let profileViewController: ProfileViewController = mainStoryboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+//
+//          return profileViewController
+//        }
+//
+//    func updateUIViewController(
+//        _ uiViewController : ProfileViewController, context: Context) {
+//
+//    }
+//}
+
+//struct ProfileIntegratedController: UIViewControllerRepresentable {
+//
+//    func makeUIViewController(context: UIViewControllerRepresentableContext<ProfileIntegratedController>) -> ProfileViewController {
+//        return ProfileViewController()
+//    }
+//
+//    func updateUIViewController(_ uiViewController: ProfileViewController, context: UIViewControllerRepresentableContext<ProfileIntegratedController>) {
+//
+//    }
+//}
+//
+//struct ProfileView: View {
+//    var body: some View {
+//      ProfileIntegratedController()
+//    }
+//}
+//
+//struct ProfilePreview: PreviewProvider {
+//    static var previews: some View {
+//        ProfileView()
+//    }
+//}
+//#endif
 class ProfileViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userEmailLabel: UILabel!
     @IBOutlet weak var userLocationLabel: UILabel!
-    @IBOutlet weak var collectionImageView: UIImageView!
+//    @IBOutlet weak var collectionImageView: UIImageView!
     @IBOutlet weak var horizontalLine: UIView!
     @IBOutlet weak var addPhoto: UIButton!
     @IBOutlet weak var savePhoto: UIButton!
@@ -40,7 +97,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         view.showAnimatedGradientSkeleton()
         //        let screenWidth = UIScreen.main.bounds.width
-        movingView = UIView(frame: CGRect(x: 10, y: -20, width: 50, height: 5))
+        movingView = UIView(frame: CGRect(x: 10, y: -5, width: 60, height: 5))
         movingView.backgroundColor = .red
         horizontalLine.addSubview(movingView)
 
@@ -69,11 +126,11 @@ class ProfileViewController: UIViewController {
                 if let id = result.value(forKey: "id") as? UUID {
                     self.idArray.append(id)
                 }
-                if let imageData = result.value(forKey: "image") as? NSData {
-                    if let image = UIImage(data: imageData as Data) {
-                        collectionImageView.image = image
-                    }
-                }
+//                if let imageData = result.value(forKey: "image") as? NSData {
+//                    if let image = UIImage(data: imageData as Data) {
+//                        collectionImageView.image = image
+//                    }
+//                }
             }
         } catch {
             print("error")
@@ -176,10 +233,10 @@ class ProfileViewController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.movingView.frame.origin.x = newx
         }
-        if addPhoto.isHidden == true {
-            let beenthere = UIImage(named: "beenthere")!
-            self.collectionImageView.image = beenthere
-        }
+//        if addPhoto.isHidden == true {
+//            let beenthere = UIImage(named: "beenthere")!
+//            self.collectionImageView.image = beenthere
+//        }
     }
 
     @IBAction func addPhoto(_ sender: Any) {
@@ -197,41 +254,36 @@ class ProfileViewController: UIViewController {
 
         let mediaFolder = storageReference.child("media")
 
-        if let data = collectionImageView.image?.jpegData(compressionQuality: 0.5) {
-            let uuid = UUID().uuidString
-            let imageReference = mediaFolder.child("\(uuid).jpg")
-            imageReference.putData(data, metadata: nil) { (metadata, error) in
-                if error != nil {
-                    self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
-                } else {
-                    imageReference.downloadURL(completion: { (url, error) in
-                        if error == nil {
-                            let imageUrl = url?.absoluteString
-
-                            //DATABASE
-                            let firestoreDatabase = Firestore.firestore()
-                            var firestoreReference: DocumentReference? = nil
-                            let firestorePost = ["imageUrl": imageUrl!,
-                                                 "postedBy": Auth.auth().currentUser!.email!,
-                                                 "date": FieldValue.serverTimestamp(),
-                                                 "likes": 0] as [String : Any]
-                            firestoreReference = firestoreDatabase.collection("Posts").addDocument(data: firestorePost, completion: { (error) in
-                                if error != nil {
-                                    self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
-                                } else {
-                                    self.collectionImageView.image = UIImage(named: "placeholder")
-                                    //                                    self.tabBarController?.selectedIndex = 1
-                                }
-                                //TODO: Add Activity Indicator for adding photo to profile view controller
-                                //                                DispatchQueue.main.async {
-                                //                                    self.showActivityIndicator(onView: self.view)
-                                //                                }
-                            })
-                        }
-                    })
-                }
-            }
-        }
+//        if let data = collectionImageView.image?.jpegData(compressionQuality: 0.5) {
+//            let uuid = UUID().uuidString
+//            let imageReference = mediaFolder.child("\(uuid).jpg")
+//            imageReference.putData(data, metadata: nil) { (metadata, error) in
+//                if error != nil {
+//                    self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
+//                } else {
+//                    imageReference.downloadURL(completion: { (url, error) in
+//                        if error == nil {
+//                            let imageUrl = url?.absoluteString
+//
+//                            //DATABASE
+//                            let firestoreDatabase = Firestore.firestore()
+//                            var firestoreReference: DocumentReference? = nil
+//                            let firestorePost = ["imageUrl": imageUrl!,
+//                                                 "postedBy": Auth.auth().currentUser!.email!,
+//                                                 "date": FieldValue.serverTimestamp(),
+//                                                 "likes": 0] as [String : Any]
+//                            firestoreReference = firestoreDatabase.collection("Posts").addDocument(data: firestorePost, completion: { (error) in
+//                                if error != nil {
+//                                    self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
+//                                } else {
+//                                    self.collectionImageView.image = UIImage(named: "placeholder")
+//                                }
+//                            })
+//                        }
+//                    })
+//                }
+//            }
+//        }
     }
 }
 
@@ -261,7 +313,7 @@ extension ProfileViewController: UITableViewDelegate, SkeletonTableViewDataSourc
 
 extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        collectionImageView.image = info[.originalImage] as? UIImage
+//        collectionImageView.image = info[.originalImage] as? UIImage
         imagePicker.dismiss(animated: true, completion: nil)
     }
 }

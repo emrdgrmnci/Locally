@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment version="2320" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -14,23 +14,23 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Message Body]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jtv-Px-mvN" userLabel="Body Label">
-                    <rect key="frame" x="20" y="44" width="560" height="18"/>
+                    <rect key="frame" x="20" y="44" width="560" height="24"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                     <accessibility key="accessibilityConfiguration">
                         <bool key="isElement" value="NO"/>
                     </accessibility>
                     <constraints>
-                        <constraint firstAttribute="height" priority="999" constant="20" id="iWH-Cw-QQQ"/>
+                        <constraint firstAttribute="height" priority="999" constant="24" id="iWH-Cw-QQQ"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Jtv-Px-mvN" firstAttribute="leading" secondItem="mGT-Jp-zjF" secondAttribute="leadingMargin" id="CHS-zo-loe"/>
                 <constraint firstItem="Jtv-Px-mvN" firstAttribute="top" secondItem="mGT-Jp-zjF" secondAttribute="topMargin" id="dki-gE-LYc"/>
-                <constraint firstAttribute="bottomMargin" secondItem="Jtv-Px-mvN" secondAttribute="bottom" id="gJ8-94-HgY"/>
+                <constraint firstAttribute="bottomMargin" secondItem="Jtv-Px-mvN" secondAttribute="bottom" constant="-6" id="gJ8-94-HgY"/>
                 <constraint firstAttribute="trailingMargin" secondItem="Jtv-Px-mvN" secondAttribute="trailing" id="hII-4c-bJX"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

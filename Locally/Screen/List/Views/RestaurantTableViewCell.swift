@@ -9,7 +9,7 @@
 import UIKit
 import AlamofireImage
 
-    class RestaurantTableViewCell: UITableViewCell {
+class RestaurantTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cardContainerView: ShadowView!
     @IBOutlet weak var restaurantImageView: UIImageView!

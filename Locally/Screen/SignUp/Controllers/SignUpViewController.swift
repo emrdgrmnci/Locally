@@ -22,7 +22,9 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.main.async {
         self.navigationController?.navigationBar.isHidden = false
+        }
         setupTextFieldPlaceholders()
         setupElements()
         firstNameTextField.delegate = self

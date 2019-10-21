@@ -19,7 +19,9 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.main.async {
         self.navigationController?.navigationBar.isHidden = false
+        }
         setupTextFieldPlaceholders()
         setupElements()
         signInButton.layer.cornerRadius = 5
