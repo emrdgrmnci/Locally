@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
         }
         setupTextFieldPlaceholders()
         setupElements()
-        signInButton.layer.cornerRadius = 5
+//        signInButton.layer.cornerRadius = 5
         NetworkManager.isUnreachable { _ in
             self.showOfflinePage()
         }
@@ -52,14 +52,14 @@ class LoginViewController: UIViewController {
     func setupTextFieldPlaceholders() {
         let iVar = class_getInstanceVariable(UITextField.self, "_placeholderLabel")!
         let placeholderLabel = object_getIvar(emailTextField, iVar) as! UILabel
-        placeholderLabel.textColor = .red
+        placeholderLabel.textColor = .systemGray2
         let placeholderLabelPassword = object_getIvar(passwordTextField, iVar) as! UILabel
         placeholderLabelPassword.textColor = .red
     }
     func setupElements() {
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
-        Utilities.styleHollowButton(signInButton)
+        Utilities.styleFilledButton(signInButton)
     }
 
     func signInUser(email: String, password: String) {

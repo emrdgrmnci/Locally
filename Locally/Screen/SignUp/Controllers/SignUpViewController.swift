@@ -23,7 +23,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.async {
-        self.navigationController?.navigationBar.isHidden = false
+            self.navigationController?.navigationBar.isHidden = false
         }
         setupTextFieldPlaceholders()
         setupElements()
@@ -38,13 +38,13 @@ class SignUpViewController: UIViewController {
     func setupTextFieldPlaceholders() {
         let iVar = class_getInstanceVariable(UITextField.self, "_placeholderLabel")!
         let placeholderLabelName = object_getIvar(firstNameTextField, iVar) as! UILabel
-        placeholderLabelName.textColor = .red
+        placeholderLabelName.textColor = .systemGray2
         let placeholderLabelLastName = object_getIvar(lastNameTextField, iVar) as! UILabel
-        placeholderLabelLastName.textColor = .red
+        placeholderLabelLastName.textColor = .systemGray2
         let placeholderLabel = object_getIvar(emailTextField, iVar) as! UILabel
-        placeholderLabel.textColor = .red
+        placeholderLabel.textColor = .systemGray2
         let placeholderLabelPassword = object_getIvar(passwordTextField, iVar) as! UILabel
-        placeholderLabelPassword.textColor = .red
+        placeholderLabelPassword.textColor = .systemGray2
     }
     
     func setupElements() {
@@ -151,7 +151,8 @@ extension SignUpViewController: UITextFieldDelegate {
             let regex = try NSRegularExpression(pattern: ".*[^A-Za-z ].*", options: [])
             if regex.firstMatch(in: string, options: [], range: NSMakeRange(0, string.count)) != nil {
                 return false
-            } }
+            }
+        }
         catch {
             self.makeAlert(titleInput: "Character Warning!", messageInput: "An error ocurred when filling in the name and surname fields")
         }
