@@ -52,9 +52,9 @@ class LoginViewController: UIViewController {
     func setupTextFieldPlaceholders() {
         let iVar = class_getInstanceVariable(UITextField.self, "_placeholderLabel")!
         let placeholderLabel = object_getIvar(emailTextField, iVar) as! UILabel
-        placeholderLabel.textColor = .systemRed
+        placeholderLabel.textColor = .red
         let placeholderLabelPassword = object_getIvar(passwordTextField, iVar) as! UILabel
-        placeholderLabelPassword.textColor = .systemRed
+        placeholderLabelPassword.textColor = .red
     }
     func setupElements() {
         Utilities.styleTextField(emailTextField)
