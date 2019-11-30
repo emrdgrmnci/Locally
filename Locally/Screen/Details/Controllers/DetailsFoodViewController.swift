@@ -82,6 +82,8 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
     @IBAction func phoneCallButton(_ sender: UIButton) {
         if let viewModel = viewModel {
             dialNumber(number: viewModel.phoneNumber)
+        } else {
+            self.phoneCallAndMapAlert(titleInput: "Phone Number", messageInput: "This restaurant has not phone number!")
         }
     }
 
@@ -92,13 +94,15 @@ class DetailsFoodViewController: UIViewController, MKMapViewDelegate, CLLocation
 
     @IBAction func getDirectionsButton(_ sender: Any) {
         if let viewModel = viewModel {
-        openMapsAppWithDirections(to: CLLocationCoordinate2D(
-            latitude: (viewModel.coordinate.latitude),
-            longitude: ((viewModel.coordinate.longitude))),
-                                  destinationName: "Destination")
-            if viewModel.phoneNumber == nil || viewModel.coordinate == nil {
-                self.phoneCallAndMapAlert(titleInput: "Location/Phone Number", messageInput: "This place has not location or phone number")
-            }
+            openMapsAppWithDirections(to: CLLocationCoordinate2D(
+                latitude: (viewModel.coordinate.latitude),
+                longitude: ((viewModel.coordinate.longitude))),
+                                      destinationName: "Destination")
+            //            if viewModel.phoneNumber == nil || viewModel.coordinate == nil {
+            //                self.phoneCallAndMapAlert(titleInput: "Location/Phone Number", messageInput: "This place has not location or phone number")
+            //            }
+        } else {
+            self.phoneCallAndMapAlert(titleInput: "Location/Phone Number", messageInput: "This place has not location!")
         }
     }
     private func mapView(mapView: MKMapView,

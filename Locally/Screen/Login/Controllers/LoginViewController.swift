@@ -20,11 +20,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.async {
-        self.navigationController?.navigationBar.isHidden = false
+            self.navigationController?.navigationBar.isHidden = false
         }
         setupTextFieldPlaceholders()
         setupElements()
-//        signInButton.layer.cornerRadius = 5
+        //        signInButton.layer.cornerRadius = 5
         NetworkManager.isUnreachable { _ in
             self.showOfflinePage()
         }
@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
         let placeholderLabel = object_getIvar(emailTextField, iVar) as! UILabel
         placeholderLabel.textColor = .systemGray2
         let placeholderLabelPassword = object_getIvar(passwordTextField, iVar) as! UILabel
-        placeholderLabelPassword.textColor = .red
+        placeholderLabelPassword.textColor = .systemGray2
     }
     func setupElements() {
         Utilities.styleTextField(emailTextField)
@@ -86,10 +86,10 @@ class LoginViewController: UIViewController {
     }
 
     func showStatusLine(_ message: String) {
-          let view: MessageView = try! SwiftMessages.viewFromNib(named: "StatusLine")
-          SwiftMessages.show(view: view)
-          view.bodyLabel?.text = message
-      }
+        let view: MessageView = try! SwiftMessages.viewFromNib(named: "StatusLine")
+        SwiftMessages.show(view: view)
+        view.bodyLabel?.text = message
+    }
 
     @IBAction func signInButtonTapped(_ sender: Any) {
         // MARK: - UserDefaults

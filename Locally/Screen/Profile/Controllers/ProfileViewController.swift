@@ -14,62 +14,6 @@ import SDWebImage
 import SkeletonView
 import SwiftUI
 
-//#if DEBUG
-//
-//
-////MARK: - Preview UIKit in Preview
-//struct ProfileViewControllerPreviews : PreviewProvider, UIViewControllerRepresentable {
-//
-//    // MARK: PreviewProvider
-//
-//    static var previews: some View {
-//
-//        ProfileViewControllerPreviews()
-//    }
-//
-//    // MARK: UIViewControllerRepresentable
-//
-//    typealias UIViewControllerType = ProfileViewController
-//
-//    func makeUIViewController(
-//        context: Context
-//        ) -> ProfileViewController {
-//          let mainStoryboard: UIStoryboard = UIStoryboard(name: "ProfileView", bundle: nil)
-//
-//          let profileViewController: ProfileViewController = mainStoryboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-//
-//          return profileViewController
-//        }
-//
-//    func updateUIViewController(
-//        _ uiViewController : ProfileViewController, context: Context) {
-//
-//    }
-//}
-
-//struct ProfileIntegratedController: UIViewControllerRepresentable {
-//
-//    func makeUIViewController(context: UIViewControllerRepresentableContext<ProfileIntegratedController>) -> ProfileViewController {
-//        return ProfileViewController()
-//    }
-//
-//    func updateUIViewController(_ uiViewController: ProfileViewController, context: UIViewControllerRepresentableContext<ProfileIntegratedController>) {
-//
-//    }
-//}
-//
-//struct ProfileView: View {
-//    var body: some View {
-//      ProfileIntegratedController()
-//    }
-//}
-//
-//struct ProfilePreview: PreviewProvider {
-//    static var previews: some View {
-//        ProfileView()
-//    }
-//}
-//#endif
 class ProfileViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userEmailLabel: UILabel!
@@ -98,7 +42,7 @@ class ProfileViewController: UIViewController {
         view.showAnimatedGradientSkeleton()
         //        let screenWidth = UIScreen.main.bounds.width
         movingView = UIView(frame: CGRect(x: 10, y: -5, width: 60, height: 5))
-        movingView.backgroundColor = .red
+        movingView.backgroundColor = .systemBlue
         horizontalLine.addSubview(movingView)
 
         dinelineTableView.delegate = self
@@ -126,11 +70,6 @@ class ProfileViewController: UIViewController {
                 if let id = result.value(forKey: "id") as? UUID {
                     self.idArray.append(id)
                 }
-//                if let imageData = result.value(forKey: "image") as? NSData {
-//                    if let image = UIImage(data: imageData as Data) {
-//                        collectionImageView.image = image
-//                    }
-//                }
             }
         } catch {
             print("error")
